@@ -1,0 +1,31 @@
+baseURL = "https://oneillo.com/"
+languageCode = "en-us"
+title = "Orlando O'Neill"  # Change to whatever you want
+theme = "PaperMod"
+
+[params]
+  description = "Thoughts from time to time"
+  defaultTheme = "auto"  # auto switches between light/dark based on OS
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+
+[params.homeInfoParams]
+  Title = "Hey there"
+  Content = "Welcome to my blog."
+
+[menu]
+  [[menu.main]]
+    identifier = "archive"
+    name = "Archive"
+    url = "/archives/"
+    weight = 10
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]  # JSON enables search if you want it later
