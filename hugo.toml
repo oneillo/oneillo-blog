@@ -4,18 +4,25 @@ title = "Orlando O'Neill"  # Change to whatever you want
 theme = "PaperMod"
 
 [params]
-  description = "Thoughts from time to time"
+  description = "Thoughts on AI, marketing, data, and whatever I'm curious about — by Orlando O'Neill."
+  author = "Orlando O'Neill"
   defaultTheme = "auto"  # auto switches between light/dark based on OS
   ShowReadingTime = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
+  ShowFullTextinRSS = true
 
 [params.homeInfoParams]
   Title = "Hey there"
   Content = "Welcome to my blog."
 
 [menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 5
   [[menu.main]]
     identifier = "archive"
     name = "Archive"
