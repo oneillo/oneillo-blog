@@ -11,6 +11,8 @@ theme = "PaperMod"
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowFullTextinRSS = true
+  ShowShareButtons = true
+  ShareButtons = ["linkedin", "x"]
 
 [menu]
   [[menu.main]]
@@ -28,6 +30,11 @@ theme = "PaperMod"
     name = "Tags"
     url = "/tags/"
     weight = 20
+  [[menu.main]]
+    identifier = "rss"
+    name = "RSS"
+    url = "/index.xml"
+    weight = 30
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]  # JSON enables search if you want it later
