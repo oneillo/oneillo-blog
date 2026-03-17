@@ -1,6 +1,6 @@
 ---
 title: "How I Manage a Team of AI Agents at Work"
-date: 2026-03-14
+date: 2026-03-16
 draft: false
 description: "How I went from rewriting the same prompts to managing a team of AI agents with a repeatable framework."
 tags: ["ai", "llm", "productivity", "agents", "managed-ai-framework"]
