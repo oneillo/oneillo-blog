@@ -40,7 +40,7 @@ To manage your team, you have to understand their strengths and weaknesses, and 
 
 Based on the gap, you'll want to address the situation at the right level. That might entail adding a new context file to the team's knowledge base or updating an agent's persona. These small tweaks will start to lead to big improvements, but this isn't a set it and forget it kind of deal. It's a continuous management process that never really ends.
 
-[![Managed AI framework overview](managed-ai-framework-overview.jpg)](managed-ai-framework-overview.jpg)
+![Managed AI framework overview](managed-ai-framework-overview.jpg)
 
 I've noticed that my team is producing better work in less time with this approach, but I don't have an objective way to measure or validate that. I want to learn more about LLM evaluation techniques so I can get to objective measurement, but in the meantime, I have some validation from others at work. First, I've started to get compliments from copywriters on the draft marketing copy I'm writing with my Copywriter AI agent. Second, I shared the first draft of a monthly business review document my team wrote with my counterpart on the product side. I let her know it was all AI-generated (the analysis and the write-up), and I asked her to review and check if there was potential there. She was so impressed with the quality of the MBR, she started asking me questions about how I'd put it together and what my setup was. Lastly, I was able to write a good business requirements document from scratch in one day because the infrastructure was already in place.
 
