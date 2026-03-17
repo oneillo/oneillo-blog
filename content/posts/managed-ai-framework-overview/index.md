@@ -2,7 +2,7 @@
 title: "How I Manage a Team of AI Agents at Work"
 date: 2026-03-16
 draft: false
-description: "How I went from rewriting the same prompts to managing a team of AI agents with a repeatable framework."
+description: "A six-step framework for treating AI agents like a team you manage, not a tool you use."
 tags: ["ai", "llm", "productivity", "agents", "managed-ai-framework"]
 cover:
   image: "managed-ai-framework-overview.jpg"
