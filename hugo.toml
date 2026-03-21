@@ -6,6 +6,7 @@ theme = "PaperMod"
 [params]
   description = "Thoughts on AI, marketing, data, and whatever I'm curious about — by Orlando O'Neill."
   defaultTheme = "auto"  # auto switches between light/dark based on OS
+  disableSpecial1stPost = true
   ShowReadingTime = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
