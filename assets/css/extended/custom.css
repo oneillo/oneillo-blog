@@ -1,3 +1,7 @@
+.first-entry {
+    margin-bottom: calc(var(--gap) * 3);
+}
+
 .post-entry {
     background: transparent;
     border: none;
