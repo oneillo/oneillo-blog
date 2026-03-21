@@ -1,3 +1,11 @@
-.first-entry {
-    padding: var(--gap);
+.post-entry {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: calc(var(--gap) * 3);
+}
+
+.post-entry:active {
+    transform: none;
 }
