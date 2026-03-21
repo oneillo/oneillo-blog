@@ -16,7 +16,7 @@ I remember when I realized I was starting to use AI at work as if I were [managi
 
 What started as a sketch is now core to how I use AI agents to do things faster and better at work and at home. It's an approach that naturally guides you toward the [context engineering best practices](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) that improve LLM output.
 
-The reason this approach works well is that it uses one of the two available levers to improve how well a best-in-class large language model (LLM) works for you.
+The reason this approach works is that it uses one of the two available levers to improve how well a best-in-class large language model (LLM) works for you.
 
 1. Fine-tuning: this is where you take an LLM and train it further using your own data so it becomes more specialized for your needs.
 2. In-context learning: giving the LLM the right expertise (persona), knowledge (context files), workflows (skills), and rules in each session (steering files).
