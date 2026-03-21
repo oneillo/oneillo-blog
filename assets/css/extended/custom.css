@@ -1,4 +1,9 @@
 .first-entry {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    min-height: unset;
     margin-bottom: calc(var(--gap) * 3);
 }
 
