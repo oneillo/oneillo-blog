@@ -12,6 +12,7 @@ theme = "PaperMod"
   ShowCodeCopyButtons = true
   ShowFullTextinRSS = true
   ShowShareButtons = true
+  disableSpecial1stPost = true
   ShareButtons = ["linkedin", "x"]
 
 [menu]
