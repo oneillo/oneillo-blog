@@ -32,6 +32,11 @@ theme = "PaperMod"
     url = "/tags/"
     weight = 20
   [[menu.main]]
+    identifier = "subscribe"
+    name = "Subscribe"
+    url = "https://orlandooneill.substack.com"
+    weight = 25
+  [[menu.main]]
     identifier = "rss"
     name = "RSS"
     url = "/index.xml"

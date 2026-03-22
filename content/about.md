@@ -16,3 +16,5 @@ Right now, most of my curiosity is pointed at AI and how non-technical people ca
 Over the last seven months I went from using AI sporadically to managing a team of five custom agents that I collaborate with daily. I'm writing about that journey as I go, because I find I understand things better when I try to explain them.
 
 This blog covers whatever I'm genuinely curious about — AI, data, marketing, leadership. If I'm writing about it, I've tried it. Right now that's mostly AI.
+
+Want new posts delivered to your inbox? [Subscribe on Substack](https://orlandooneill.substack.com).
