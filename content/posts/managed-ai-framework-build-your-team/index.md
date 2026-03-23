@@ -19,7 +19,7 @@ What started as a sketch is now core to how I use AI agents to do things faster 
 The reason this approach works is that it uses one of the two available levers to improve how well a best-in-class large language model (LLM) works for you.
 
 1. Fine-tuning: this is where you take an LLM and train it further using your own data so it becomes more specialized for your needs.
-2. In-context learning: giving the LLM the right expertise (persona), knowledge (context files), workflows (skills), and rules in each session (steering files).
+2. In-context learning: giving the LLM the right expertise (persona), knowledge (context files), workflows (skills), and rules in each session (team rules).
 
 For most people, fine-tuning is going to be out of reach. Even if you could fine-tune a model, you'd have to retrain it repeatedly to keep up with changes in your work. Otherwise, the model would grow stale. In-context learning is how you keep the model relevant between retraining cycles, and for most people, it's the only lever available.
 
