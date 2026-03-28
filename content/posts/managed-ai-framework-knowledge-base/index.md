@@ -97,6 +97,8 @@ It's the same approach as in the last post: you let the LLM take the first pass 
 
 Your team is more knowledgeable, but that isn't enough to guarantee you get consistent, high-quality work. You still need to give them an employee handbook and a set of standard operating procedures to fix the second type of gap: behavioral gaps.
 
+---
+
 ## Resource: prompt you can use to design a knowledge base for your AI agents
 
 ```

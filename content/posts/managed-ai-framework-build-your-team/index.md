@@ -27,7 +27,7 @@ It all starts with building your team.
 
 ![Build your team process](managed-ai-framework-build-your-team.jpg)
 
-#### Define the roles
+## Define the roles
 
 The first step is to define the roles for your team by identifying the groups of similar tasks you do over and over again. It might help to start with pen and paper like I did.
 
@@ -43,7 +43,7 @@ In my role as a Sr Product Marketing Manager, I've landed on five agents that I 
 
 I'm setting up a different team at home: an editor, financial advisor, and personal trainer.
 
-#### Create the personas
+## Create the personas
 
 Creating the personas will be quicker than you think, because you're going to use AI to help create them.
 
@@ -61,14 +61,14 @@ After you create your persona prompts, take a step back and think about how you 
 
 As you build trust with your agents, you're going to start to delegate more to them: bigger tasks, more autonomy, more trust. This is exactly what it's like to be a manager when you're working with a new employee. You're initially close to what they're doing, you build trust, and then you start to give them the room to run. That's when you start to really see the benefits of adding that employee to your team. It's the same thing here. The earlier you get comfortable delegating work to the AI agents, the faster everything in the framework will start to pay off.
 
-#### Set up the agents
+## Set up the agents
 
 The last thing you need to do to build your team is set up the agents by loading the persona prompt into whatever tool you're using. The specifics are going to vary based on the tool you're using, e.g. Claude Code versus Kiro CLI. I'll cover how to do this in more detail in an upcoming post in this series. For now, you just need to remember that the persona prompt is the foundation for each agent on your team.
 
 Building your AI team is straightforward. You're the expert at what you do and how to do it well. Use your experience and expertise to guide an LLM to build persona prompts for AI agents to fill your open roles. That gets them hired. The knowledge base you'll create is what gets them up to speed and delivering high-quality work for you.
 
 
-#### Resource: prompt you can use with an LLM to help create your persona prompts
+## Resource: prompt you can use with an LLM to help create your persona prompts
 
 ```
 I need you to help me write a persona prompt — a set of instructions that will shape how an AI agent behaves every time it runs. Think of it as a job description the AI reads before every conversation.
