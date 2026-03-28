@@ -1,6 +1,6 @@
 ---
 title: "Building the Knowledge Base: Fixing the First Gaps in Your AI Team"
-date: 2026-03-22
+date: 2026-03-27
 draft: false
 description: "The first gaps you'll notice on your AI team are knowledge gaps. Here's how to build a knowledge base that fixes them without overwhelming your agents."
 tags: ["ai", "llm", "productivity", "agents", "managed-ai-framework"]
