@@ -68,7 +68,7 @@ The last thing you need to do to build your team is set up the agents by loading
 Building your AI team is straightforward. You're the expert at what you do and how to do it well. Use your experience and expertise to guide an LLM to build persona prompts for AI agents to fill your open roles. That gets them hired. The knowledge base you'll create is what gets them up to speed and delivering high-quality work for you.
 
 
----
+***
 
 ## Resource: prompt you can use with an LLM to help create your persona prompts
 
