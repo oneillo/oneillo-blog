@@ -42,5 +42,8 @@ theme = "PaperMod"
     url = "/index.xml"
     weight = 30
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]  # JSON enables search if you want it later
