@@ -34,7 +34,7 @@ theme = "PaperMod"
   [[menu.main]]
     identifier = "subscribe"
     name = "Subscribe"
-    url = "https://orlandooneill.substack.com"
+    url = "/subscribe/"
     weight = 25
   [[menu.main]]
     identifier = "rss"
