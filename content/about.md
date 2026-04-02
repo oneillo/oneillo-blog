@@ -17,4 +17,6 @@ Over the last seven months I went from using AI sporadically to managing a team 
 
 This blog covers whatever I'm genuinely curious about — AI, data, marketing, leadership. If I'm writing about it, I've tried it. Right now that's mostly AI.
 
-Want new posts delivered to your inbox? [Subscribe on Substack](https://orlandooneill.substack.com).
+Want new posts delivered to your inbox? Subscribe below.
+
+<script async data-uid="2560d0ad9a" src="https://oneillo.kit.com/2560d0ad9a/index.js"></script>
