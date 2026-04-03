@@ -9,3 +9,12 @@
 .post-entry:active {
     transform: none;
 }
+
+/* Make Kit form background transparent to match site theme */
+.formkit-form {
+    background-color: transparent !important;
+}
+
+.formkit-background {
+    background-color: transparent !important;
+}
