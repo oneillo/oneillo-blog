@@ -11,10 +11,9 @@
 }
 
 /* Make Kit form background transparent to match site theme */
-.formkit-form {
-    background-color: transparent !important;
-}
-
-.formkit-background {
+.formkit-form,
+.formkit-form *,
+.formkit-background,
+[data-sv-form] {
     background-color: transparent !important;
 }
