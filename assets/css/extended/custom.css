@@ -17,7 +17,7 @@
 
 /* Make Kit form background transparent to match site theme */
 .formkit-form,
-.formkit-form *,
+.formkit-form *:not([type="submit"]):not(button):not(.formkit-submit):not(.formkit-submit *),
 .formkit-background,
 [data-sv-form] {
     background-color: transparent !important;
