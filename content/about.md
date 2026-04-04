@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Where technology meets the real work"
 layout: "single"
 url: "/about/"
 summary: "About Orlando O'Neill"
@@ -8,8 +8,6 @@ aliases:
 ShowReadingTime: false
 ShowBreadCrumbs: false
 ---
-
-## Where technology meets the real work
 
 **Essays on AI, marketing, data, and productivity — from someone who tries everything before writing about it.**
 
