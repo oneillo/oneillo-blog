@@ -1,3 +1,8 @@
+/* Use consistent off-white background across all pages */
+:root {
+    --theme: rgb(245, 245, 245);
+}
+
 .post-entry {
     background: transparent;
     border: none;
