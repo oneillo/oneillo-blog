@@ -63,7 +63,7 @@ The agent will make recommendations about what to address and how, but push back
 
 Watch this video to see me go through the process at home, working through real issues with real fixes.
 
-![The Feedback Loop in Action](https://youtu.be/qgtoa7nj698?rel=0)
+{{< youtube qgtoa7nj698 >}}
 
 This is a management practice, and you'll get out of it what you put into it. The underlying tools are simple: a feedback log, an audit cadence, and a framework for deciding what to fix and how. By doing this consistently, though, you ensure that your team keeps getting better because you're investing in their development the same way a good manager invests in their people.
 
