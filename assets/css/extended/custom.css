@@ -23,17 +23,34 @@
     background-color: transparent !important;
 }
 
-/* Fix Kit form elements in dark mode */
-.dark .formkit-input {
+/* Fix Kit form elements in dark mode (manual toggle) */
+[data-theme="dark"] .formkit-input {
     color: var(--content) !important;
     border-color: var(--border) !important;
 }
 
-.dark .formkit-input::placeholder {
+[data-theme="dark"] .formkit-input::placeholder {
     color: var(--secondary) !important;
 }
 
-.dark .formkit-powered-by-convertkit-container,
-.dark [data-element="powered-by"] {
+[data-theme="dark"] [data-element="powered-by"],
+[data-theme="dark"] .formkit-powered-by-convertkit-container {
     filter: invert(1) !important;
+}
+
+/* Fix Kit form elements in dark mode (OS preference) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .formkit-input {
+        color: var(--content) !important;
+        border-color: var(--border) !important;
+    }
+
+    :root:not([data-theme="light"]) .formkit-input::placeholder {
+        color: var(--secondary) !important;
+    }
+
+    :root:not([data-theme="light"]) [data-element="powered-by"],
+    :root:not([data-theme="light"]) .formkit-powered-by-convertkit-container {
+        filter: invert(1) !important;
+    }
 }
