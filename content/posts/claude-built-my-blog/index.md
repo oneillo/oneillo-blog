@@ -2,7 +2,7 @@
 title: "I Let Claude Build My Blog. Now I Can't Maintain It."
 date: 2026-04-19
 draft: false
-description: "Claude Code set up my Hugo blog in 40 minutes and lets me edit it from my phone. The catch: I don't understand how any of it works."
+description: "Claude Code set up my Hugo blog in 40 minutes and lets me edit it from my phone. The catch: I don't understand how it all works."
 tags: ["ai", "llm", "claude-code", "hugo", "agents"]
 cover:
   image: ""
