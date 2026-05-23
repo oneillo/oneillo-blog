@@ -10,6 +10,8 @@ I recently gave a presentation in my division about using AI agents in non-techn
 
 {{< youtube KeYYKoOSOKY >}}
 
+<br>
+
 It introduces the elements of the framework, explains why it works given the importance of context engineering, and provides more detail on what it actually looks like to work with AI agents daily.
 
 Stay tuned for the final posts in my Managed AI framework series.
