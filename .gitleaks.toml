@@ -1,0 +1,16 @@
+# Gitleaks configuration for oneillo-blog.
+# Extends the built-in default ruleset and adds a small allowlist for
+# values that are public by design.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Public, non-secret values that should not be flagged"
+# Cloudflare Web Analytics beacon token. This is a public identifier that
+# ships in the HTML of every page on the live site, so it is not a secret.
+regexes = [
+  '''ee8c80dc4b0847959efa7dc18fb06f9e''',
+]
+paths = [
+  '''layouts/partials/extend_footer\.html''',
+]
