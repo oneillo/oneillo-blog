@@ -1,6 +1,8 @@
 /* Use consistent off-white background across all pages */
 :root {
     --theme: rgb(245, 245, 245);
+    /* Match header width to content width */
+    --nav-width: var(--main-width);
 }
 
 .post-entry {
@@ -8,7 +10,7 @@
     border: none;
     border-radius: 0;
     padding: 0;
-    margin-bottom: calc(var(--gap) * 3);
+    margin-bottom: calc(var(--gap) * 1.5);
 }
 
 .post-entry:active {
