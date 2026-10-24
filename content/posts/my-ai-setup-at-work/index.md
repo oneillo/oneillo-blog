@@ -10,9 +10,9 @@ cover:
   hidden: true
 ---
 
-Over the past year, [the way I work has completely changed](https://oneillo.com/posts/my-llm-journey/). I'm a marketer, not a developer, but I now spend over 80% of my workday in the terminal, working with [a team of AI agents](https://oneillo.com/posts/managed-ai-framework-overview/). They plan my day, triage my to-dos, pull and analyze my data, and even build the tools I use. When they need my judgment, they pull me in.
+Over the past year, [the way I work has completely changed](https://oneillo.com/posts/my-llm-journey/). I now spend over 80% of my workday in the terminal working with [a team of AI agents](https://oneillo.com/posts/managed-ai-framework-overview/). They plan my day, triage my to-dos, pull and analyze my data, and even build the tools I use. When they need my judgment, they pull me in.
 
-From what I've seen, that puts me at the far end of what non-developers are doing with agentic AI. So I thought I'd share my setup as a reference.
+From what I've seen, I'm at the far end of what non-developers are doing with agentic AI. So I thought I'd share my setup as a reference.
 
 If it starts to look like a lot, stick with me to the end. There's good news for anyone who wants to try something similar.
 
@@ -21,12 +21,12 @@ If it starts to look like a lot, stick with me to the end. There's good news for
 Here are the core apps I use every day.
 
 - [Kiro CLI](https://kiro.dev/cli/) - the app I use to run my AI agents at work. It runs in the terminal, which I find faster than clicking around an app, and it makes it super easy to switch between model families. For example, I can go from a Claude model to an OpenAI model, which is great for reviewing work and picking the right model for the job.
-- [Ghostty](https://ghostty.org) - my terminal of choice, and where most of my work happens. I used to run Kiro CLI in multiple Ghostty panes side by side. Now I start with Herdr instead.
+- [Ghostty](https://ghostty.org) - my preferred terminal and where most of my work happens. I used to run Kiro CLI in multiple Ghostty panes side by side. Now I start with Herdr instead.
 - [Herdr](https://herdr.dev) - a tool for managing multiple AI agents at once. I can organize agents by the work they're doing, and I get a notification when one is done and waiting on me. It also lets one agent oversee a group of other agents while still keeping me in the loop.
 - [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage) / SharePoint - for backing up all of my local work, including my entire AI setup, and sharing documents with colleagues. I also use a SharePoint site as a low-tech shared [knowledge base](https://oneillo.com/posts/managed-ai-framework-knowledge-base/) for my team's AI agents. The Markdown files in the site sync to each of our laptops, so our agents can look things up in them while they work. It's not managed in Git the way a developer would set it up, but it's easy for a team of non-developers to use, and it comes with version control built in.
 - [OmniFocus](https://www.omnigroup.com/omnifocus/) - my central to-do list. My agents add tasks here whenever something needs my attention: a message I flagged in Slack, a work item they found in my meeting notes, or an automated alert. I already used OmniFocus to track work (honestly, not as well as I would have liked), so it was an easy pick for the one list of everything I need to get done. 
 - [Obsidian](https://obsidian.md) - for browsing my AI workspace. It's the fastest way I've found to move around folders and open specific Markdown files.
-- Glosa (right side of the image below) - an app I built with Kiro CLI to enable me to collaborate with my AI agents on Markdown documents the same way I do with my teammates in Word. I started working on it when I realized how slow it was to copy and paste passages back into the terminal or point the agent at the thing I wanted it to change. I leave comments on specific parts of a document, and my agents pick them up and act on them. I can tag different agents on the same doc, even ones running in different apps. For example, I can ask my Data Wizard to check some calculations while my Writer reworks a separate passage (more on my agents below). It has sped up how quickly I get from an AI-written draft to something I'm comfortable sharing.
+- Glosa (right side of the image below) - an app I built with Kiro CLI to enable me to collaborate with my AI agents on Markdown documents the same way I do with my teammates in Word. I started working on it when I realized how slow it was to copy and paste passages back into the terminal or point the agent at the thing I wanted it to change. I leave comments on specific parts of a document, and my agents pick them up and act on them. I can tag different agents on the same doc, even ones running in different apps. For example, I can ask my Data Wizard to check some calculations while my Writer reworks a separate passage (more on my agents below). It has sped up how quickly I get from an AI-written draft to something I'm comfortable sharing. Kiro IDE recently shipped [Markdown Review](https://kiro.dev/changelog/ide/1-3-11/), which is kind of like this.
 
 ![glosa](glosa.png)
 
@@ -47,7 +47,7 @@ My agents also work with each other. I often have several running at once, and t
 
 ## Systems
 
-The apps and agents are the building blocks. These systems are what make them useful day to day. Most of them run in the background without me lifting a finger.
+These are the core automations and processes in my setup.
 
 ### Heartbeat automation
 
@@ -79,6 +79,16 @@ The charts are built to my exact specifications, so I can see overall performanc
 
 Once the data is in, my Data Wizard analyzes recent performance to look for outliers and issues that need my attention. Depending on how severe and urgent an issue is, it shows up on the dashboard, in email, in OmniFocus, or as a macOS notification. On top of that, every Monday morning it emails me a digest with performance data and a narrative, written by my Writer agent, of what's going on with my products, and at the start of each month, it sends me a monthly performance overview. 
 
+### Agent evaluation tests
+
+When I first started, I made a lot of changes to my agents, skills, and system prompts to address issues, but I didn't have a way to test if they were actually making things better. I was "vibe testing" the improvements, and I wanted something more rigorous. After researching agent eval frameworks, I built a simple, automated version into my setup. 
+
+When I make a change to a custom agent, skill, or system prompt (steering file in Kiro), my LLM Expert agent can kick off my agent evaluation system in the background to check how it performs against the current baseline. 
+
+The evaluation is done by judging the current version against the proposed update against a set of predefined tests. For example, if I'm changing my Writer agent, it goes through a set of defined prompts asking it do things like write an email communicating a status update, write a short document, write marketing copy for push notifications, etc. Their output is then evaluated against a list of criteria for each scenario, like checking if the output contains too many em dashes. 
+
+At the end, if the proposed improvements are no worse than the current version, they get promoted and become my new baseline.
+
 ### Folder-based project management
 
 This system gives my agents the context they need to write my status updates and nudge me on work that needs my attention. It has two parts: a standard folder structure and a context.md file in every project folder.
@@ -96,15 +106,15 @@ Each context.md file starts with a standardized YAML header, a block of structur
 
 ## Start small
 
-If you've read this far and feel a little overwhelmed, I get it. Written out like this, it looks like a lot. But I have good news.
+If you've read this far and feel a little overwhelmed, I get it. It looks like a lot. But I have good news.
 
 First, your AI agents can do most, if not all, of the heavy lifting. I provide oversight, guidance, and taste, but 99% of my setup was built by my Kiro agents.
 
 Second, none of this happened at once. My setup last March was drastically simpler than what I have today. Over 8 months of using AI agents daily, I've added one piece at a time, [usually in response to a specific pain point](https://oneillo.com/posts/managed-ai-framework-feedback-loop/), and made sure I understood what each piece did and how it fit with the rest. That's how I'd recommend you do it too. Pick one annoying problem, have your agent help you solve it, and build from there.
 
-My goal is to use the minimum number of things I need. I don't like complexity for the sake of complexity, and I'm still pruning. My Marketing Strategist might not survive the year.
+When it comes to my setup, my goal is to use the minimum number of things I need. I don't like complexity for the sake of complexity, and I'm still pruning. My Marketing Strategist might not survive the year.
 
-At this point, I can't imagine working any other way. To me, AI agents have been as transformative to how I work as computers, laptops, and wifi. There's no going back.
+At this point, I can't imagine going back to the way I worked before agentic AI. To me, AI agents have been as transformative to how I work as computers, laptops, and wifi. There's no going back.
 
 ---
 
