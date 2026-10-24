@@ -83,11 +83,13 @@ Once the data is in, my Data Wizard analyzes recent performance to look for outl
 
 When I first started, I made a lot of changes to my agents, skills, and system prompts to address issues, but I didn't have a way to test if they were actually making things better. I was "vibe testing" the improvements, and I wanted something more rigorous. After researching agent eval frameworks, I built a simple, automated version into my setup. 
 
-When I make a change to a custom agent, skill, or system prompt (steering file in Kiro), my LLM Expert agent can kick off my agent evaluation system in the background to check how it performs against the current baseline. 
+If I want to make a change to a custom agent, skill, or system prompt (steering file in Kiro), my LLM Expert agent can kick off my agent evaluation system in the background to check how it performs against the current baseline. 
 
 The evaluation is done by comparing the current version with the proposed update on a set of predefined tests. For example, if I'm changing my Writer agent, it goes through a set of defined prompts asking it to do things like write an email communicating a status update, write a short document, write marketing copy for push notifications, etc. Their output is then evaluated against a list of criteria for each scenario, like checking if the output contains too many em dashes. 
 
 At the end, if the proposed improvements are no worse than the current version, they get promoted and become my new baseline.
+
+A few months ago I significantly trimmed the token cost of my setup, and this was how I ensured it didn't worsen my AI setup's performance.
 
 ### Folder-based project management
 
