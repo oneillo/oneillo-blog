@@ -377,7 +377,7 @@
 }
 .ai-setup .code .copy-code { display: none; }
 .ai-setup .ai-setup-copy {
-  margin-left: auto; height: 28px; padding: 0 12px; border: 1px solid var(--as-control-line); border-radius: 6px;
+  flex: none; white-space: nowrap; margin-left: auto; height: 28px; padding: 0 12px; border: 1px solid var(--as-control-line); border-radius: 6px;
   background: var(--as-button); color: var(--as-text); font: inherit; font-size: 12px; font-weight: 500; line-height: 16px; cursor: pointer;
 }
 .ai-setup .ai-setup-copy::before {
