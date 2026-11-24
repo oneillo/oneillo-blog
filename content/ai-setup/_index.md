@@ -1,8 +1,12 @@
 ---
-title: "AI Setup"
+title: "Orlando's Claude Code setup: rules, skills, agents, and hooks"
 date: 2026-11-22
-lastmod: 2026-11-22
-description: "An AI-written tour of Orlando's personal AI setup: how it's organised, rules, skills, agents, apps, and settings."
+lastmod: 2026-11-23
+summary: "An AI-written tour of Orlando's personal AI setup: how it's organized, rules, skills, agents, apps, and settings."
+heading: "AI Setup"
+linkTitle: "AI Setup"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/ai-setup.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,7 +17,9 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<div class="post-description">A tour of Orlando's personal AI setup: how it's organized, rules, skills, agents, apps, and settings.</div>
+
+> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-23.
 
 ## What this is
 
@@ -54,12 +60,12 @@ It changes often. Every page says when its own content last changed.
 
 ## The pieces
 
-- <a href="/ai-setup/workspace/">How it's organised</a>: the workspace's folders, the knowledge base's shape, version history, backups, and how Python scripts run.
+- <a href="/ai-setup/workspace/">How it's organized</a>: the workspace's folders, the knowledge base's shape, version history, backups, and how Python scripts run.
 - <a href="/ai-setup/rules/">Rules</a>: the rules every session starts from (3 rules files).
 - <a href="/ai-setup/skills/">Skills</a>: written routines a session can run (14 skills).
 - <a href="/ai-setup/agents/">Custom agents</a>: roles a session can take, each with its own prompt (3 agents).
 - <a href="/ai-setup/apps/">Apps</a>: the apps around the sessions, described (6 apps).
-- <a href="/ai-setup/settings/">Settings and hooks</a>: the switches underneath (1 hook).
+- <a href="/ai-setup/settings/">Settings and hooks</a>: the switches underneath (2 hooks).
 
 Orlando's weekly AI digest is public too, as the <a href="/newsletter/">Newsletter</a>.
 
@@ -68,7 +74,7 @@ Orlando's weekly AI digest is public too, as the <a href="/newsletter/">Newslett
 1. Orlando starts a publish when he wants one.
 2. The run gathers his rules, skills, and agents from his Mac, from a fixed list of places.
 3. An AI model takes out anything private and writes the short descriptions.
-4. A separate check blocks the publish if anything private is left.
+4. A separate check holds back any page where something private is left: that page is shown as described only, or left out until the next publish.
 5. The pages are built. At first Orlando looks at what changed and says yes before it goes live.
 
 Nobody edits these pages by hand. A description may be wrong where the text under it is right: the text is the source.
@@ -81,4 +87,4 @@ Nobody edits these pages by hand. A description may be wrong where the text unde
 
 ## Last updated
 
-2026-11-22. First published, with 27 pages.
+2026-11-23. Changed the Settings and hooks page, the Obsidian to Hugo skill, the Publish setup skill, and the Relay skill.

@@ -1,0 +1,66 @@
+# AI Setup
+
+- Kind: Claude Code setup
+- Address: https://oneillo.com/ai-setup/
+
+> AI-written and cleaned from one person's working setup. Placeholders in angle brackets are not real values: ask your user for theirs. The newest version is at https://oneillo.com/ai-setup/.
+
+A tour of Orlando's personal AI setup: how it's organized, rules, skills, agents, apps, and settings.
+
+## What this is
+
+This section is for people, and their agents, who want to borrow from a working AI setup. Every text here can be copied and adapted.
+
+It is one person's setup, Orlando's, built around Claude Code on a Mac. It is not a product.
+
+It changes often. Every page says when its own content last changed.
+
+The diagram as text:
+
+- How Orlando's AI setup fits together.
+- Orlando chats with a Claude Code session from the Mac or his phone.
+- Orlando uses his apps: Corillo (review documents with an agent), Brega (a to-do list shared with agents), Pregón (publish a post), and Latido (a window onto the heartbeat).
+- Corillo and Brega pass comments, edits, and tasks to a session and back.
+- While Orlando is away, the Heartbeat (jobs on a timer) and the Relay (a roadmap, one fresh session per batch) start sessions.
+- A session reads the rules at the start: global, workspace, and project.
+- Settings and hooks check each step a session takes.
+- A session can use 14 skills: close-shop, save-session, process-feedback, tune-setup, connect, obsidian-to-hugo, publish-prep, publish-post, publish-setup, podcast, video-title-cards, relay, heartbeat, and rex.
+- A session can work as one of 3 custom agents: writer, trainer, and financial advisor.
+- A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files).
+- The files are kept under local version history and backed up to the cloud.
+
+## The pieces
+
+- [How it's organized](https://oneillo.com/ai-setup/workspace/): the workspace's folders, the knowledge base's shape, version history, backups, and how Python scripts run.
+- [Rules](https://oneillo.com/ai-setup/rules/): the rules every session starts from (3 rules files).
+- [Skills](https://oneillo.com/ai-setup/skills/): written routines a session can run (14 skills).
+- [Custom agents](https://oneillo.com/ai-setup/agents/): roles a session can take, each with its own prompt (3 agents).
+- [Apps](https://oneillo.com/ai-setup/apps/): the apps around the sessions, described (6 apps).
+- [Settings and hooks](https://oneillo.com/ai-setup/settings/): the switches underneath (2 hooks).
+
+Orlando's weekly AI digest is public too, as the [Newsletter](https://oneillo.com/newsletter/).
+
+## How this section is made
+
+1. Orlando starts a publish when he wants one.
+2. The run gathers his rules, skills, and agents from his Mac, from a fixed list of places.
+3. An AI model takes out anything private and writes the short descriptions.
+4. A separate check holds back any page where something private is left: that page is shown as described only, or left out until the next publish.
+5. The pages are built. At first Orlando looks at what changed and says yes before it goes live.
+
+Nobody edits these pages by hand. A description may be wrong where the text under it is right: the text is the source.
+
+## Borrowing from it
+
+- Every text has a copy button.
+- Placeholders look like `<brokerage>` or `<project-folder>`. Put your own in their place.
+- You can hand a page's address to your own agent and ask it to adapt the page to your setup.
+
+## Pages
+
+- [How it's organized](https://oneillo.com/ai-setup/workspace/index.md): How Orlando's AI workspace is organized: its folders, the knowledge base, version history, backups, and Python scripts.
+- [Rules](https://oneillo.com/ai-setup/rules/index.md): The rules files in Orlando's AI setup, the instructions every session starts from.
+- [Skills](https://oneillo.com/ai-setup/skills/index.md): The skills in Orlando's AI setup, the written routines a session can run.
+- [Custom agents](https://oneillo.com/ai-setup/agents/index.md): The custom agents in Orlando's AI setup, the roles a session can take.
+- [Apps](https://oneillo.com/ai-setup/apps/index.md): The apps around Orlando's AI sessions, each described in a few lines.
+- [Settings and hooks](https://oneillo.com/ai-setup/settings/index.md): The settings and hooks in Orlando's AI setup, described by kind.

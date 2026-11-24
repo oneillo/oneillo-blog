@@ -1,8 +1,12 @@
 ---
-title: "Connect"
+title: "Connect: a Claude Code skill that links new notes into a knowledge base"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: a skill that connects new or changed notes in a knowledge base to the rest of it."
+summary: "AI-written: Links new knowledge base notes to concept notes, builds concept notes for recurring ideas, and adds cross-area links."
+heading: "Connect"
+linkTitle: "Connect"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/skills/connect.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,15 +17,24 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Links new knowledge base notes to concept notes, builds concept notes for recurring ideas, and adds cross-area links.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-It links notes to concept notes, creates concept notes for ideas that recur across sources, and adds links between areas.
+- **What it is:** Connect is a Claude Code skill that links new or changed knowledge base notes to concept notes and to the rest of the vault.
+- **How it starts:** You type <code>&#47;connect</code>. Claude can also pick it up when it fits.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;connect&#47;SKILL&#46;md</code>
+- **Needs:** uv
+- **To make it yours:** Put your own values where you see <code>&#60;area&#62;</code> and <code>&#60;note&#62;</code>.
+  Taken out for privacy: 3 paths, 1 list of private folders, and 2 names.
 
 **Works with:** <a href="/ai-setup/skills/close-shop/">Close shop</a>.
 
-## <code>SKILL&#46;md</code>
+## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
-The skill's instructions for linking new knowledge base notes to concepts and to each other, used after notes are added or when asked to connect a subject.
+<a href="#skill-md">Link to this file</a>
+
+The instructions for connecting new notes in a knowledge base to the ideas they discuss. It is used after notes are added, or when asked to link a subject.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: connect
@@ -73,7 +86,7 @@ A large subject can have hundreds of candidates. Work from the top (most shared)
 - **Frontmatter:** `type: concept`, `subject`, `summary`, `source: &quot;Synthesized from the notes listed in sources&quot;`, `sources` (a list of quoted links to every source note), and `aliases`. Aliases are what `kb.py connect` matches in other notes, so use specific phrases the sources actually use, six or more characters, never single common words like &quot;trust&quot; or &quot;power&quot;. A shorter all-caps abbreviation the sources use for the whole idea (&quot;NPV&quot;, &quot;BATNA&quot;) or a short name with a capital letter (&quot;Scrum&quot;) also works: it matches only as written (an abbreviation also as &quot;NPVs&quot; and in &quot;NPV-based&quot;). The title is usually the first alias, so a short capitalized title (&quot;Lean&quot;) matches as written too, sentence starts included. To stop that, keep it out of `aliases` and put it in `title:` instead, as `flow-state` does with &quot;Flow&quot;.
 - **Body:**
   1. What the idea is, in a sentence or two, then how it works and when it applies. Build it only from the sources. No facts from your own knowledge; mark gaps `[?]`.
-  2. `## Where it comes up`: one bullet per source: a link to the most specific place (a highlight block `[[&lt;source-note&gt;#^loc-1469]]`, a heading `[[&lt;source-note&gt;#Targeting]]`, or the note) and a sentence on what that source adds. Where sources disagree, say so. Quote at most a short phrase; the full quotes stay in the source notes.
+  2. `## Where it comes up`: one bullet per source: a link to the most specific place (a highlight block `[[&lt;note&gt;#^loc-1469]]`, a heading `[[&lt;note&gt;#Targeting]]`, or the note) and a sentence on what that source adds. Where sources disagree, say so. Quote at most a short phrase; the full quotes stay in the source notes.
   3. `## Related`: broader, narrower and opposing concepts, linked.
 - **Updating an existing concept:** add the new source to `sources` and to &quot;Where it comes up&quot;, and revise the explanation if the source adds something. Keep what&#x27;s there.
 
@@ -82,7 +95,7 @@ A large subject can have hundreds of candidates. Work from the top (most shared)
 The graph is only as connected as the links across areas. For the notes in scope, search Orlando&#x27;s writing and career for the same book, author or idea:
 
 ```
-grep -rli &quot;&lt;distinctive phrase&gt;\|&lt;author surname&gt;&quot; ~/ai/knowledge-base/writing/blog/archive ~/ai/knowledge-base/career ~/ai/knowledge-base/self-knowledge ~/ai/knowledge-base/people
+grep -rli &quot;&lt;distinctive phrase&gt;\|&lt;author surname&gt;&quot; ~/ai/knowledge-base/writing/blog/archive ~/ai/knowledge-base/&lt;area&gt; ~/ai/knowledge-base/&lt;area&gt; ~/ai/knowledge-base/&lt;area&gt;
 ```
 
 Link both ways at the first mention, when the connection is real. A blog post reviewing a book, a career story that used a framework, a person who taught a course.
@@ -101,5 +114,3 @@ Link both ways at the first mention, when the connection is real. A blog post re
 
 For a big subject, agents can split the candidates, but only one agent edits a given concept note or a given source note at a time. Give each agent its own list of concepts, and collect links into other agents&#x27; notes in a report for one agent to apply.
 </code></pre>
-
-Taken out: 1 course code, 2 private example note names, and 1 list of private folders.

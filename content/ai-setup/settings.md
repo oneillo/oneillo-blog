@@ -1,8 +1,12 @@
 ---
-title: "Settings and hooks"
+title: "Settings and hooks: how Orlando's Claude Code is set up"
 date: 2026-11-22
-lastmod: 2026-11-22
-description: "AI-written: the settings and hooks in Orlando's AI setup, described by kind."
+lastmod: 2026-11-23
+summary: "AI-written: the settings and hooks in Orlando's AI setup, described by kind."
+heading: "Settings and hooks"
+linkTitle: "Settings and hooks"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/settings.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,32 +17,39 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<div class="post-description">The settings and hooks in Orlando's AI setup, described by kind.</div>
 
-These settings add two hooks, one that runs before a tool is used and one that runs when a session starts, and turn on one plugin and a status line.
+> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-23.
+
+Sets up hooks, a plugin, a status line, and permissions so Claude Code sessions start and run the way the setup expects.
+
+Two hooks run before tools are used and when a session starts. The frontend-design plugin is turned on.
 
 ## Permissions
 
-The summary gives no default mode and shows no list of things sessions must refuse.
+There is a default mode setting left open, and no list of things sessions must refuse.
 
 ## Plugins and the status line
 
-- Plugin: frontend-design, from the official plugin collection.
-- Status line: set up.
-
-Taken out: nothing.
+One plugin is turned on: frontend-design. The status line shows the model, the folder, and how much of the context window is used.
 
 ## Hooks
 
+The settings set up 2 hooks: commands Claude Code runs at set points in a session.
+
 ### No em dash {#no-em-dash}
 
-A hook that runs before Claude writes or edits a file and blocks the change if it adds em dashes. It compares the new text with the text it replaces, so em dashes already in a file never trigger it, and it tells Claude to rewrite with other punctuation.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;hooks&#47;no&#45;em&#45;dash&#46;sh</code>, set up in <code>&#126;&#47;&#46;claude&#47;settings&#46;json</code>
+
+Blocks file writes and edits that add em dashes, while leaving em dashes already in the text alone.
 
 **Works with:** <a href="/ai-setup/apps/#corillo">Corillo</a>.
 
-## <code>no&#45;em&#45;dash&#46;sh</code>
+## The hook script (<code>no&#45;em&#45;dash&#46;sh</code>) {#no-em-dash-sh}
 
-A shell script that runs before a file write or edit and blocks it if the change adds em dashes. It counts em dashes in the new text and the old text, and only newly added ones cause a block.
+<a href="#no-em-dash-sh">Link to this file</a>
+
+A hook script that runs before a write or edit tool call and blocks it if the new text has more em dashes than the text it replaces. It tells Claude to rewrite with other punctuation.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">#!/bin/bash
 # PreToolUse hook: block a Write or Edit that adds em dashes.
@@ -49,9 +60,6 @@ A shell script that runs before a file write or edit and blocks it if the change
 # what agents write. It names those tools: if Corillo renames them, it stops
 # checking them silently (update the matcher in settings.json too).
 
-# The em dash character, written as bytes so this file holds none itself.
-DASH=$(printf &#x27;\xe2\x80\x94&#x27;)
-
 input=$(cat)
 tool=$(echo &quot;$input&quot; | jq -r &#x27;.tool_name // empty&#x27;)
 path=$(echo &quot;$input&quot; | jq -r &#x27;.tool_input.file_path // empty&#x27;)
@@ -60,13 +68,13 @@ case &quot;$path&quot; in
   &quot;$HOME&quot;/.claude/skills/synced/*|&quot;$HOME&quot;/.claude/hooks/*) exit 0 ;;
 esac
 
-count() &#123; jq -r &quot;($1 // \&quot;\&quot;) | [scan(\&quot;\\u2014\&quot;)] | length&quot; &lt;&lt;&lt;&quot;$input&quot;; &#125;
+count() &#123; jq -r &quot;($1 // \&quot;\&quot;) | [scan(\&quot;—\&quot;)] | length&quot; &lt;&lt;&lt;&quot;$input&quot;; &#125;
 
 case &quot;$tool&quot; in
   Write)
     new=$(count .tool_input.content)
     old=0
-    [ -f &quot;$path&quot; ] &amp;&amp; old=$(grep -o &quot;$DASH&quot; &quot;$path&quot; | wc -l | tr -d &#x27; &#x27;)
+    [ -f &quot;$path&quot; ] &amp;&amp; old=$(grep -o &#x27;—&#x27; &quot;$path&quot; | wc -l | tr -d &#x27; &#x27;)
     ;;
   Edit)
     new=$(count .tool_input.new_string)
@@ -76,7 +84,7 @@ case &quot;$tool&quot; in
     path=$(echo &quot;$input&quot; | jq -r &#x27;.tool_input.path // empty&#x27;)
     new=$(count .tool_input.text)
     old=0
-    [ -f &quot;$path&quot; ] &amp;&amp; old=$(grep -o &quot;$DASH&quot; &quot;$path&quot; | wc -l | tr -d &#x27; &#x27;)
+    [ -f &quot;$path&quot; ] &amp;&amp; old=$(grep -o &#x27;—&#x27; &quot;$path&quot; | wc -l | tr -d &#x27; &#x27;)
     ;;
   mcp__corillo__edit_document)
     new=$(count &#x27;([.tool_input.edits[]?.replace // &quot;&quot;] | join(&quot; &quot;))&#x27;)
@@ -90,8 +98,6 @@ esac
 echo &quot;Blocked: this adds $((new - old)) em dash(es). Rewrite with commas, periods, colons, or parentheses, then retry. Em dashes already in the text you&#x27;re replacing can stay.&quot; &gt;&amp;2
 exit 2
 </code></pre>
-
-Taken out: nothing.
 
 ## Connectors
 

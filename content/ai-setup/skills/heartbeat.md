@@ -1,8 +1,12 @@
 ---
-title: "Heartbeat"
+title: "Heartbeat: a Claude Code skill that manages scheduled agent jobs"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: This skill lets an agent add, change, pause, or remove jobs on a scheduler that runs a free check on a timer and starts a limited agent session only when there is work."
+summary: "AI-written: Adds, changes, pauses, or removes scheduled jobs on the heartbeat, a scheduler that runs a free check and then an agent session with limits."
+heading: "Heartbeat"
+linkTitle: "Heartbeat"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/skills/heartbeat.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,15 +17,22 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Adds, changes, pauses, or removes scheduled jobs on the heartbeat, a scheduler that runs a free check and then an agent session with limits.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-Each job is one small file with settings and a checklist, and the skill sets out what to ask first and how to check the result.
+- **What it is:** Heartbeat is a Claude Code skill that manages the jobs on a scheduler that runs a cheap check and then, if there is work, an agent session with limits.
+- **How it starts:** You type <code>&#47;heartbeat</code>. Claude can also pick it up when it fits.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;heartbeat&#47;SKILL&#46;md</code>
+- **Needs:** Rex and macOS
 
 **Works with:** <a href="/ai-setup/skills/relay/">Relay</a> and <a href="/ai-setup/skills/rex/">Rex</a>.
 
-## <code>SKILL&#46;md</code>
+## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
-The instructions an agent follows when its owner asks to add, change, pause, or remove a scheduled job, including the job file format and what to confirm first.
+<a href="#skill-md">Link to this file</a>
+
+The instructions for adding, changing, pausing, and removing heartbeat jobs, with the settings a job file takes and what to ask before writing risky ones.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: heartbeat
@@ -73,7 +84,7 @@ max-runs-per-day: 2
 | `billing` | `plan` or `api` | `plan` |
 | `enabled` | `yes` or `no` | `yes` |
 
-   A check of his own goes in `checks/`, made executable. The heartbeat starts it with a cleared environment and a short fixed `PATH`, so it names other programs by their full path and reads no key or token from the environment. Try it once from `~/ai/tools/heartbeat/` and tell him what it printed and its exit code.
+   A check of his own goes in `checks/`, made executable. The heartbeat starts it with a cleared environment and the `PATH` `/usr/bin:/bin:/usr/sbin:/sbin`, so it names other programs by their full path and reads no key or token from the environment. Try it once from `~/ai/tools/heartbeat/` and tell him what it printed and its exit code.
 3. Run `heartbeat jobs`. If it names a mistake, fix the file and run it again until the job is listed without one.
 4. Show him the whole file and its path, and say when it first runs (`heartbeat status`). A new job waits for its first scheduled time.
 
@@ -99,5 +110,3 @@ Never add anything that turns permission checks off. The heartbeat refuses it, a
 
 After any change, run `heartbeat jobs` and show him the lines you changed.
 </code></pre>
-
-Taken out: 1 security detail (the exact path list given to checks).

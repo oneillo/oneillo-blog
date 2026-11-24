@@ -1,8 +1,12 @@
 ---
-title: "How it's organised"
+title: "How it's organized: Orlando's Claude Code workspace"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: how Orlando's AI workspace is organised: its folders, the knowledge base, version history, backups, and Python scripts."
+summary: "AI-written: how Orlando's AI workspace is organized: its folders, the knowledge base, version history, backups, and Python scripts."
+heading: "How it's organized"
+linkTitle: "How it's organized"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/workspace.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,47 +17,44 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">How Orlando's AI workspace is organized: its folders, the knowledge base, version history, backups, and Python scripts.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-This page explains how Orlando's AI setup is organised: one workspace folder, a knowledge base, local version history, a timed cloud backup, and Python scripts that run with uv. It is described only, so no original text is shared.
-
-Everything lives in one workspace folder, and the sections below cover the knowledge base, version history, backups, and how scripts are run.
+This page explains how Orlando's setup is organized: one workspace for agents, a knowledge base, local git history, an automatic cloud backup, and Python scripts that carry their own needs.
 
 ## The workspace
 
-One folder holds everything. It has the knowledge base, projects sorted by area, finished tools, and a scratch folder. Each project lives in a dated folder, and each of those has a context file that records its goal, constraints, and decisions. When a project is finished, it moves to a completed folder inside its area. Finished, reusable tools move to a top-level tools folder and keep being improved there. The scratch folder is swept daily, so it never holds anything vital: originals live in project folders.
+One folder holds everything. It has the knowledge base, projects sorted by area in dated folders that each have a context file, finished tools, and a scratch folder. The scratch folder is swept daily and never holds anything vital.
 
 ## The knowledge base
 
-The knowledge base is a vault of notes, split into areas. Each area has a hub note, and concept notes link back to their sources. A scratch folder inside it holds notes he should review. Agents start from its rules file and its index, and read only what the task needs. When a project closes, anything it produced that will stay true moves into the knowledge base.
+The knowledge base is a vault of notes. It is split into areas, and each area has a hub note. Concept notes link back to their sources. A scratch folder holds notes for Orlando to review. Agents start from the vault's rules file and its index. When a project closes, the lasting facts move into the knowledge base.
 
 ## Version history with git
 
-The workspace, the Claude Code config folder, and the vault are each a local git repo with no remote. Agents do all the git work. There is a commit at the end of each session, and a checkpoint before any bulk change such as moving, renaming, or deleting many files. Undoing means restoring specific files. Why: any change an agent makes can be seen and undone.
+The workspace, the Claude Code config folder, and the vault are each a local git repo with no remote. Agents do all the git work. There is a commit at the end of each session and a checkpoint before a bulk change. Undoing means restoring files. Why: any change an agent makes can be seen and undone.
 
 ## Backups
 
-His reason, in his words: "If an agent ever accidentally removes a file completely, I can generally recover it from the cloud storage's recycle bin online."
+"If an agent ever accidentally removes a file completely, I can generally recover it from the cloud storage's recycle bin online."
 
 The backup is one of three safety nets:
 
-1. Deletes go to the Trash, not straight to oblivion, so a mistake can be recovered.
-2. Local version history, kept in git.
-3. A cloud copy, kept in OneDrive.
+1. Deletes go to the Trash, so a mistake can be recovered from there.
+2. Local version history keeps every committed change.
+3. The cloud copy mirrors the workspace and the Claude Code config folder.
 
-The backup copies the workspace folder and the Claude Code config folder to OneDrive (cloud storage). It runs every 30 minutes, on a timer. The copy mirrors deletions, which is why the recycle bin matters. It leaves out scratch files, built apps, and installed packages. It also does not include session transcripts, which are dropped on purpose.
+His backup goes to OneDrive (cloud storage). It copies <code>&#126;&#47;ai&#47;</code> and <code>&#126;&#47;&#46;claude&#47;</code> every 30 minutes, on a timer. A private GitHub repo or similar is another way to do it, with one catch: it has no recycle bin for a file deleted between commits, so it needs frequent automatic commits.
 
-A restore works in plain steps:
+To restore, follow these steps:
 
-1. Sign in to the cloud storage and let the backup folder download fully.
-2. Reinstall the tools the setup needs.
-3. Copy the folders back to their places, without deleting anything.
-4. Reconnect the knowledge base, and rebuild any missing notes from its git history if needed.
-5. Check that every git repo answers and has its history.
-6. Do a dry run of the backup to see what it would delete, and stop if the list is long.
-7. Only then turn the backup timer back on, so it does not start deleting the backup to match a half-restored machine.
-
-A private GitHub repo or similar is another way to back up. It has one catch: it has no recycle bin for a file deleted between commits, so it needs frequent automatic commits.
+1. Sign in to the cloud storage on the new computer and let the backup folder download fully.
+2. Install the tools the setup needs, such as Claude Code and uv.
+3. Copy the backed-up folders back to <code>&#126;&#47;ai&#47;</code> and <code>&#126;&#47;&#46;claude&#47;</code>, without deleting anything.
+4. Check that every git repo answers and still has its history.
+5. Do a dry run of the backup to see what it would delete, and stop if the list is long.
+6. Turn the backup timer back on last, so it never mirrors a half-restored computer over the backup.
 
 ## Python with uv
 
@@ -68,5 +69,3 @@ Every script runs with <code>uv run</code> and declares its Python version and p
 **Works with:** <a href="/ai-setup/apps/#brega">Brega</a>, <a href="/ai-setup/skills/close-shop/">Close shop</a>, <a href="/ai-setup/apps/#corillo">Corillo</a>, <a href="/ai-setup/agents/financial-advisor/">Financial advisor</a>, <a href="/ai-setup/skills/heartbeat/">Heartbeat</a>, <a href="/ai-setup/skills/process-feedback/">Process feedback</a>, <a href="/ai-setup/skills/rex/">Rex</a>, <a href="/ai-setup/skills/save-session/">Save session</a>, <a href="/ai-setup/agents/trainer/">Trainer</a>, <a href="/ai-setup/skills/tune-setup/">Tune setup</a>, and <a href="/ai-setup/agents/writer/">Writer</a>.
 
 The same rules appear as text on the <a href="/ai-setup/rules/global/">Global rules</a> and <a href="/ai-setup/rules/workspace/">Workspace rules</a> pages.
-
-Taken out: nothing.

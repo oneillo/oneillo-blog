@@ -1,8 +1,12 @@
 ---
-title: "Video title cards"
+title: "Video title cards: a Claude Code skill that adds intro and outro title cards to videos"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: a skill that makes intro, outro, and in-between title cards for a video with ffmpeg and joins them to a screen recording."
+summary: "AI-written: Makes intro, outro, and interstitial title cards with ffmpeg and joins them to screen recordings."
+heading: "Video title cards"
+linkTitle: "Video title cards"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/skills/video-title-cards.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,13 +17,20 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Makes intro, outro, and interstitial title cards with ffmpeg and joins them to screen recordings.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-It first works out what the video is about, by transcript or by frames, then drafts card copy with the user and builds and checks the cards.
+- **What it is:** Video title cards is a Claude Code skill that makes intro, outro, and interstitial title cards with ffmpeg and joins them to a screen recording.
+- **How it starts:** You type <code>&#47;video&#45;title&#45;cards</code>. Claude can also pick it up when it fits.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;video&#45;title&#45;cards&#47;SKILL&#46;md</code>
+- **Needs:** ffmpeg-full, Homebrew, uv, and mlx-whisper
 
-## <code>SKILL&#46;md</code>
+## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
-The skill's instructions for building title cards with ffmpeg, joining them to a recording, cleaning up its audio, and cutting segments. It is used when the user asks for intro, end, or recap cards on a video.
+<a href="#skill-md">Link to this file</a>
+
+The full instructions for making title cards with ffmpeg and joining them to a screen recording, used when someone asks for intro, end, or recap cards on a video.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: video-title-cards
@@ -279,5 +290,3 @@ The user may request different colors, durations, or fonts. Adjust the ffmpeg pa
 - Keep each bullet on a single line by default. Only wrap to a second line when the text physically exceeds the available width (card width minus left margin minus a small right margin).
 - Do not pre-wrap lines for aesthetics or conservative spacing -- use the full available width.
 </code></pre>
-
-Taken out: nothing.

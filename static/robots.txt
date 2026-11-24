@@ -1,0 +1,5 @@
+# Written by setup-share for the AI Setup section of this blog. Every crawler may read every page.
+User-agent: *
+Allow: /
+
+Sitemap: https://oneillo.com/sitemap.xml

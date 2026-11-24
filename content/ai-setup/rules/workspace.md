@@ -1,8 +1,12 @@
 ---
-title: "Workspace rules"
+title: "Workspace rules: a Claude Code rules file that sets shared rules for a whole workspace"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: the shared rules file for a personal AI workspace."
+summary: "AI-written: Sets the shared rules for every session in a workspace: how to work together, where files live, how projects start, and how history is kept."
+heading: "Workspace rules"
+linkTitle: "Workspace rules"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/rules/workspace.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,15 +17,23 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Sets the shared rules for every session in a workspace: how to work together, where files live, how projects start, and how history is kept.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-It tells every agent session how to work with its owner, how the workspace folders are laid out, how to start a project, how to keep version history, and how to handle feedback and memory.
+- **What it is:** The workspace rules file is a Claude Code rules file that sets how agents work with Orlando, where things live in the workspace, how projects start, and how git history is kept.
+- **How it starts:** Every Claude Code session started in the workspace, or in a folder inside it, reads it at the start.
+- **Where the file goes:** <code>&#60;your&#45;workspace&#62;&#47;CLAUDE&#46;md</code>
+- **Needs:** Nothing extra
+- **Taken out for privacy:** 5 money or health area names, 2 backup arrangements, and 2 generalized examples.
 
 **Works with:** <a href="/ai-setup/skills/close-shop/">Close shop</a>, <a href="/ai-setup/apps/#corillo">Corillo</a>, <a href="/ai-setup/agents/financial-advisor/">Financial advisor</a>, <a href="/ai-setup/skills/heartbeat/">Heartbeat</a>, <a href="/ai-setup/skills/process-feedback/">Process feedback</a>, <a href="/ai-setup/skills/save-session/">Save session</a>, <a href="/ai-setup/agents/trainer/">Trainer</a>, <a href="/ai-setup/skills/tune-setup/">Tune setup</a>, and <a href="/ai-setup/agents/writer/">Writer</a>.
 
-## <code>CLAUDE&#46;md</code>
+## The rules file (<code>CLAUDE&#46;md</code>) {#claude-md}
 
-The workspace rules file that every agent session reads first. It sets how agents should behave, where things live, how projects start, how git is used, and where feedback and memory go.
+<a href="#claude-md">Link to this file</a>
+
+The rules file every session in the workspace loads, covering how agents should work with Orlando, the folder layout, how projects start or resume, version history, and where feedback and memory go.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere"># Shared Agent Guidelines
 
@@ -40,10 +52,10 @@ These apply to every session in ~/ai/, including the custom agents (`writer`, `t
 
 ## Workspace Layout
 
-- `knowledge-base/`: Orlando&#x27;s durable knowledge, a link to his Obsidian vault, split into areas. Before reading or writing there, follow `knowledge-base/AGENTS.md`; start from `knowledge-base/index.md` and the area hubs. Read what the task needs; don&#x27;t preload. Project-specific, short-lived context stays in the project folder; at `/close-shop`, anything a project produced that will stay true moves into the knowledge base.
-- `projects/&lt;area&gt;/`: working output by area. Dated subfolders (`yyyymmdd-slug/`) for discrete pieces of work. When a project is finished, move it into a `zzCompleted/` folder inside its own area, keeping its folder name. File by subject: a project that builds a tool goes in the area the tool serves, and once the tool is in regular use it moves to top-level `tools/`, and keeps being improved there. `misc/` is the fallback for projects that fit no other area. Keep this level small and intentional: don&#x27;t add an area without asking Orlando, and nest deeper rather than spreading out.
-- `tools/`: finished, reusable tools for the AI setup. Standalone scripts go in `tools/scripts/`. Larger tools get their own subfolder (for example, a backup tool that runs on a timer and has a restore runbook); a tool with its own git repo must be listed in `.gitignore` so the workspace repo doesn&#x27;t absorb it.
-- `tmp/`: scratch space for throwaway files (intermediate outputs, test conversions, downloads you only need briefly). Ephemeral, not committed, not backed up to the cloud. Use it instead of a project folder or the system temp dir for anything that isn&#x27;t a deliverable. Anything there can be deleted at any time: a daily heartbeat job (`sweep-scratch`) removes what is untouched for 7 days, the vault&#x27;s `_scratch/` too. Never keep anything vital in either; originals live in project folders.
+- `knowledge-base/`: Orlando&#x27;s durable knowledge, a link to his Obsidian vault, organized by area. Before reading or writing there, follow `knowledge-base/AGENTS.md`; start from `knowledge-base/index.md` and the area hubs. Read what the task needs; don&#x27;t preload. Project-specific, short-lived context stays in the project folder; at `/close-shop`, anything a project produced that will stay true moves into the knowledge base.
+- `projects/&lt;area&gt;/`: working output by area (for example `blog/`, `ai-setup/`, and `misc/`). Dated subfolders (`yyyymmdd-slug/`) for discrete pieces of work. When a project is finished, move it into a `zzCompleted/` folder inside its own area (e.g. `projects/&lt;area&gt;/zzCompleted/`), keeping its folder name. File by subject: a project that builds a tool goes in the area the tool serves, and once the tool is in regular use it moves to top-level `tools/`, and keeps being improved there. `misc/` is the fallback for projects that fit no other area. Keep this level small and intentional: don&#x27;t add an area without asking Orlando, and nest deeper rather than spreading out.
+- `tools/`: finished, reusable tools for the AI setup. Standalone scripts go in `tools/scripts/` (e.g. `shrink-video.sh`). Larger tools get their own subfolder (e.g. a backup tool that runs on a timer and has a restore runbook); a tool with its own git repo must be listed in `.gitignore` so the workspace repo doesn&#x27;t absorb it.
+- `tmp/`: scratch space for throwaway files (intermediate outputs, test conversions, downloads you only need briefly). Ephemeral, not committed, not backed up. Use it instead of a project folder or the system temp dir for anything that isn&#x27;t a deliverable. Anything there can be deleted at any time: a daily heartbeat job (`sweep-scratch`) removes what is untouched for 7 days, the vault&#x27;s `_scratch/` too. Never keep anything vital in either; originals live in project folders.
 
 ## Starting or Resuming a Project
 
@@ -64,8 +76,6 @@ Every project folder gets a `context.md` at its root, created with the folder. U
 ## Feedback and Memory
 
 - Corrections go to auto memory as `feedback` memories, not to a separate log. `/process-feedback` reviews them at each `/tune-setup`.
-- Bugs and ideas for my apps and tools go in a `feedback.md` at the root of that app&#x27;s or tool&#x27;s folder (for example `tools/&lt;app&gt;/feedback.md`), the moment I mention one: newest first, the date, what I saw or want in my words, what I was doing, and a status (open, in batch N, done in build X). Make the file with the first item. The next batch or session for that app takes its work from there and marks what it built. This is separate from feedback memories, which are about how you work with me.
-- Memory, the workspace&#x27;s and each agent&#x27;s, holds lessons on how to work with me, where things are, and what was decided. What is true about me (profile, plans, programs, portfolios, series) goes in the knowledge base, with at most a one-line pointer in memory. An agent that finds such a fact in its memory offers to move it, with my OK, at its next real session with me.
+- Bugs and ideas for my apps and tools go in a `feedback.md` at the root of that app&#x27;s or tool&#x27;s folder (for example `tools/corillo/feedback.md`), the moment I mention one: newest first, the date, what I saw or want in my words, what I was doing, and a status (open, in batch N, done in build X). Make the file with the first item. The next batch or session for that app takes its work from there and marks what it built. This is separate from feedback memories, which are about how you work with me.
+- Memory, the workspace&#x27;s and each agent&#x27;s, holds lessons on how to work with me, where things are, and what was decided. What is true about me (profile, plans, and the like) goes in the knowledge base, with at most a one-line pointer in memory. An agent that finds such a fact in its memory offers to move it, with my OK, at its next real session with me.
 </code></pre>
-
-Taken out: 2 lists of knowledge-base areas, 1 list of project areas, 3 example names and paths, 1 backup arrangement detail, and 1 cloud storage name.

@@ -1,8 +1,12 @@
 ---
-title: "Publish prep"
+title: "Publish prep: a Claude Code skill that prepares a finished blog post to publish"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: a skill that prepares a finished blog post for publishing."
+summary: "AI-written: Prepares a finished blog post for publishing with title options, a description, a LinkedIn blurb, and a Substack version."
+heading: "Publish prep"
+linkTitle: "Publish prep"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/skills/publish-prep.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,17 +17,24 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Prepares a finished blog post for publishing with title options, a description, a LinkedIn blurb, and a Substack version.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-It reads the post, the series plan, prior posts, and a style guide, then drafts a title, a description, a LinkedIn blurb, and a Substack version, with the author approving each step.
+- **What it is:** Publish prep is a Claude Code skill that prepares a finished blog post for publishing by drafting its title, description, LinkedIn blurb, and Substack version.
+- **How it starts:** You type <code>&#47;publish&#45;prep</code>. Claude doesn't start it by itself.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;publish&#45;prep&#47;SKILL&#46;md</code>
+- **Needs:** Nothing extra
 
 This skill is specific to Orlando's blog. It is here because it is part of his setup, and its steps may still be worth borrowing.
 
 **Works with:** <a href="/ai-setup/skills/publish-post/">Publish post</a>.
 
-## <code>SKILL&#46;md</code>
+## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
-The skill's instructions for turning a finished blog post into a title, a description, a LinkedIn blurb, and a Substack version, with the author choosing and approving at each step.
+<a href="#skill-md">Link to this file</a>
+
+The instructions for preparing a finished blog post for publishing, step by step, with the author approving each piece. It is used after a post is written and before it goes live.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: publish-prep
@@ -41,7 +52,7 @@ Prepare a finished blog post for publishing by generating its title, description
 - **Post directory path**: provided as `$ARGUMENTS`. Contains the finished blog post draft and any supporting files (outline, images, etc.).
 - **Series plan**: if the post is part of a series, read the series plan for context on the arc and how prior posts were titled/described.
 - **Prior post artifacts**: read title/description, LinkedIn, and Substack files from prior posts in the same series (or from recent posts if standalone) to calibrate tone and format.
-- **Style guide**: read `~/ai/&lt;vault-folder&gt;/&lt;style-guide&gt;.md` for voice and tone reference.
+- **Style guide**: read `~/ai/knowledge-base/writing/writing-style-guide.md` for voice and tone reference.
 
 ## Steps
 
@@ -109,5 +120,3 @@ Prepare a finished blog post for publishing by generating its title, description
 
 List the files created with their paths so the author can verify everything is saved.
 </code></pre>
-
-Taken out: 1 path.

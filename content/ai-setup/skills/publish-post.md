@@ -1,8 +1,12 @@
 ---
-title: "Publish post"
+title: "Publish post: a Claude Code skill that publishes a finished blog post to Hugo"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: a skill that publishes a finished blog post to a Hugo site."
+summary: "AI-written: Publishes a finished blog post to a Hugo site, checks the build, and pushes it to GitHub."
+heading: "Publish post"
+linkTitle: "Publish post"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/skills/publish-post.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,17 +17,26 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Publishes a finished blog post to a Hugo site, checks the build, and pushes it to GitHub.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-It finds the post, asks for the slug, date, and tags, builds the post folder, checks the site builds, then commits, pushes, and files the working folder away.
+- **What it is:** Publish post is a Claude Code skill that takes a finished blog post from the blog projects folder and publishes it to a Hugo site on GitHub.
+- **How it starts:** You type <code>&#47;publish&#45;post</code>. Claude doesn't start it by itself.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;publish&#45;post&#47;SKILL&#46;md</code>
+- **Needs:** Hugo, Git, and GitHub
+- **To make it yours:** Put your own values where you see <code>&#60;blog&#45;folder&#62;</code> and <code>&#60;project&#45;folder&#62;</code>.
+  Taken out for privacy: 7 paths and 1 private project name.
 
 This skill is specific to Orlando's blog. It is here because it is part of his setup, and its steps may still be worth borrowing.
 
 **Works with:** <a href="/ai-setup/skills/obsidian-to-hugo/">Obsidian to Hugo</a>.
 
-## <code>SKILL&#46;md</code>
+## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
-The steps Claude follows when asked to publish a finished blog post to the Hugo site, from finding the post to filing away its working folder.
+<a href="#skill-md">Link to this file</a>
+
+The instructions for publishing a finished blog post to a Hugo site, from picking the post to building the site, pushing it to GitHub, and filing the working folder. It is used when the owner asks to publish a post.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: publish-post
@@ -126,5 +139,3 @@ Stage the new post files, commit with the message format `Add post: [title]`, an
 - Move the post&#x27;s working folder (its `posts-to-review/[slug]/` folder or its dated project folder) to `~/ai/projects/blog/zzCompleted/`, keeping its name.
 - Tell Orlando what is still his to do: paste the Substack version and post the LinkedIn blurb.
 </code></pre>
-
-Taken out: 8 paths and 1 private project name.

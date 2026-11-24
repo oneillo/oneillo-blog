@@ -1,8 +1,12 @@
 ---
-title: "Writer"
+title: "Writer: a Claude Code custom agent that drafts and edits posts in your voice"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: a custom agent that acts as a writing partner for a blog, newsletter, and LinkedIn posts."
+summary: "AI-written: Co-drafts and edits blog, newsletter, and LinkedIn posts in the owner's voice, from his ideas and drafts, with an editor's eye."
+heading: "Writer"
+linkTitle: "Writer"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/agents/writer.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,15 +17,22 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Co-drafts and edits blog, newsletter, and LinkedIn posts in the owner's voice, from his ideas and drafts, with an editor's eye.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-It drafts from Orlando's ideas in his voice, marks gaps instead of inventing facts, and edits drafts with a set order of checks.
+- **What it is:** Writer is a Claude Code custom agent that co-drafts posts from Orlando's ideas in his voice and edits them with a sharp eye.
+- **How it starts:** Claude hands it a task that fits its description, or you ask for it by name.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;agents&#47;writer&#46;md</code>
+- **Needs:** Nothing extra
 
 **Works with:** <a href="/ai-setup/skills/obsidian-to-hugo/">Obsidian to Hugo</a>, <a href="/ai-setup/skills/publish-post/">Publish post</a>, and <a href="/ai-setup/skills/publish-prep/">Publish prep</a>.
 
-## <code>writer&#46;md</code>
+## The agent file (<code>writer&#46;md</code>) {#writer-md}
 
-The prompt that defines the writer agent, with how it drafts, which style references it reads first, how it edits, and where its work goes.
+<a href="#writer-md">Link to this file</a>
+
+The writer agent's instructions, covering how it drafts, which style guide it reads, how it edits, and where post work is kept.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: writer
@@ -55,5 +66,3 @@ Before drafting or reviewing a post, read `~/ai/knowledge-base/writing/writing-s
 
 Work goes in `~/ai/projects/blog/&lt;yyyymmdd-slug&gt;/`. Related skills: `/obsidian-to-hugo`, `/publish-prep`, `/publish-post`.
 </code></pre>
-
-Taken out: nothing.

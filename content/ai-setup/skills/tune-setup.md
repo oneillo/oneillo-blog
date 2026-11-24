@@ -1,8 +1,12 @@
 ---
-title: "Tune setup"
+title: "Tune setup: a Claude Code skill that keeps your setup current with guidance"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: a skill that keeps a Claude Code setup current with Anthropic's guidance."
+summary: "AI-written: Researches current Anthropic guidance, updates a guidance file, and proposes specific improvements to a Claude Code setup."
+heading: "Tune setup"
+linkTitle: "Tune setup"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/skills/tune-setup.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,15 +17,24 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Researches current Anthropic guidance, updates a guidance file, and proposes specific improvements to a Claude Code setup.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-It researches primary sources, updates one knowledge file, checks the setup against it, and writes ranked proposals for the owner to approve.
+- **What it is:** Tune setup is a Claude Code skill that checks a Claude Code setup against current Anthropic guidance and proposes ranked improvements without applying them.
+- **How it starts:** You type <code>&#47;tune&#45;setup</code>. Claude doesn't start it by itself.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;tune&#45;setup&#47;SKILL&#46;md</code>, its other files beside it
+- **Needs:** Nothing extra
+- **To make it yours:** Put your own values where you see <code>&#60;project&#45;folder&#62;</code>.
+  Taken out for privacy: 1 project folder and 1 path.
 
 **Works with:** <a href="/ai-setup/skills/process-feedback/">Process feedback</a> and <a href="/ai-setup/skills/save-session/">Save session</a>.
 
-## <code>SKILL&#46;md</code>
+## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
-The instructions for a skill that researches current Anthropic guidance, checks the setup against it, and writes ranked proposals without applying them. It is run when a new model or major Claude Code release ships, or on request.
+<a href="#skill-md">Link to this file</a>
+
+The instructions for a skill that researches current Anthropic guidance, updates one knowledge file, reviews the setup against it, and writes proposals for the owner to approve.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: tune-setup
@@ -77,5 +90,3 @@ Write `~/ai/projects/ai-setup/&lt;yyyymmdd&gt;-tune-setup/proposals.md`: a short
 - Never put this material in `~/ai/CLAUDE.md` or workspace memory; every agent loads those.
 - Say plainly when guidance conflicts with how Orlando likes to work, and let Orlando decide.
 </code></pre>
-
-Taken out: 1 private project folder name, 1 path into the vault.

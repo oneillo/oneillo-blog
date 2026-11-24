@@ -1,12 +1,22 @@
-{{- /* Written by setup-share: the AI Setup section's hub pages show the page the run wrote (breadcrumbs, title, the body) instead of the theme's list of cards. A publish puts its own copy back here, so change the copy in setup-share instead. */ -}}
+{{- /* Written by setup-share: the AI Setup section's hub pages show the page the run wrote (breadcrumbs by each page's short link title, the heading by its short name, a link to its plain copy, the body) instead of the theme's list of cards. A publish puts its own copy back here, so change the copy in setup-share instead. */ -}}
 {{- define "main" }}
 <article class="post-single ai-setup">
   <header class="post-header">
-    {{ partial "breadcrumbs.html" . }}
-    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if (.Param "ShowBreadCrumbs") }}
+    <div class="breadcrumbs">
+      <a href="{{ "" | absLangURL }}">{{ i18n "home" | default "Home" }}</a>
+      {{- range .Ancestors.Reverse }}
+      {{- if not .IsHome }}
+      {{- print "&nbsp;»&nbsp;" | safeHTML -}}<a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+      {{- end }}
+      {{- end }}
+    </div>
+    {{- end }}
+    <h1 class="post-title">{{ .Params.heading | default .Title }}</h1>
     {{- with .Description }}
     <div class="post-description">{{ . }}</div>
     {{- end }}
+    <div class="post-meta ai-setup-plain"><a href="{{ .RelPermalink }}index.md">Open as plain text</a></div>
   </header>
   {{- with .Content }}
   <div class="post-content">

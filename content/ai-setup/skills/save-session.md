@@ -1,8 +1,12 @@
 ---
-title: "Save session"
+title: "Save session: a Claude Code skill that saves project context for the next session"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: a skill that runs at the end of a working session."
+summary: "AI-written: Saves where a project stands in a context file so the next session can pick up where this one left off."
+heading: "Save session"
+linkTitle: "Save session"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/skills/save-session.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,13 +17,22 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Saves where a project stands in a context file so the next session can pick up where this one left off.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-It reviews the conversation and writes or updates a context file in the project's folder, so a future session can pick up where this one left off.
+- **What it is:** Save session is a Claude Code skill that writes a project's goal, decisions, and next steps into a context file at the end of a working session.
+- **How it starts:** You type <code>&#47;save&#45;session</code>. Claude doesn't start it by itself.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;save&#45;session&#47;SKILL&#46;md</code>
+- **Needs:** Nothing extra
+- **To make it yours:** Put your own values where you see <code>&#60;project&#45;folder&#62;</code>.
+  Taken out for privacy: 1 private project folder pattern.
 
-## <code>SKILL&#46;md</code>
+## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
-The instructions for the save-session skill, which finds the project folder and writes a structured context file there at the end of a session.
+<a href="#skill-md">Link to this file</a>
+
+The instructions for saving a project's context at the end of a working session. It tells Claude how to find the project folder and write or update a context file there.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: save-session
@@ -83,5 +96,3 @@ last-updated: [YYYY-MM-DD]
 - Only include information that would actually help a future session. Skip ephemeral details.
 - Do not include information that can be derived from the code, git history, or existing project files.
 </code></pre>
-
-Taken out: 1 project folder name pattern.

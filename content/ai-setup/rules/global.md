@@ -1,8 +1,12 @@
 ---
-title: "Global rules"
+title: "Global rules: a Claude Code rules file that sets house rules for every session"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: a short global rules file that every Claude Code session and agent reads first."
+summary: "AI-written: Sets global rules for every session: direct style, keeping the Mac awake, file defaults, cleanup, Python with uv, and formatting."
+heading: "Global rules"
+linkTitle: "Global rules"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/rules/global.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,15 +17,22 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Sets global rules for every session: direct style, keeping the Mac awake, file defaults, cleanup, Python with uv, and formatting.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-It sets the tone of replies, keeps the computer awake for long jobs, limits where files may be written, asks agents to clean up after themselves, and fixes how Python scripts are run.
+- **What it is:** Global Steering is a Claude Code global rules file that sets how every session and agent talks, handles files, cleans up, and runs Python.
+- **How it starts:** Every Claude Code session reads it at the start.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;CLAUDE&#46;md</code>
+- **Needs:** uv, Rex, and macOS
 
 **Works with:** <a href="/ai-setup/skills/rex/">Rex</a>.
 
-## <code>CLAUDE&#46;md</code>
+## The rules file (<code>CLAUDE&#46;md</code>) {#claude-md}
 
-The global rules file read by every Claude Code session and agent, covering reply style, keeping the computer awake, file defaults, cleaning up, Python scripts, and formatting.
+<a href="#claude-md">Link to this file</a>
+
+The global rules file read by every Claude Code session and agent, covering style, keeping the Mac awake, file naming, cleanup, Python scripts, and formatting.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere"># Global Steering
 
@@ -75,5 +86,3 @@ These rules apply to all Claude Code sessions and agents.
 - No emojis unless I ask for them.
 - Use commas, periods, colons, or parentheses where an em dash might go. Em dashes read as AI-written, in chat and in files.
 </code></pre>
-
-Taken out: nothing.

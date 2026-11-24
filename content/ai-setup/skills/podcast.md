@@ -1,8 +1,12 @@
 ---
-title: "Podcast"
+title: "Podcast: a Claude Code skill that turns documents into a two-host podcast"
 date: 2026-11-22
 lastmod: 2026-11-22
-description: "AI-written: a skill that turns source documents into a two-host, podcast-style MP3 for listening during exercise, commutes, or chores."
+summary: "AI-written: Turns source documents into a two-host podcast-style MP3 by writing a script, then rendering it locally with a text-to-speech voice."
+heading: "Podcast"
+linkTitle: "Podcast"
+author: "Orlando O'Neill"
+images: ["/ai-setup/cards/skills/podcast.png"]
 ShowReadingTime: false
 ShowShareButtons: false
 disableShare: true
@@ -13,13 +17,22 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
+<div class="post-description">Turns source documents into a two-host podcast-style MP3 by writing a script, then rendering it locally with a text-to-speech voice.</div>
+
 > **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
 
-It writes a script with a lead host and a co-host, then renders it to audio locally with a text-to-speech tool, with no cloud service or account.
+- **What it is:** Podcast is a Claude Code skill that turns source documents into a two-host audio conversation and renders it to an MP3 on a Mac.
+- **How it starts:** You type <code>&#47;podcast</code>. Claude can also pick it up when it fits.
+- **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;podcast&#47;SKILL&#46;md</code>
+- **Needs:** uv, Kokoro, and macOS
+- **To make it yours:** Put your own values where you see <code>&#60;series name&#62;</code>.
+  Taken out for privacy: 1 family detail, 3 career details, and 1 money detail.
 
-## <code>SKILL&#46;md</code>
+## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
-The instructions for turning source documents into a two-host podcast script and rendering it to an MP3 on the owner's own computer. It is used whenever he wants material as audio.
+<a href="#skill-md">Link to this file</a>
+
+The skill's instructions for turning source documents into a two-host script and rendering it to a tagged MP3 with a local voice engine, then handing it off.
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: podcast
@@ -38,7 +51,7 @@ Tool folder (render scripts): `~/ai/tools/podcast/`.
 
 - **Sources:** files or a folder from the arguments or the conversation. Read them fully. If the sources conflict, go with the most recent and well-sourced one, and note the conflict to Orlando in chat (not in the audio).
 - **Length:** default about 20-25 minutes. Plan on 150 spoken words per minute (25 min ≈ 3,750 words).
-- **Focus:** what the listening is for (interview prep, learning a topic, a book summary). Infer it from context. Ask one question only if you can&#x27;t.
+- **Focus:** what the listening is for (preparing for a talk, learning a topic, a book summary). Infer it from context. Ask one question only if you can&#x27;t.
 
 ## 2. Write the script
 
@@ -49,7 +62,7 @@ Format:
 ```
 ---
 title: &quot;The big picture&quot;
-album: &quot;&lt;album name&gt;&quot;
+album: &quot;&lt;series name&gt;&quot;
 track: 1
 sources: ...
 pronounce: GIF=jif; SQL=sequel
@@ -66,8 +79,8 @@ B: Co-host reply.
 Writing for the ear:
 - Open with why this episode matters and the single most important takeaway. Close with a recap and anything Orlando can think through while he listens.
 - Talk to the listener as &quot;you.&quot; Keep turns short: 1-4 sentences. A single line of &quot;Why?&quot; or &quot;Got it.&quot; is fine.
-- Spell numbers the way they&#x27;re said: &quot;about eight point three billion dollars,&quot; &quot;a hundred twenty-four thousand,&quot; &quot;fiscal twenty-eight.&quot; Round where precision doesn&#x27;t matter.
-- Write acronyms as spaced capitals when they&#x27;re spelled out loud (&quot;G P M,&quot; &quot;O K Rs&quot;); write ones said as words normally (&quot;NASA&quot;).
+- Spell numbers the way they&#x27;re said: &quot;about eight point three percent,&quot; &quot;a hundred twenty-four thousand,&quot; &quot;fiscal twenty-eight.&quot; Round where precision doesn&#x27;t matter.
+- Write acronyms as spaced capitals when they&#x27;re spelled out loud (&quot;A P I,&quot; &quot;C L I&quot;); write ones said as words normally (&quot;NASA&quot;).
 - Plain sentences only: no markdown, bullets, parentheses, URLs, or em dashes (use commas or periods).
 - Facts come only from the sources. Say &quot;unverified&quot; or &quot;an estimate&quot; out loud when the source does. Don&#x27;t read long verbatim quotes; paraphrase.
 - Signpost sections (&quot;Okay, culture.&quot;) so the structure survives without visuals.
@@ -97,5 +110,3 @@ Report the MP3 path, length and album, say it is tagged for Apple Music, and off
 
 A re-render doesn&#x27;t update a copy he has already added to Apple Music. Tell him to delete the old track in Music, then add the new file.
 </code></pre>
-
-Taken out: 1 private example (an album name).

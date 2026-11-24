@@ -1,0 +1,14 @@
+Orlando's Claude Code setup: rules, skills, agents, and hooks
+oneillo.com
+
+How Orlando's AI setup fits together.
+Orlando chats with a Claude Code session from the Mac or his phone.
+Orlando uses his apps: Corillo (review documents with an agent), Brega (a to-do list shared with agents), Pregón (publish a post), and Latido (a window onto the heartbeat).
+Corillo and Brega pass comments, edits, and tasks to a session and back.
+While Orlando is away, the Heartbeat (jobs on a timer) and the Relay (a roadmap, one fresh session per batch) start sessions.
+A session reads the rules at the start: global, workspace, and project.
+Settings and hooks check each step a session takes.
+A session can use 14 skills: close-shop, save-session, process-feedback, tune-setup, connect, obsidian-to-hugo, publish-prep, publish-post, publish-setup, podcast, video-title-cards, relay, heartbeat, and rex.
+A session can work as one of 3 custom agents: writer, trainer, and financial advisor.
+A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files).
+The files are kept under local version history and backed up to the cloud.
