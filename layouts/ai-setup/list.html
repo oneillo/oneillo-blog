@@ -1,0 +1,19 @@
+{{- /* Written by setup-share: the AI Setup section's hub pages show the page the run wrote (breadcrumbs, title, the body) instead of the theme's list of cards. A publish puts its own copy back here, so change the copy in setup-share instead. */ -}}
+{{- define "main" }}
+<article class="post-single ai-setup">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- with .Description }}
+    <div class="post-description">{{ . }}</div>
+    {{- end }}
+  </header>
+  {{- with .Content }}
+  <div class="post-content">
+    {{- if not ($.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" . -}}
+    {{- else }}{{ . }}{{ end }}
+  </div>
+  {{- end }}
+</article>
+{{- end }}

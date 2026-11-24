@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1104" width="360" height="1104" class="light" role="img" aria-labelledby="t d">
+<title id="t">How Orlando&#x27;s AI setup fits together.</title>
+<desc id="d">Orlando chats with a Claude Code session from the Mac or his phone. Orlando uses his apps: Corillo (review documents with an agent), Brega (a to-do list shared with agents), Pregón (publish a post), and Latido (a window onto the heartbeat). Corillo and Brega pass comments, edits, and tasks to a session and back. While Orlando is away, the Heartbeat (jobs on a timer) and the Relay (a roadmap, one fresh session per batch) start sessions. A session reads the rules at the start: global, workspace, and project. Settings and hooks check each step a session takes. A session can use 14 skills: close-shop, save-session, process-feedback, tune-setup, connect, obsidian-to-hugo, publish-prep, publish-post, publish-setup, podcast, video-title-cards, relay, heartbeat, and rex. A session can work as one of 3 custom agents: writer, trainer, and financial advisor. A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files). The files are kept under local version history and backed up to the cloud.</desc>
+<style>
+.light{--card:#fff;--ink:#1e1e1e;--soft:#6c6c6c;--line:#d0d0d0;--hair:#e6e6e6;--slate:#4F6D7A;--slate-ink:#36505B;--slate-tint:#DCE6EA;--on:#fff;--coral:#CC7354;--coral-ink:#8A3F2A;--coral-tint:#F6DDD3}
+.dark{--card:#2e2e33;--ink:#dadadb;--soft:#9b9c9d;--line:#55565a;--hair:#3c3d41;--slate:#84A6B5;--slate-ink:#A9C6D3;--slate-tint:#2C3C43;--on:#142024;--coral:#D58868;--coral-ink:#EBA48D;--coral-tint:#4A2E25}
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;font-size:12px;fill:var(--soft)}
+.name{font-size:14px;font-weight:600;fill:var(--ink)}
+.cap{font-size:12.5px;font-weight:600;fill:var(--soft)}
+.big{font-size:17px;font-weight:700}
+.on{fill:var(--on)}
+.t-slate{fill:var(--slate-ink)}
+.t-coral{fill:var(--coral-ink)}
+.mid{text-anchor:middle}
+.end{text-anchor:end}
+.icon{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.c-ink{color:var(--ink)}.c-soft{color:var(--soft)}.c-slate{color:var(--slate)}.c-coral{color:var(--coral)}.c-on{color:var(--on)}
+.card{fill:var(--card);stroke:var(--hair);stroke-width:1.5}
+.l-coral{fill:none;stroke:var(--coral);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.l-slate{fill:none;stroke:var(--slate);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.l-soft{fill:none;stroke:var(--line);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dash{stroke-dasharray:1 7}
+</style>
+<defs>
+<marker id="a-coral" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1.5L8 5L1 8.5" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="a-slate" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1.5L8 5L1 8.5" fill="none" stroke="var(--slate)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="a-soft" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1.5L8 5L1 8.5" fill="none" stroke="var(--line)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<g class="icon">
+<symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.9 3.1-6.5 7-6.5s7 2.6 7 6.5"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h4"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M4 7l2 2 3-4M4 16l2 2 3-4M13 7h7M13 16h7"/></symbol>
+<symbol id="i-horn" viewBox="0 0 24 24"><path d="M4 10v4h3l8 4V6l-8 4zM18.5 9.5a3.5 3.5 0 0 1 0 5M7 14l1 5h2.5"/></symbol>
+<symbol id="i-window" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 8.5h18M6.5 14.5h2.5l1.5-2.5 2 5 1.5-2.5h3.5"/></symbol>
+<symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 4 12 2.5-6h5"/></symbol>
+<symbol id="i-relay" viewBox="0 0 24 24"><path d="M4 7l5 5-5 5M10.5 7l5 5-5 5M17 7l4 5-4 5"/></symbol>
+<symbol id="i-rules" viewBox="0 0 24 24"><path d="M4 8.5l8-4.5 8 4.5-8 4.5zM4 12.5l8 4.5 8-4.5M4 16.500l8 4.5 8-4.5"/></symbol>
+<symbol id="i-skill" viewBox="0 0 24 24"><path d="M13 3L5 13.500h6L10 21l8-10.500h-6z"/></symbol>
+<symbol id="i-agents" viewBox="0 0 24 24"><circle cx="9" cy="8.500" r="3"/><path d="M3 19.500c0-3.200 2.700-5.500 6-5.500s6 2.300 6 5.500M15.500 5.800a3 3 0 0 1 0 5.400M17 14.300c2.400.600 4 2.600 4 5.200"/></symbol>
+<symbol id="i-guard" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.500-3 8-7 10-4-2-7-5.500-7-10V6zM9 12l2.200 2.200L15.200 10"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M5 5.500A2.500 2.500 0 0 1 7.500 3H19v14H7.500A2.500 2.500 0 0 0 5 19.500zM5 19.500A2.500 2.500 0 0 0 7.500 21H19v-4M9 7.500h6"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.500h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.500 5.500a4.200 4.200 0 0 0-5 5.300L4 16.300 7.700 20l5.500-5.500a4.200 4.200 0 0 0 5.300-5l-2.800 2.800-2.300-.700-.700-2.300z"/></symbol>
+<symbol id="i-scratch" viewBox="0 0 24 24"><path stroke-dasharray="2.500 3" d="M3 7a2 2 0 0 1 2-2h4l2 2.500h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-history" viewBox="0 0 24 24"><path d="M4.500 12a7.500 7.500 0 1 0 2.300-5.400L4.500 9M4.500 4.500V9H9M12 8v4.300l3 1.700"/></symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.500h10.500a4 4 0 0 0 .600-7.950A6 6 0 0 0 6.400 9.600 4.500 4.500 0 0 0 7 18.500z"/></symbol>
+<symbol id="i-app" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 12h6"/></symbol>
+</g>
+</defs>
+
+<!-- the owner, and his two ways in -->
+<path class="l-coral" d="M180 52V457" marker-end="url(#a-coral)"/>
+<path class="l-coral" d="M156 28H95a12 12 0 0 0-12 12V73" marker-end="url(#a-coral)"/>
+<circle cx="180" cy="28" r="23" fill="var(--coral)"/>
+<use href="#i-person" class="icon c-on" x="167" y="14" width="26" height="26"/>
+<text x="212" y="18" class="name">Orlando</text>
+<text transform="translate(212 34)"><tspan x="0" dy="0">at the Mac, or</tspan><tspan x="0" dy="14">from his phone</tspan></text>
+<text x="120" y="20" class="t-coral mid">uses</text>
+
+<!-- his apps -->
+<rect class="card" x="1" y="80" width="165" height="290" rx="14"/>
+<text x="14" y="104" class="cap t-coral">His apps</text>
+<g transform="translate(14 120)">
+<use href="#i-doc" class="icon c-coral" width="20" height="20"/>
+<text x="28" y="14" class="name">Corillo</text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">review documents</tspan><tspan x="0" dy="14">with an agent</tspan></text>
+</g>
+<g transform="translate(14 181)">
+<use href="#i-list" class="icon c-coral" width="20" height="20"/>
+<text x="28" y="14" class="name">Brega</text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">a to-do list shared</tspan><tspan x="0" dy="14">with agents</tspan></text>
+</g>
+<g transform="translate(14 242)">
+<use href="#i-horn" class="icon c-coral" width="20" height="20"/>
+<text x="28" y="14" class="name">Pregón</text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">publish a post</tspan></text>
+</g>
+<g transform="translate(14 303)">
+<use href="#i-window" class="icon c-coral" width="20" height="20"/>
+<text x="28" y="14" class="name">Latido</text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">a window onto the</tspan><tspan x="0" dy="14">heartbeat</tspan></text>
+</g>
+
+<!-- while he is away -->
+<rect class="card" x="194" y="80" width="165" height="182" rx="14"/>
+<text x="208" y="104" class="cap t-slate">While he is away</text>
+<g transform="translate(208 120)">
+<use href="#i-pulse" class="icon c-slate" width="20" height="20"/>
+<text x="28" y="14" class="name">Heartbeat</text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">jobs on a timer</tspan></text>
+</g>
+<g transform="translate(208 181)">
+<use href="#i-relay" class="icon c-slate" width="20" height="20"/>
+<text x="28" y="14" class="name">Relay</text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">a roadmap, one</tspan><tspan x="0" dy="14">fresh session per</tspan><tspan x="0" dy="14">batch</tspan></text>
+</g>
+
+<path class="l-coral" d="M83 378V422" marker-start="url(#a-coral)" marker-end="url(#a-coral)"/>
+<text transform="translate(94 391)" class="t-coral"><tspan x="0" dy="0">comments,</tspan><tspan x="0" dy="14">edits,</tspan><tspan x="0" dy="14">and tasks</tspan></text>
+<path class="l-slate" d="M277 270V422" marker-end="url(#a-slate)"/>
+<text transform="translate(288 342)" class="t-slate"><tspan x="0" dy="0">start</tspan><tspan x="0" dy="15">sessions</tspan></text>
+<text x="189" y="410" class="t-coral">chats</text>
+
+<!-- Claude Code: placed below the taller card -->
+<g transform="translate(0 430)">
+<rect x="0" y="0" width="360" height="394" rx="18" fill="var(--slate-tint)"/>
+<text x="16" y="25" class="name t-slate">Claude Code</text>
+<rect x="95" y="33" width="170" height="48" rx="24" fill="var(--slate)"/>
+<text x="180" y="63" class="big on mid">A session</text>
+<path class="l-coral" d="M180 0V27" marker-end="url(#a-coral)"/>
+
+<use href="#i-rules" class="icon c-slate" x="16" y="100" width="20" height="20"/>
+<text x="44" y="114" class="name">Rules</text>
+<text transform="translate(44 130)" class="t-slate"><tspan x="0" dy="0">read at the start: global,</tspan><tspan x="0" dy="14">workspace, and project</tspan></text>
+<use href="#i-guard" class="icon c-slate" x="190" y="100" width="20" height="20"/>
+<text x="218" y="114" class="name">Settings and hooks</text>
+<text x="218" y="130" class="t-slate">check each step</text>
+
+<rect x="14" y="176" width="332" height="112" rx="12" fill="var(--card)"/>
+<use href="#i-skill" class="icon c-slate" x="28" y="189" width="20" height="20"/>
+<text x="56" y="204" class="name">14 skills</text>
+<text x="332" y="204" class="end">written routines</text>
+<text transform="translate(30 226)" class="t-slate"><tspan x="0" dy="0">close-shop, save-session, process-feedback,</tspan><tspan x="0" dy="16">tune-setup, connect, obsidian-to-hugo, publish-prep,</tspan><tspan x="0" dy="16">publish-post, publish-setup, podcast, video-title-cards,</tspan><tspan x="0" dy="16">relay, heartbeat, and rex</tspan></text>
+
+<g transform="translate(0 298)">
+<rect x="14" y="0" width="332" height="84" rx="12" fill="var(--card)"/>
+<use href="#i-agents" class="icon c-slate" x="28" y="13" width="20" height="20"/>
+<text x="56" y="28" class="name">3 custom agents</text>
+<g transform="translate(28 44)">
+<rect width="54" height="26" rx="13" fill="var(--slate-tint)"/>
+<text x="27" y="17.5" class="mid t-slate">writer</text>
+</g>
+<g transform="translate(88 44)">
+<rect width="58" height="26" rx="13" fill="var(--slate-tint)"/>
+<text x="29" y="17.5" class="mid t-slate">trainer</text>
+</g>
+<g transform="translate(152 44)">
+<rect width="112" height="26" rx="13" fill="var(--slate-tint)"/>
+<text x="56" y="17.5" class="mid t-slate">financial advisor</text>
+</g>
+</g>
+</g>
+
+<path class="l-slate" d="M180 832V860" marker-start="url(#a-slate)" marker-end="url(#a-slate)"/>
+<text x="192" y="851" class="t-slate">reads and writes</text>
+
+<!-- files -->
+<g transform="translate(0 868)">
+<rect class="card" x="1" y="0" width="358" height="232" rx="14"/>
+<text x="16" y="25" class="cap">Files on the Mac</text>
+<g transform="translate(16 42)">
+<use href="#i-book" class="icon c-ink" width="20" height="20"/>
+<text x="28" y="14" class="name">Knowledge base</text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">an Obsidian vault</tspan></text>
+</g>
+<g transform="translate(180 42)">
+<use href="#i-folder" class="icon c-ink" width="20" height="20"/>
+<text x="28" y="14" class="name">Projects</text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">by area, in dated</tspan><tspan x="0" dy="14">folders</tspan></text>
+</g>
+<g transform="translate(16 102)">
+<use href="#i-tool" class="icon c-ink" width="20" height="20"/>
+<text x="28" y="14" class="name">Tools</text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">finished and reusable</tspan></text>
+</g>
+<g transform="translate(180 102)">
+<use href="#i-scratch" class="icon c-ink" width="20" height="20"/>
+<text x="28" y="14" class="name">Scratch</text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">throwaway files</tspan></text>
+</g>
+<path d="M16 164H344" stroke="var(--hair)" stroke-width="1.5"/>
+<use href="#i-history" class="icon c-soft" x="16" y="174" width="18" height="18"/>
+<text x="42" y="187" class="cap">Local version history</text>
+<g transform="translate(16 200)">
+<use href="#i-cloud" class="icon c-soft" width="18" height="18"/>
+<text x="26" y="13" class="cap">Backups to the cloud</text>
+</g>
+</g>
+</svg>
