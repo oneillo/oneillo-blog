@@ -21,7 +21,7 @@ theme = "PaperMod"
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 5
+    weight = 25
   [[menu.main]]
     identifier = "archive"
     name = "Archive"
@@ -31,12 +31,12 @@ theme = "PaperMod"
     identifier = "newsletter"
     name = "Newsletter"
     url = "/newsletter/"
-    weight = 15
+    weight = 5
   [[menu.main]]
     identifier = "ai-setup"
     name = "AI Setup"
     url = "/ai-setup/"
-    weight = 17
+    weight = 7
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
