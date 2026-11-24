@@ -34,15 +34,15 @@ It changes often. Every page says when its own content last changed.
 </section>
 
 <figure class="ai-setup-diagram">
-<style>.ai-setup-diagram{margin:1.5rem 0;position:relative}.ai-setup-diagram picture,.ai-setup-diagram img{display:block;width:100%;height:auto;margin:0}.ai-setup-diagram .ai-setup-diagram-dark{display:none}[data-theme="dark"] .ai-setup-diagram .ai-setup-diagram-light{display:none}[data-theme="dark"] .ai-setup-diagram .ai-setup-diagram-dark{display:block}@media (prefers-color-scheme:dark){[data-theme="auto"] .ai-setup-diagram .ai-setup-diagram-light{display:none}[data-theme="auto"] .ai-setup-diagram .ai-setup-diagram-dark{display:block}}.ai-setup-diagram-text ul{margin-top:.5rem}.ai-setup-diagram .ai-setup-diagram-links a{position:absolute;display:block;border-radius:10px;box-shadow:none;text-decoration:none}.ai-setup-diagram .ai-setup-diagram-links a:hover,.ai-setup-diagram .ai-setup-diagram-links a:focus-visible{outline:2px solid currentColor;outline-offset:1px}.ai-setup-diagram .ai-setup-diagram-narrow{display:none}@media (max-width:600px){.ai-setup-diagram .ai-setup-diagram-wide{display:none}.ai-setup-diagram .ai-setup-diagram-narrow{display:block}}</style>
-<picture class="ai-setup-diagram-light">
-<source media="(max-width: 600px)" srcset="diagram-narrow-light.svg" width="360" height="1148">
-<img src="diagram-wide-light.svg" alt="How Orlando&#x27;s AI setup fits together: an AI-written diagram. The same, as text, is in the fold below it." width="720" height="839" loading="lazy" decoding="async">
-</picture>
-<picture class="ai-setup-diagram-dark">
-<source media="(max-width: 600px)" srcset="diagram-narrow-dark.svg" width="360" height="1148">
-<img src="diagram-wide-dark.svg" alt="How Orlando&#x27;s AI setup fits together: an AI-written diagram. The same, as text, is in the fold below it." width="720" height="839" loading="lazy" decoding="async">
-</picture>
+<style>.ai-setup-diagram{margin:1.5rem 0;position:relative}.ai-setup-diagram img{display:block;width:100%;height:auto;margin:0}.ai-setup-diagram .ai-setup-diagram-dark{display:none}[data-theme="dark"] .ai-setup-diagram .ai-setup-diagram-light{display:none}[data-theme="dark"] .ai-setup-diagram .ai-setup-diagram-dark{display:block}@media (prefers-color-scheme:dark){[data-theme="auto"] .ai-setup-diagram .ai-setup-diagram-light{display:none}[data-theme="auto"] .ai-setup-diagram .ai-setup-diagram-dark{display:block}}.ai-setup-diagram-text ul{margin-top:.5rem}.ai-setup-diagram .ai-setup-diagram-links a{position:absolute;display:block;border-radius:10px;box-shadow:none;text-decoration:none}.ai-setup-diagram .ai-setup-diagram-links a:hover,.ai-setup-diagram .ai-setup-diagram-links a:focus-visible{outline:2px solid currentColor;outline-offset:1px}.ai-setup-diagram .ai-setup-diagram-narrow{display:none}@media (max-width:600px){.ai-setup-diagram .ai-setup-diagram-wide{display:none}.ai-setup-diagram .ai-setup-diagram-narrow{display:block}}</style>
+<div class="ai-setup-diagram-light">
+<img class="ai-setup-diagram-wide" src="diagram-wide-light.svg" alt="How Orlando&#x27;s AI setup fits together: an AI-written diagram. The same, as text, is in the fold below it." width="720" height="839" loading="lazy" decoding="async">
+<img class="ai-setup-diagram-narrow" src="diagram-narrow-light.svg" alt="How Orlando&#x27;s AI setup fits together: an AI-written diagram. The same, as text, is in the fold below it." width="360" height="1148" loading="lazy" decoding="async">
+</div>
+<div class="ai-setup-diagram-dark">
+<img class="ai-setup-diagram-wide" src="diagram-wide-dark.svg" alt="How Orlando&#x27;s AI setup fits together: an AI-written diagram. The same, as text, is in the fold below it." width="720" height="839" loading="lazy" decoding="async">
+<img class="ai-setup-diagram-narrow" src="diagram-narrow-dark.svg" alt="How Orlando&#x27;s AI setup fits together: an AI-written diagram. The same, as text, is in the fold below it." width="360" height="1148" loading="lazy" decoding="async">
+</div>
 <div class="ai-setup-diagram-links ai-setup-diagram-wide">
 <a href="/ai-setup/workspace/" style="left:0.139%;top:82.837%;width:99.722%;height:16.687%" aria-label="How it&#x27;s organized" title="How it&#x27;s organized"></a>
 <a href="/ai-setup/apps/" style="left:0.139%;top:11.442%;width:45.694%;height:25.149%" aria-label="Apps" title="Apps"></a>
