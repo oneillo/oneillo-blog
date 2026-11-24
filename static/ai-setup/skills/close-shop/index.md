@@ -15,7 +15,9 @@ Ends a working session in three steps: saves project context, checks corrections
 - **To make it yours:** Put your own values where you see `<vault-history-folder>`.
   Taken out for privacy: 1 path.
 
-**Works with:** [Connect](https://oneillo.com/ai-setup/skills/connect/), [Financial advisor](https://oneillo.com/ai-setup/agents/financial-advisor/), [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/), [Save session](https://oneillo.com/ai-setup/skills/save-session/), [Trainer](https://oneillo.com/ai-setup/agents/trainer/), [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/), and [Writer](https://oneillo.com/ai-setup/agents/writer/).
+**Works with:**
+- **Calls:** [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/) and [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/).
+- **Called by:** [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/).
 
 ## The skill file (`SKILL.md`)
 
@@ -64,3 +66,11 @@ Never push (the question above is the one exception), amend, rebase, reset, or o
 
 Finish by telling Orlando, in one line per repo, what was committed (or that nothing was), plus anything left uncommitted and why.
 ```
+
+Next: [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

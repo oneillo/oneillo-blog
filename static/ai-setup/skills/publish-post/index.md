@@ -17,7 +17,9 @@ Publishes a finished blog post to a Hugo site, checks the build, and pushes it t
 
 This skill is specific to Orlando's blog. It is here because it is part of his setup, and its steps may still be worth borrowing.
 
-**Works with:** [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/).
+**Works with:**
+- **Calls:** [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/).
+- **Called by:** [Publish prep](https://oneillo.com/ai-setup/skills/publish-prep/) and [Writer](https://oneillo.com/ai-setup/agents/writer/).
 
 ## The skill file (`SKILL.md`)
 
@@ -125,3 +127,12 @@ Stage the new post files, commit with the message format `Add post: [title]`, an
 - Move the post's working folder (its `posts-to-review/[slug]/` folder or its dated project folder) to `~/ai/projects/blog/zzCompleted/`, keeping its name.
 - Tell Orlando what is still his to do: paste the Substack version and post the LinkedIn blurb.
 ````
+
+Previous: [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/).
+Next: [Publish prep](https://oneillo.com/ai-setup/skills/publish-prep/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

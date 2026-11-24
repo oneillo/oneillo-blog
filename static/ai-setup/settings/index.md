@@ -30,7 +30,8 @@ The settings set up 2 hooks: commands Claude Code runs at set points in a sessio
 
 Blocks file writes and edits that add em dashes, while leaving em dashes already in the text alone.
 
-**Works with:** [Corillo](https://oneillo.com/ai-setup/apps/#corillo).
+**Works with:**
+- **Also mentions:** [Corillo](https://oneillo.com/ai-setup/apps/#corillo).
 
 ## The hook script (`no-em-dash.sh`)
 
@@ -88,3 +89,9 @@ exit 2
 ## Connectors
 
 [Corillo](https://oneillo.com/ai-setup/apps/#corillo) and [Brega](https://oneillo.com/ai-setup/apps/#brega) connect to Claude Code, so a session can use them. Each one has its section on the [Apps](https://oneillo.com/ai-setup/apps/) page.
+
+[Back to AI Setup](https://oneillo.com/ai-setup/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

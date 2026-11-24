@@ -19,7 +19,7 @@ madeBy: "setup-share"
 
 <div class="post-description">The apps around Orlando's AI sessions, each described in a few lines.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
 The apps around Orlando's sessions. Each one is described here, not shared as text. When an app goes public, its section links to it.
 
@@ -58,3 +58,13 @@ Not public yet.
 ## The relay {#relay}
 
 Its full text is on its skill page: <a href="/ai-setup/skills/relay/">Relay</a>.
+
+<nav class="page-foot">
+
+<a href="/ai-setup/">Back to AI Setup</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

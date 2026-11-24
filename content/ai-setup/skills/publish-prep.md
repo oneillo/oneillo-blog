@@ -19,22 +19,39 @@ madeBy: "setup-share"
 
 <div class="post-description">Prepares a finished blog post for publishing with title options, a description, a LinkedIn blurb, and a Substack version.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+
+<section class="facts facts-skill">
+
+<div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/publish-prep</code></span></div>
 
 - **What it is:** Publish prep is a Claude Code skill that prepares a finished blog post for publishing by drafting its title, description, LinkedIn blurb, and Substack version.
 - **How it starts:** You type <code>&#47;publish&#45;prep</code>. Claude doesn't start it by itself.
 - **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;publish&#45;prep&#47;SKILL&#46;md</code>
 - **Needs:** Nothing extra
 
+</section>
+
 This skill is specific to Orlando's blog. It is here because it is part of his setup, and its steps may still be worth borrowing.
 
-**Works with:** <a href="/ai-setup/skills/publish-post/">Publish post</a>.
+<div class="works">
+
+**Works with:**
+- **Calls:** <a href="/ai-setup/skills/publish-post/">Publish post</a>.
+- **Called by:** <a href="/ai-setup/agents/writer/">Writer</a>.
+
+</div>
+
+<section class="file">
 
 ## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
 <a href="#skill-md">Link to this file</a>
 
 The instructions for preparing a finished blog post for publishing, step by step, with the author approving each piece. It is used after a post is written and before it goes live.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 83 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: publish-prep
@@ -120,3 +137,20 @@ Prepare a finished blog post for publishing by generating its title, description
 
 List the files created with their paths so the author can verify everything is saved.
 </code></pre>
+
+</figure>
+
+</section>
+
+<nav class="page-foot">
+
+Previous: <a href="/ai-setup/skills/publish-post/">Publish post</a>.
+Next: <a href="/ai-setup/skills/publish-setup/">Publish setup</a>.
+
+<a href="/ai-setup/skills/">Back to Skills</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

@@ -54,6 +54,10 @@ Every script runs with `uv run` and declares its Python version and packages at 
 # ///
 ```
 
-**Works with:** [Brega](https://oneillo.com/ai-setup/apps/#brega), [Close shop](https://oneillo.com/ai-setup/skills/close-shop/), [Corillo](https://oneillo.com/ai-setup/apps/#corillo), [Financial advisor](https://oneillo.com/ai-setup/agents/financial-advisor/), [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/), [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/), [Rex](https://oneillo.com/ai-setup/skills/rex/), [Save session](https://oneillo.com/ai-setup/skills/save-session/), [Trainer](https://oneillo.com/ai-setup/agents/trainer/), [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/), and [Writer](https://oneillo.com/ai-setup/agents/writer/).
-
 The same rules appear as text on the [Global rules](https://oneillo.com/ai-setup/rules/global/) and [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/) pages.
+
+[Back to AI Setup](https://oneillo.com/ai-setup/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

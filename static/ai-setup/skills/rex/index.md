@@ -15,3 +15,11 @@ Manages Rex sessions, tabs, and panes, runs commands, and reads terminal output 
 Rex is a terminal app. It installs this skill itself, so the skill's text belongs to Rex and is not Orlando's to share.
 
 Rex's own site: [www.superlogical.com/rex](https://www.superlogical.com/rex/).
+
+Previous: [Relay](https://oneillo.com/ai-setup/skills/relay/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

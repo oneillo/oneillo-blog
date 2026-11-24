@@ -29,6 +29,20 @@ The diagram as text:
 - A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files).
 - The files are kept under local version history and backed up to the cloud.
 
+## Start here
+
+1. [Global rules](https://oneillo.com/ai-setup/rules/global/): short and general, the rules every session starts from.
+2. [Save session](https://oneillo.com/ai-setup/skills/save-session/) and [Close shop](https://oneillo.com/ai-setup/skills/close-shop/): the habit of a context file per project, so the next session picks up where the last one stopped.
+3. [No em dash](https://oneillo.com/ai-setup/settings/#no-em-dash): a small hook with one clear job, stopping em dashes in anything an agent writes.
+
+## By what you want to do
+
+- **Pick up where you left off:** [Save session](https://oneillo.com/ai-setup/skills/save-session/), [Close shop](https://oneillo.com/ai-setup/skills/close-shop/), and [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/).
+- **Let work run while you're away:** [Relay](https://oneillo.com/ai-setup/skills/relay/), [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/), and [the keep-awake rule](https://oneillo.com/ai-setup/rules/global/).
+- **Undo an agent's mistake:** version history, backups, and the Trash, all on [How it's organized](https://oneillo.com/ai-setup/workspace/).
+- **Keep the setup lean:** [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/) and [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/).
+- **Write and publish:** [Writer](https://oneillo.com/ai-setup/agents/writer/), [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/), [Publish prep](https://oneillo.com/ai-setup/skills/publish-prep/), and [Publish post](https://oneillo.com/ai-setup/skills/publish-post/).
+
 ## The pieces
 
 - [How it's organized](https://oneillo.com/ai-setup/workspace/): the workspace's folders, the knowledge base's shape, version history, backups, and how Python scripts run.
@@ -40,6 +54,18 @@ The diagram as text:
 
 Orlando's weekly AI digest is public too, as the [Newsletter](https://oneillo.com/newsletter/).
 
+## Walk-throughs
+
+Each one follows a job across several pieces, and links to each.
+
+- [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/): Shows how a session ends: it saves project state, files lasting knowledge, keeps corrections, and commits, so the next session starts clean.
+- [How work runs while I'm away](https://oneillo.com/ai-setup/guides/while-im-away/): Shows how the keep-awake rule, the Relay and Heartbeat skills, and the Latido app keep work going while Orlando is away, and how he sees the results.
+- [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/): Shows the three ways Orlando's setup undoes an agent's mistake: the Trash, local version history, and the cloud copy, and when each one helps.
+
+## What this setup runs on
+
+A Mac, Claude Code, Rex (the terminal app), Obsidian (the knowledge base), Hugo (the blog), uv (for Python scripts), git (for version history), and ffmpeg (for audio and video).
+
 ## How this section is made
 
 1. Orlando starts a publish when he wants one.
@@ -48,13 +74,17 @@ Orlando's weekly AI digest is public too, as the [Newsletter](https://oneillo.co
 4. A separate check holds back any page where something private is left: that page is shown as described only, or left out until the next publish.
 5. The pages are built. At first Orlando looks at what changed and says yes before it goes live.
 
-Nobody edits these pages by hand. A description may be wrong where the text under it is right: the text is the source.
+Nobody edits the AI-written text by hand. A note marked as Orlando's is his own words. A description may be wrong where the text under it is right: the text is the source.
 
 ## Borrowing from it
 
-- Every text has a copy button.
-- Placeholders look like `<brokerage>` or `<project-folder>`. Put your own in their place.
-- You can hand a page's address to your own agent and ask it to adapt the page to your setup.
+Every text here can be copied and made your own. [How to borrow](https://oneillo.com/ai-setup/borrow/) says where each file goes, how to try one safely, and what to ask your own agent.
+
+## Follow changes
+
+[What changed](https://oneillo.com/ai-setup/changes/) lists every publish, newest first, with the pieces each one added, changed, or removed.
+
+The section's [feed](/ai-setup/index.xml) lists only its main pages, each when it first comes out. It doesn't list each rule, skill, or agent page, or say when a page changes.
 
 ## Pages
 
@@ -64,3 +94,5 @@ Nobody edits these pages by hand. A description may be wrong where the text unde
 - [Custom agents](https://oneillo.com/ai-setup/agents/index.md): The custom agents in Orlando's AI setup, the roles a session can take.
 - [Apps](https://oneillo.com/ai-setup/apps/index.md): The apps around Orlando's AI sessions, each described in a few lines.
 - [Settings and hooks](https://oneillo.com/ai-setup/settings/index.md): The settings and hooks in Orlando's AI setup, described by kind.
+- [How to borrow](https://oneillo.com/ai-setup/borrow/index.md): How to take a rule, skill, agent, or hook from Orlando's AI setup and make it work in your own Claude Code.
+- [What changed](https://oneillo.com/ai-setup/changes/index.md): Every publish of Orlando's AI setup, newest first, with the pieces each one added, changed, or removed.

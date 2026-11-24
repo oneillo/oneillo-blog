@@ -1,7 +1,12 @@
-{{- /* Written by setup-share: the AI Setup section's hub pages show the page the run wrote (breadcrumbs by each page's short link title, the heading by its short name, a link to its plain copy, the body) instead of the theme's list of cards. A publish puts its own copy back here, so change the copy in setup-share instead. */ -}}
+{{- /* Written by setup-share: the AI Setup section's hub pages show the page the run wrote (breadcrumbs by each page's short link title, the heading by its short name, a link to its plain copy, the body) instead of the theme's list of cards, in the section's own look (static/ai-setup/look.css), with Brega's garita drawn at the top of the main hub. A publish puts its own copy back here, so change the copy in setup-share instead. */ -}}
 {{- define "main" }}
-<article class="post-single ai-setup">
-  <header class="post-header">
+<link rel="stylesheet" href="{{ "ai-setup/look.css" | relURL }}">
+{{- $hub := and .Parent .Parent.IsHome }}
+<article class="post-single ai-setup {{ if $hub }}ai-hub{{ else }}ai-sub{{ end }}">
+  <header class="post-header{{ if $hub }} hub-head{{ end }}">
+    {{- if $hub }}
+    <div class="hub-head-text">
+    {{- end }}
     {{- if (.Param "ShowBreadCrumbs") }}
     <div class="breadcrumbs">
       <a href="{{ "" | absLangURL }}">{{ i18n "home" | default "Home" }}</a>
@@ -17,6 +22,28 @@
     <div class="post-description">{{ . }}</div>
     {{- end }}
     <div class="post-meta ai-setup-plain"><a href="{{ .RelPermalink }}index.md">Open as plain text</a></div>
+    {{- if $hub }}
+    </div>
+    <div class="hub-scene">
+<svg class="garita" xmlns="http://www.w3.org/2000/svg" viewBox="56 6 224 178" aria-hidden="true">
+  <path class="sky" d="M110.5 172A92 92 0 1 1 225.5 172Z"/>
+  <path class="sea" d="M80.5 128H255.5A92 92 0 0 1 225.5 172H110.5A92 92 0 0 1 80.5 128Z"/>
+  <path class="wave" fill="none" stroke-width="2" stroke-linecap="round" d="M206 146H232M214 160H230"/>
+  <path class="stone" d="M78 82H150V106L174 108L201 172H110.5A92 92 0 0 1 78 82Z"/>
+  <path class="ink" fill="none" stroke-width="1.5" stroke-linecap="round" d="M79 82H150M78 106H150M150 106L170 171M174 108L200.5 171"/>
+  <path class="water" fill="none" stroke-width="3" stroke-linecap="round" d="M60 172H276M120 180H216"/>
+  <g class="ink" stroke-width="1.5" stroke-linejoin="round">
+    <path class="stone" d="M128 109H172Q168 124 154 133Q150 136 146 133Q132 124 128 109Z"/>
+    <rect class="stone" x="128" y="58" width="44" height="46"/>
+    <rect class="stone" x="125" y="102" width="50" height="7" rx="3.5"/>
+    <path class="stone" d="M128 58A22 22 0 0 1 172 58Z"/>
+    <rect class="stone" x="124" y="54" width="52" height="7" rx="3.5"/>
+    <circle class="stone" cx="150" cy="32" r="3.5"/>
+  </g>
+  <rect class="slit" x="147.5" y="68" width="5" height="24" rx="2.5"/>
+</svg>
+    </div>
+    {{- end }}
   </header>
   {{- with .Content }}
   <div class="post-content">

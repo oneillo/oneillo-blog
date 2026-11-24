@@ -15,7 +15,9 @@ Reviews saved memories, promotes lasting lessons to the right place, and prunes 
 - **To make it yours:** Put your own values where you see `<workspace-project>`.
   Taken out for privacy: 1 path.
 
-**Works with:** [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/).
+**Works with:**
+- **Calls:** [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/).
+- **Called by:** [Close shop](https://oneillo.com/ai-setup/skills/close-shop/), [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/), and [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/).
 
 ## The skill file (`SKILL.md`)
 
@@ -54,3 +56,12 @@ Default to the narrowest place that fully covers the lesson. Every line in a CLA
 
 Show only the memories you would change, grouped by action, one line each with its location and the reason. Then one line for how many stay as they are. Wait for my input before changing anything. After we agree, apply the changes. When a lesson is promoted, delete the memory and its index line so it isn't loaded twice. Git history in `~/.claude` keeps a record of everything removed.
 ```
+
+Previous: [Close shop](https://oneillo.com/ai-setup/skills/close-shop/).
+Next: [Save session](https://oneillo.com/ai-setup/skills/save-session/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

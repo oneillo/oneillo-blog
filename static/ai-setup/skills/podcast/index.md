@@ -96,3 +96,12 @@ Report the MP3 path, length and album, say it is tagged for Apple Music, and off
 
 A re-render doesn't update a copy he has already added to Apple Music. Tell him to delete the old track in Music, then add the new file.
 ````
+
+Previous: [Publish setup](https://oneillo.com/ai-setup/skills/publish-setup/).
+Next: [Video title cards](https://oneillo.com/ai-setup/skills/video-title-cards/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

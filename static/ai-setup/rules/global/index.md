@@ -13,7 +13,8 @@ Sets global rules for every session: direct style, keeping the Mac awake, file d
 - **Where the file goes:** `~/.claude/CLAUDE.md`
 - **Needs:** uv, Rex, and macOS
 
-**Works with:** [Rex](https://oneillo.com/ai-setup/skills/rex/).
+**Works with:**
+- **Also mentions:** [Rex](https://oneillo.com/ai-setup/skills/rex/).
 
 ## The rules file (`CLAUDE.md`)
 
@@ -72,3 +73,11 @@ These rules apply to all Claude Code sessions and agents.
 - No emojis unless I ask for them.
 - Use commas, periods, colons, or parentheses where an em dash might go. Em dashes read as AI-written, in chat and in files.
 ````
+
+Next: [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/).
+
+[Back to Rules](https://oneillo.com/ai-setup/rules/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

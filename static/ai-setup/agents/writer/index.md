@@ -13,7 +13,9 @@ Co-drafts and edits blog, newsletter, and LinkedIn posts in the owner's voice, f
 - **Where the file goes:** `~/.claude/agents/writer.md`
 - **Needs:** Nothing extra
 
-**Works with:** [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/), [Publish post](https://oneillo.com/ai-setup/skills/publish-post/), and [Publish prep](https://oneillo.com/ai-setup/skills/publish-prep/).
+**Works with:**
+- **Calls:** [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/), [Publish post](https://oneillo.com/ai-setup/skills/publish-post/), and [Publish prep](https://oneillo.com/ai-setup/skills/publish-prep/).
+- **Called by:** [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/).
 
 ## The agent file (`writer.md`)
 
@@ -52,3 +54,11 @@ Before drafting or reviewing a post, read `~/ai/knowledge-base/writing/writing-s
 
 Work goes in `~/ai/projects/blog/<yyyymmdd-slug>/`. Related skills: `/obsidian-to-hugo`, `/publish-prep`, `/publish-post`.
 ```
+
+Next: [Trainer](https://oneillo.com/ai-setup/agents/trainer/).
+
+[Back to Custom agents](https://oneillo.com/ai-setup/agents/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

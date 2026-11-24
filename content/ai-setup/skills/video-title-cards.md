@@ -19,18 +19,29 @@ madeBy: "setup-share"
 
 <div class="post-description">Makes intro, outro, and interstitial title cards with ffmpeg and joins them to screen recordings.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+
+<section class="facts facts-skill">
+
+<div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/video-title-cards</code></span></div>
 
 - **What it is:** Video title cards is a Claude Code skill that makes intro, outro, and interstitial title cards with ffmpeg and joins them to a screen recording.
 - **How it starts:** You type <code>&#47;video&#45;title&#45;cards</code>. Claude can also pick it up when it fits.
 - **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;video&#45;title&#45;cards&#47;SKILL&#46;md</code>
 - **Needs:** ffmpeg-full, Homebrew, uv, and mlx-whisper
 
+</section>
+
+<section class="file">
+
 ## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
 <a href="#skill-md">Link to this file</a>
 
 The full instructions for making title cards with ffmpeg and joining them to a screen recording, used when someone asks for intro, end, or recap cards on a video.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 257 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: video-title-cards
@@ -49,7 +60,7 @@ Generate title cards with text using ffmpeg and concatenate them with screen rec
 
 ## Work Folder
 
-Make one work folder at the start, `mkdir -p ~/ai/tmp/title-cards-&lt;slug&gt;`, and put every file that is not the final video there: audio, frames, text files, cards, cuts and previews. `WORK` in the commands below stands for its full path (write it out: the shell does not expand `~` inside a filter string). When the final video is built and checked, remove the folder: `rm -rf ~/ai/tmp/title-cards-&lt;slug&gt;`.
+Make one work folder at the start, `mkdir -p ~/ai/tmp/title-cards-<span class="ph">&lt;slug&gt;</span>`, and put every file that is not the final video there: audio, frames, text files, cards, cuts and previews. `WORK` in the commands below stands for its full path (write it out: the shell does not expand `~` inside a filter string). When the final video is built and checked, remove the folder: `rm -rf ~/ai/tmp/title-cards-<span class="ph">&lt;slug&gt;</span>`.
 
 ## Step 0: Understand the Recording
 
@@ -290,3 +301,20 @@ The user may request different colors, durations, or fonts. Adjust the ffmpeg pa
 - Keep each bullet on a single line by default. Only wrap to a second line when the text physically exceeds the available width (card width minus left margin minus a small right margin).
 - Do not pre-wrap lines for aesthetics or conservative spacing -- use the full available width.
 </code></pre>
+
+</figure>
+
+</section>
+
+<nav class="page-foot">
+
+Previous: <a href="/ai-setup/skills/podcast/">Podcast</a>.
+Next: <a href="/ai-setup/skills/heartbeat/">Heartbeat</a>.
+
+<a href="/ai-setup/skills/">Back to Skills</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

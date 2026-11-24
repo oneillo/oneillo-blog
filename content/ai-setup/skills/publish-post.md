@@ -19,7 +19,11 @@ madeBy: "setup-share"
 
 <div class="post-description">Publishes a finished blog post to a Hugo site, checks the build, and pushes it to GitHub.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+
+<section class="facts facts-skill">
+
+<div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/publish-post</code></span></div>
 
 - **What it is:** Publish post is a Claude Code skill that takes a finished blog post from the blog projects folder and publishes it to a Hugo site on GitHub.
 - **How it starts:** You type <code>&#47;publish&#45;post</code>. Claude doesn't start it by itself.
@@ -28,15 +32,28 @@ madeBy: "setup-share"
 - **To make it yours:** Put your own values where you see <code>&#60;blog&#45;folder&#62;</code> and <code>&#60;project&#45;folder&#62;</code>.
   Taken out for privacy: 7 paths and 1 private project name.
 
+</section>
+
 This skill is specific to Orlando's blog. It is here because it is part of his setup, and its steps may still be worth borrowing.
 
-**Works with:** <a href="/ai-setup/skills/obsidian-to-hugo/">Obsidian to Hugo</a>.
+<div class="works">
+
+**Works with:**
+- **Calls:** <a href="/ai-setup/skills/obsidian-to-hugo/">Obsidian to Hugo</a>.
+- **Called by:** <a href="/ai-setup/skills/publish-prep/">Publish prep</a> and <a href="/ai-setup/agents/writer/">Writer</a>.
+
+</div>
+
+<section class="file">
 
 ## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
 <a href="#skill-md">Link to this file</a>
 
 The instructions for publishing a finished blog post to a Hugo site, from picking the post to building the site, pushing it to GitHub, and filing the working folder. It is used when the owner asks to publish a post.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 100 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: publish-post
@@ -47,14 +64,14 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash, AskUserQuestion
 
 # Publish Blog Post
 
-Take a finished blog post from `~/ai/projects/blog/` and publish it to the Hugo site at `&lt;blog-folder&gt;/`.
+Take a finished blog post from `~/ai/projects/blog/` and publish it to the Hugo site at `<span class="ph">&lt;blog-folder&gt;</span>/`.
 
 ## 1. Identify the post
 
 Find the post to publish. The user will either specify which project folder to use or you should look for posts in these locations:
 
 - `~/ai/projects/blog/posts-to-review/`: posts converted from Obsidian via the `obsidian-to-hugo` skill. Each post lives in a subfolder named by slug (e.g., `posts-to-review/my-post-title/`), containing the markdown file and any images.
-- `~/ai/projects/blog/`: other project folders (e.g., `&lt;project-folder&gt;/`). Each project folder may contain a subfolder for the post (e.g., `post-5/`).
+- `~/ai/projects/blog/`: other project folders (e.g., `<span class="ph">&lt;project-folder&gt;</span>/`). Each project folder may contain a subfolder for the post (e.g., `post-5/`).
 
 Inside the post folder, expect:
 - A markdown file with the post body (the longest `.md` file, usually named with a date prefix)
@@ -66,7 +83,7 @@ Read the title-and-description file to get the title and description. Read the p
 
 ## 2. Determine the post slug
 
-Ask the user what slug to use for the post URL. Suggest one based on the post content and existing posts in `&lt;blog-folder&gt;/content/posts/`. The slug becomes the folder name (for bundle posts) or filename (for single-file posts).
+Ask the user what slug to use for the post URL. Suggest one based on the post content and existing posts in `<span class="ph">&lt;blog-folder&gt;</span>/content/posts/`. The slug becomes the folder name (for bundle posts) or filename (for single-file posts).
 
 ## 3. Determine the publish date
 
@@ -79,12 +96,12 @@ Look at the post content and existing posts to suggest relevant tags. Ask the us
 ## 5. Create the post in Hugo
 
 If the post has images, create a page bundle:
-- Create `&lt;blog-folder&gt;/content/posts/[slug]/`
+- Create `<span class="ph">&lt;blog-folder&gt;</span>/content/posts/[slug]/`
 - Copy all image files from the source folder into the bundle directory
 - Create `index.md` with front matter and post content
 
 If the post has no images, create a single file:
-- Create `&lt;blog-folder&gt;/content/posts/[slug].md` with front matter and post content
+- Create `<span class="ph">&lt;blog-folder&gt;</span>/content/posts/[slug].md` with front matter and post content
 
 ### Front matter format
 
@@ -123,11 +140,11 @@ Then build the site locally. A link to a post that does not exist only shows up 
 
 ```bash
 B=~/ai/tmp/blog-build-[slug]
-git -C &lt;blog-folder&gt; status --short
-HUGO_RESOURCEDIR=$B/resources hugo build --source &lt;blog-folder&gt; --destination $B/public --cacheDir $B/cache --noBuildLock --quiet
+git -C <span class="ph">&lt;blog-folder&gt;</span> status --short
+HUGO_RESOURCEDIR=$B/resources hugo build --source <span class="ph">&lt;blog-folder&gt;</span> --destination $B/public --cacheDir $B/cache --noBuildLock --quiet
 ```
 
-If the build reports an error, stop: show the error and don&#x27;t commit. Otherwise check that `$B/public/posts/[slug]/index.html` exists, then remove `$B` (`rm -rf` is fine inside `~/ai/tmp/`). Run `git -C &lt;blog-folder&gt; status --short` again: the only changes should be the new post&#x27;s files.
+If the build reports an error, stop: show the error and don&#x27;t commit. Otherwise check that `$B/public/posts/[slug]/index.html` exists, then remove `$B` (`rm -rf` is fine inside `~/ai/tmp/`). Run `git -C <span class="ph">&lt;blog-folder&gt;</span> status --short` again: the only changes should be the new post&#x27;s files.
 
 ## 7. Commit and push
 
@@ -135,7 +152,24 @@ Stage the new post files, commit with the message format `Add post: [title]`, an
 
 ## 8. Finish
 
-- Put the post&#x27;s address in place of `BLOG_URL` in the Substack file (`post-N-substack.md`) in the post&#x27;s working folder. The address is the `baseURL` in `&lt;blog-folder&gt;/hugo.toml` followed by `posts/[slug]/`.
+- Put the post&#x27;s address in place of `BLOG_URL` in the Substack file (`post-N-substack.md`) in the post&#x27;s working folder. The address is the `baseURL` in `<span class="ph">&lt;blog-folder&gt;</span>/hugo.toml` followed by `posts/[slug]/`.
 - Move the post&#x27;s working folder (its `posts-to-review/[slug]/` folder or its dated project folder) to `~/ai/projects/blog/zzCompleted/`, keeping its name.
 - Tell Orlando what is still his to do: paste the Substack version and post the LinkedIn blurb.
 </code></pre>
+
+</figure>
+
+</section>
+
+<nav class="page-foot">
+
+Previous: <a href="/ai-setup/skills/obsidian-to-hugo/">Obsidian to Hugo</a>.
+Next: <a href="/ai-setup/skills/publish-prep/">Publish prep</a>.
+
+<a href="/ai-setup/skills/">Back to Skills</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

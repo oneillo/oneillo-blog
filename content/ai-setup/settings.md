@@ -19,7 +19,7 @@ madeBy: "setup-share"
 
 <div class="post-description">The settings and hooks in Orlando's AI setup, described by kind.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-23.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-23">2026-11-23</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
 Sets up hooks, a plugin, a status line, and permissions so Claude Code sessions start and run the way the setup expects.
 
@@ -39,17 +39,33 @@ The settings set up 2 hooks: commands Claude Code runs at set points in a sessio
 
 ### No em dash {#no-em-dash}
 
+<section class="facts facts-hook">
+
+<div class="facts-head"><span class="tag tag-hook">Hook</span></div>
+
 - **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;hooks&#47;no&#45;em&#45;dash&#46;sh</code>, set up in <code>&#126;&#47;&#46;claude&#47;settings&#46;json</code>
+
+</section>
 
 Blocks file writes and edits that add em dashes, while leaving em dashes already in the text alone.
 
-**Works with:** <a href="/ai-setup/apps/#corillo">Corillo</a>.
+<div class="works">
+
+**Works with:**
+- **Also mentions:** <a href="/ai-setup/apps/#corillo">Corillo</a>.
+
+</div>
+
+<section class="file">
 
 ## The hook script (<code>no&#45;em&#45;dash&#46;sh</code>) {#no-em-dash-sh}
 
 <a href="#no-em-dash-sh">Link to this file</a>
 
 A hook script that runs before a write or edit tool call and blocks it if the new text has more em dashes than the text it replaces. It tells Claude to rewrite with other punctuation.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">no-em-dash.sh</span><span class="code-meta">Shell · 46 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">#!/bin/bash
 # PreToolUse hook: block a Write or Edit that adds em dashes.
@@ -99,6 +115,20 @@ echo &quot;Blocked: this adds $((new - old)) em dash(es). Rewrite with commas, p
 exit 2
 </code></pre>
 
+</figure>
+
+</section>
+
 ## Connectors
 
 <a href="/ai-setup/apps/#corillo">Corillo</a> and <a href="/ai-setup/apps/#brega">Brega</a> connect to Claude Code, so a session can use them. Each one has its section on the <a href="/ai-setup/apps/">Apps</a> page.
+
+<nav class="page-foot">
+
+<a href="/ai-setup/">Back to AI Setup</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

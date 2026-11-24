@@ -14,7 +14,8 @@ Sets the shared rules for every session in a workspace: how to work together, wh
 - **Needs:** Nothing extra
 - **Taken out for privacy:** 5 money or health area names, 2 backup arrangements, and 2 generalized examples.
 
-**Works with:** [Close shop](https://oneillo.com/ai-setup/skills/close-shop/), [Corillo](https://oneillo.com/ai-setup/apps/#corillo), [Financial advisor](https://oneillo.com/ai-setup/agents/financial-advisor/), [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/), [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/), [Save session](https://oneillo.com/ai-setup/skills/save-session/), [Trainer](https://oneillo.com/ai-setup/agents/trainer/), [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/), and [Writer](https://oneillo.com/ai-setup/agents/writer/).
+**Works with:**
+- **Calls:** [Close shop](https://oneillo.com/ai-setup/skills/close-shop/), [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/), [Save session](https://oneillo.com/ai-setup/skills/save-session/), and [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/).
 
 ## The rules file (`CLAUDE.md`)
 
@@ -65,3 +66,12 @@ Every project folder gets a `context.md` at its root, created with the folder. U
 - Bugs and ideas for my apps and tools go in a `feedback.md` at the root of that app's or tool's folder (for example `tools/corillo/feedback.md`), the moment I mention one: newest first, the date, what I saw or want in my words, what I was doing, and a status (open, in batch N, done in build X). Make the file with the first item. The next batch or session for that app takes its work from there and marks what it built. This is separate from feedback memories, which are about how you work with me.
 - Memory, the workspace's and each agent's, holds lessons on how to work with me, where things are, and what was decided. What is true about me (profile, plans, and the like) goes in the knowledge base, with at most a one-line pointer in memory. An agent that finds such a fact in its memory offers to move it, with my OK, at its next real session with me.
 ```
+
+Previous: [Global rules](https://oneillo.com/ai-setup/rules/global/).
+Next: [Knowledge base rules](https://oneillo.com/ai-setup/rules/knowledge-base/).
+
+[Back to Rules](https://oneillo.com/ai-setup/rules/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

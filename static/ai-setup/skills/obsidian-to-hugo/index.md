@@ -17,7 +17,18 @@ Converts an Obsidian blog post to Hugo-ready Markdown, fixes links and pictures,
 
 This skill is specific to Orlando's blog. It is here because it is part of his setup, and its steps may still be worth borrowing.
 
-**Works with:** [Corillo](https://oneillo.com/ai-setup/apps/#corillo), [Relay](https://oneillo.com/ai-setup/skills/relay/), and [Writer](https://oneillo.com/ai-setup/agents/writer/).
+**Works with:**
+- **Calls:** [Writer](https://oneillo.com/ai-setup/agents/writer/).
+- **Called by:** [Publish post](https://oneillo.com/ai-setup/skills/publish-post/) and [Writer](https://oneillo.com/ai-setup/agents/writer/).
+- **Also mentions:** [Corillo](https://oneillo.com/ai-setup/apps/#corillo) and [Relay](https://oneillo.com/ai-setup/skills/relay/).
+
+## Files on this page
+
+| File | What it is | Size |
+| --- | --- | --- |
+| `SKILL.md` | The instructions for the skill that converts an Obsidian blog post to Hugo Markdown. | 52 lines |
+| `convert.py` | The script that turns an Obsidian post into Hugo Markdown. | 323 lines |
+| `test_convert.py` | The tests for the conversion script, run on made-up posts in a temporary folder. | 93 lines |
 
 ## The skill file (`SKILL.md`)
 
@@ -515,3 +526,12 @@ class ConvertTest(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+
+Previous: [Connect](https://oneillo.com/ai-setup/skills/connect/).
+Next: [Publish post](https://oneillo.com/ai-setup/skills/publish-post/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

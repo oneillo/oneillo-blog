@@ -1,0 +1,428 @@
+/* Written by setup-share: the AI Setup section's look, Adoquín (design.md section 10). Linked only from the section's two layouts, and every rule is held to the section's pages (.ai-setup), so no other page of the blog changes. A publish puts its own copy back here, so change the copy in setup-share instead. */
+
+/* The blog's frame stays as it is: header, menu, footer, font, column, background and
+   the theme's switch between light and dark. Inside the section, the parts take
+   Corillo's Adoquín colors: cobblestone blue-grey for links and labels, light cards on
+   the blog's grey, light code blocks with a bar, one façade pastel per kind (rules
+   mint, skills sky, agents lilac, hooks and settings ochre, apps peach, walk-throughs
+   rose, overviews the plain chip), and flamboyán for "Start here".
+   Nothing here loads from another site: no font, picture or other stylesheet. */
+
+/* ------------------------------------------------------------ colors, light */
+
+.ai-setup {
+  --as-strong: var(--primary);
+  --as-text: var(--content);
+  --as-soft: #55606A;
+  --as-card: #FFFFFF;
+  --as-card-line: #D2D8D7;
+  --as-divider: #E3E7E6;
+  --as-raw: #F3F5F4;
+  --as-chip: #EAEDEC;
+  --as-button: #FFFFFF;
+  --as-control-line: #758484;
+  --as-accent: #4F6D7A;
+  --as-accent-ink: #36505B;
+  --as-accent-tint: #DCE6EA;
+  --as-accent-wash: #E6EEF2;
+  --as-accent-line: #C3D3DA;
+  --as-link: #36505B;
+  --as-coral: #CC7354;
+  --as-coral-tint: #F6DDD3;
+  --as-coral-ink: #8A3F2A;
+  --as-warn-tint: #F8E7E0;
+  --as-warn-line: #EBC9BC;
+  --as-tag-ink: #3B3F42;
+  --as-k-skill: #B9CEE2; --as-k-skill-edge: #54697E;
+  --as-k-rule: #B4D7C7;  --as-k-rule-edge: #4A6F5F;
+  --as-k-agent: #CEC1DF; --as-k-agent-edge: #6E617F;
+  --as-k-hook: #E8D49C;  --as-k-hook-edge: #7A6523;
+  --as-k-app: #EFC9A9;   --as-k-app-edge: #855E3C;
+  --as-k-guide: #E9C0C0; --as-k-guide-edge: #865D5E;
+  --as-garita-stone: var(--as-k-hook);
+  --as-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* ------------------------------------------------------------ colors, dark */
+
+/* The blog's own switch: the theme sets data-theme="dark" on the page. */
+:root[data-theme="dark"] .ai-setup {
+  --as-soft: #A3AEB4;
+  --as-card: #24292D;
+  --as-card-line: #353D42;
+  --as-divider: #30373C;
+  --as-raw: #2A3135;
+  --as-chip: #2E363A;
+  --as-button: #313A3F;
+  --as-control-line: #808C94;
+  --as-accent: #84A6B5;
+  --as-accent-ink: #A9C6D3;
+  --as-accent-tint: #2C3C43;
+  --as-accent-wash: #253238;
+  --as-accent-line: #3E535C;
+  --as-link: #A9C6D3;
+  --as-coral: #B9735C;
+  --as-coral-tint: #4A2E25;
+  --as-coral-ink: #EBA48D;
+  --as-warn-tint: #36261F;
+  --as-warn-line: #563A30;
+  --as-tag-ink: #EEF0EF;
+  --as-k-skill: #4C6278; --as-k-skill-edge: #B9CEE2;
+  --as-k-rule: #48675A;  --as-k-rule-edge: #B4D7C7;
+  --as-k-agent: #625779; --as-k-agent-edge: #CEC1DF;
+  --as-k-hook: #74653B;  --as-k-hook-edge: #E8D49C;
+  --as-k-app: #7A5A43;   --as-k-app-edge: #EFC9A9;
+  --as-k-guide: #754F52; --as-k-guide-edge: #E9C0C0;
+  --as-garita-stone: var(--as-k-app);
+}
+
+/* The system setting, when the page has no switch of its own (scripts off). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .ai-setup {
+    --as-soft: #A3AEB4;
+    --as-card: #24292D;
+    --as-card-line: #353D42;
+    --as-divider: #30373C;
+    --as-raw: #2A3135;
+    --as-chip: #2E363A;
+    --as-button: #313A3F;
+    --as-control-line: #808C94;
+    --as-accent: #84A6B5;
+    --as-accent-ink: #A9C6D3;
+    --as-accent-tint: #2C3C43;
+    --as-accent-wash: #253238;
+    --as-accent-line: #3E535C;
+    --as-link: #A9C6D3;
+    --as-coral: #B9735C;
+    --as-coral-tint: #4A2E25;
+    --as-coral-ink: #EBA48D;
+    --as-warn-tint: #36261F;
+    --as-warn-line: #563A30;
+    --as-tag-ink: #EEF0EF;
+    --as-k-skill: #4C6278; --as-k-skill-edge: #B9CEE2;
+    --as-k-rule: #48675A;  --as-k-rule-edge: #B4D7C7;
+    --as-k-agent: #625779; --as-k-agent-edge: #CEC1DF;
+    --as-k-hook: #74653B;  --as-k-hook-edge: #E8D49C;
+    --as-k-app: #7A5A43;   --as-k-app-edge: #EFC9A9;
+    --as-k-guide: #754F52; --as-k-guide-edge: #E9C0C0;
+    --as-garita-stone: var(--as-k-app);
+  }
+}
+
+/* ------------------------------------------------------------ a link's kind, by its address */
+
+.ai-setup a[href*="/ai-setup/"] { --as-kind: var(--as-chip); --as-kind-edge: var(--as-soft); }
+.ai-setup a[href*="/ai-setup/rules/"] { --as-kind: var(--as-k-rule); --as-kind-edge: var(--as-k-rule-edge); }
+.ai-setup a[href*="/ai-setup/skills/"] { --as-kind: var(--as-k-skill); --as-kind-edge: var(--as-k-skill-edge); }
+.ai-setup a[href*="/ai-setup/agents/"] { --as-kind: var(--as-k-agent); --as-kind-edge: var(--as-k-agent-edge); }
+.ai-setup a[href*="/ai-setup/apps/"] { --as-kind: var(--as-k-app); --as-kind-edge: var(--as-k-app-edge); }
+.ai-setup a[href*="/ai-setup/settings/"] { --as-kind: var(--as-k-hook); --as-kind-edge: var(--as-k-hook-edge); }
+.ai-setup a[href*="/ai-setup/guides/"] { --as-kind: var(--as-k-guide); --as-kind-edge: var(--as-k-guide-edge); }
+
+/* A card in a list of cards takes the kind of the link it starts with. Kept apart from the rules
+   above: a browser that doesn't know :has() drops only these. */
+.ai-setup li:has(> a:first-child[href*="/ai-setup/"]) { --as-kind: var(--as-chip); --as-kind-edge: var(--as-soft); }
+.ai-setup li:has(> a:first-child[href*="/ai-setup/rules/"]) { --as-kind: var(--as-k-rule); --as-kind-edge: var(--as-k-rule-edge); }
+.ai-setup li:has(> a:first-child[href*="/ai-setup/skills/"]) { --as-kind: var(--as-k-skill); --as-kind-edge: var(--as-k-skill-edge); }
+.ai-setup li:has(> a:first-child[href*="/ai-setup/agents/"]) { --as-kind: var(--as-k-agent); --as-kind-edge: var(--as-k-agent-edge); }
+.ai-setup li:has(> a:first-child[href*="/ai-setup/apps/"]) { --as-kind: var(--as-k-app); --as-kind-edge: var(--as-k-app-edge); }
+.ai-setup li:has(> a:first-child[href*="/ai-setup/settings/"]) { --as-kind: var(--as-k-hook); --as-kind-edge: var(--as-k-hook-edge); }
+.ai-setup li:has(> a:first-child[href*="/ai-setup/guides/"]) { --as-kind: var(--as-k-guide); --as-kind-edge: var(--as-k-guide-edge); }
+
+/* ------------------------------------------------------------ the text */
+
+.ai-setup .post-content h2 { margin: 40px 0 14px; color: var(--as-strong); font-size: 26px; line-height: 1.25; }
+.ai-setup .post-content a { color: var(--as-link); box-shadow: 0 1px 0 var(--as-accent-line); }
+.ai-setup .post-content a:hover { box-shadow: 0 1px 0 var(--as-accent); }
+.ai-setup .post-content a code { box-shadow: none; }
+/* The theme lays code out in rows and columns, which would put a marked placeholder on a line of its own. */
+.ai-setup .post-content pre code { display: block; }
+.ai-setup .post-content :not(pre) > code { margin: 0 1px; padding: 2px 5px; background: var(--as-chip); border-radius: 4px; }
+/* A file's name in a heading reads as part of the heading, as in the mockup. Weighs the
+   same as the rule above, and wins by coming after it. */
+.ai-setup .post-content h2 > code, .ai-setup .post-content h3 > code { margin: 0; padding: 0; background: none; font: inherit; }
+/* A code block with no bar (How to borrow's prompt): the same light block as the
+   files'. The theme gives every block its dark background with !important. */
+.ai-setup .post-content > pre { margin: 12px 0 24px; border: 1px solid var(--as-card-line); border-radius: 8px; background: var(--as-raw) !important; }
+.ai-setup .post-content > pre > code {
+  padding: 14px 16px; border-radius: 8px; background: var(--as-raw) !important; color: var(--as-text);
+  font-size: 13.5px; line-height: 1.55;
+}
+.ai-setup .post-description { color: var(--as-soft); }
+
+/* ------------------------------------------------------------ tags and chips */
+
+.ai-setup .tag {
+  display: inline-flex; align-items: center; height: 22px; padding: 0 8px;
+  border-radius: 4px; background: var(--as-chip); color: var(--as-tag-ink);
+  font-size: 12px; font-weight: 600; line-height: 16px; white-space: nowrap;
+}
+.ai-setup .tag-skill { background: var(--as-k-skill); }
+.ai-setup .tag-rule { background: var(--as-k-rule); }
+.ai-setup .tag-agent { background: var(--as-k-agent); }
+.ai-setup .tag-hook, .ai-setup .tag-settings { background: var(--as-k-hook); }
+.ai-setup .tag-app { background: var(--as-k-app); }
+.ai-setup .tag-guide { background: var(--as-k-guide); }
+.ai-setup .tag-overview { background: var(--as-chip); color: var(--as-soft); }
+
+/* The label's "AI" chip, drawn here as the hub box's is, so it is not a word on the page */
+.ai-setup .ai-setup-label::before {
+  content: "AI"; display: inline-flex; align-items: center; justify-content: center; height: 20px; margin-right: 6px;
+  padding: 0 6px; border-radius: 4px; background: var(--as-accent-tint); color: var(--as-accent-ink);
+  font-size: 11px; font-weight: 700; line-height: 16px; vertical-align: 1px;
+}
+
+/* ------------------------------------------------------------ the head of a page */
+
+.ai-setup .ai-setup-label { margin: 14px 0 24px; color: var(--as-soft); font-size: 14px; line-height: 20px; }
+.ai-setup .ai-setup-label a { color: var(--as-link); }
+
+.ai-setup .hub-head { display: flex; gap: 24px; align-items: center; justify-content: space-between; }
+.ai-setup .hub-head-text { min-width: 0; }
+.ai-setup .hub-scene { flex: none; width: 112px; }
+.ai-setup .garita { display: block; width: 100%; height: auto; }
+.ai-setup .garita .sky { fill: var(--as-accent-tint); }
+.ai-setup .garita .wave { stroke: var(--as-accent-tint); }
+.ai-setup .garita .sea { fill: var(--as-k-skill); }
+.ai-setup .garita .water { stroke: var(--as-k-skill); }
+.ai-setup .garita .stone { fill: var(--as-garita-stone); }
+.ai-setup .garita .ink { stroke: var(--as-accent); }
+.ai-setup .garita .slit { fill: var(--as-accent); }
+
+.ai-setup .ai-box {
+  position: relative; margin: 0 0 32px; padding: 14px 16px 14px 56px;
+  border-radius: 8px; background: var(--as-accent-wash); color: var(--as-text); font-size: 15px; line-height: 22px;
+}
+.ai-setup .ai-box p { margin: 0; }
+.ai-setup .ai-box p + p { margin-top: 8px; }
+.ai-setup .ai-box blockquote { margin: 0; padding: 0; border: 0; }
+.ai-setup .ai-box::before {
+  content: "AI"; position: absolute; left: 16px; top: 15px; display: inline-flex; align-items: center;
+  justify-content: center; height: 20px; padding: 0 6px; border-radius: 4px;
+  background: var(--as-accent-tint); color: var(--as-accent-ink); font-size: 11px; font-weight: 700; line-height: 16px;
+}
+
+/* ------------------------------------------------------------ the hub's blocks */
+
+.ai-setup .block { margin: 0 0 40px; }
+.ai-setup .block > h2 { margin-top: 0; }
+.ai-setup .block p { line-height: 1.6; }
+.ai-setup .block p:last-child { margin-bottom: 0; }
+
+/* The diagram's text, folded under it */
+.ai-setup .ai-setup-diagram-text { margin: 0 0 40px; color: var(--as-soft); font-size: 14px; line-height: 20px; }
+.ai-setup .ai-setup-diagram-text summary { color: var(--as-link); cursor: pointer; }
+
+/* Start here: each pick a card, numbered in flamboyán */
+.ai-setup .start h2 { display: flex; align-items: center; gap: 10px; }
+.ai-setup .start h2::before { content: ""; flex: none; width: 4px; height: 1.1em; border-radius: 2px; background: var(--as-coral); }
+.ai-setup .start ol {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0; padding: 0;
+  list-style: none; counter-reset: as-start;
+}
+.ai-setup .start ol > li {
+  counter-increment: as-start; margin: 0; padding: 16px;
+  border: 1px solid var(--as-card-line); border-radius: 8px; background: var(--as-card);
+  color: var(--as-soft); font-size: 14px; line-height: 20px;
+}
+.ai-setup .start ol > li::before {
+  content: counter(as-start); display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; margin-bottom: 10px; border-radius: 50%;
+  background: var(--as-coral-tint); color: var(--as-coral-ink); font-size: 14px; font-weight: 700; line-height: 1;
+}
+.ai-setup .start ol > li > a { color: var(--as-strong); font-size: 17px; font-weight: 700; line-height: 1.3; box-shadow: none; }
+.ai-setup .start ol > li > a:hover { color: var(--as-link); }
+
+/* By what you want to do: each task, then its links as chips */
+.ai-setup .goals ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--as-divider); }
+.ai-setup .goals ul > li {
+  position: relative; margin: 0; padding: 12px 0 12px calc(38% + 12px);
+  border-bottom: 1px solid var(--as-divider); color: var(--as-soft); font-size: 14px; line-height: 20px;
+}
+.ai-setup .goals ul > li > strong:first-child {
+  position: absolute; left: 0; top: 16px; width: 38%; color: var(--as-strong); font-size: 15px; font-weight: 600; line-height: 22px;
+}
+.ai-setup .goals li a {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 28px; margin: 2px 0; padding: 3px 10px;
+  border: 1px solid var(--as-card-line); border-radius: 6px; background: var(--as-card); color: var(--as-text);
+  font-size: 14px; font-weight: 500; line-height: 20px; box-shadow: none;
+}
+.ai-setup .goals li a:hover { border-color: var(--as-accent); color: var(--as-link); }
+.ai-setup .goals li a::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--as-kind-edge, var(--as-soft)); }
+
+/* The tables: the files on a page, the rules */
+.ai-setup .files table, .ai-setup .rules-table table {
+  display: table; width: 100%; margin: 0; border-collapse: collapse; font-size: 15px; line-height: 22px;
+}
+.ai-setup .files th, .ai-setup .rules-table th {
+  min-width: 0; padding: 0 12px 8px 0; border-bottom: 2px solid var(--as-card-line);
+  color: var(--as-soft); font-size: 13px; font-weight: 600; line-height: 18px; text-align: left;
+}
+/* A cell's rules weigh more than the theme's own for a cell, (0,3,2), or its padding and
+   border win, on a phone too: hence ".post-content ... tbody tr td". */
+.ai-setup .post-content .files tbody tr td, .ai-setup .post-content .rules-table tbody tr td {
+  min-width: 0; padding: 12px 12px 12px 0; border-bottom: 1px solid var(--as-divider);
+  vertical-align: top; text-align: left;
+}
+
+/* The pieces: cards side by side, each with its kind's color on top */
+.ai-setup .piece-grid ul {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 0; padding: 0; list-style: none;
+}
+.ai-setup .piece-grid { margin: 0 0 var(--content-gap, 20px); }
+.ai-setup .piece-grid li {
+  margin: 0; padding: 14px 16px 16px; border: 1px solid var(--as-card-line);
+  border-top: 4px solid var(--as-kind, var(--as-card-line)); border-radius: 8px; background: var(--as-card);
+  color: var(--as-soft); font-size: 14px; line-height: 20px;
+}
+.ai-setup .piece-grid li > a:first-child { color: var(--as-strong); font-size: 18px; font-weight: 700; line-height: 1.3; box-shadow: none; }
+.ai-setup .piece-grid li > a:first-child:hover { color: var(--as-link); }
+
+/* Walk-throughs: rows, a dot in their rose */
+.ai-setup .guides ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--as-divider); }
+.ai-setup .guides li { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--as-divider); color: var(--as-soft); font-size: 15px; line-height: 22px; }
+.ai-setup .guides li > a:first-child { color: var(--as-strong); font-weight: 600; box-shadow: none; }
+.ai-setup .guides li > a:first-child::before {
+  content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 10px; border-radius: 50%;
+  background: var(--as-kind-edge, var(--as-k-guide-edge)); vertical-align: 1px;
+}
+
+/* What it runs on: one sentence, in a quiet box */
+.ai-setup .runs p { padding: 10px 14px; border-radius: 6px; background: var(--as-chip); font-size: 15px; line-height: 24px; }
+
+/* How it's made: numbered steps */
+.ai-setup .made ol { margin: 0 0 12px; padding: 0; list-style: none; counter-reset: as-step; }
+.ai-setup .made ol > li { counter-increment: as-step; position: relative; margin: 0; padding: 8px 0 8px 40px; font-size: 15px; line-height: 22px; }
+.ai-setup .made ol > li + li { border-top: 1px solid var(--as-divider); }
+.ai-setup .made ol > li::before {
+  content: counter(as-step); position: absolute; left: 0; top: 8px; width: 24px; height: 24px;
+  border-radius: 50%; background: var(--as-accent-tint); color: var(--as-accent-ink);
+  font-size: 12px; font-weight: 700; line-height: 24px; text-align: center;
+}
+.ai-setup .made p { color: var(--as-soft); font-size: 14px; line-height: 20px; }
+
+/* Last updated: a quiet box */
+.ai-setup .updated { padding: 14px 16px; border-radius: 8px; background: var(--as-chip); font-size: 14px; line-height: 20px; }
+.ai-setup .updated > h2 { margin: 0 0 4px; font-size: 15px; line-height: 20px; }
+.ai-setup .updated p { margin: 0 0 6px; }
+.ai-setup .updated a { font-weight: 600; }
+
+/* ------------------------------------------------------------ a piece's page */
+
+/* The top block: a card, the kind as a tag, each fact a label beside its value */
+.ai-setup .facts {
+  margin: 0 0 32px; border: 1px solid var(--as-card-line); border-radius: 8px; background: var(--as-card);
+  font-size: 15px; line-height: 22px;
+}
+.ai-setup .facts-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--as-divider); }
+.ai-setup .facts-head code { margin: 0; padding: 2px 6px; border-radius: 4px; background: var(--as-raw); font-size: 13px; }
+.ai-setup .facts-head .facts-files { margin-left: auto; color: var(--as-soft); font-size: 13px; }
+.ai-setup .facts > ul { margin: 0; padding: 4px 16px; list-style: none; }
+.ai-setup .facts > ul > li { position: relative; margin: 0; padding: 10px 0 10px calc(10.5em + 16px); }
+.ai-setup .facts > ul > li + li { border-top: 1px solid var(--as-divider); }
+.ai-setup .facts > ul > li > strong:first-child {
+  position: absolute; left: 0; top: 10px; width: 10.5em; color: var(--as-soft); font-size: 14px; font-weight: 600;
+}
+.ai-setup .facts code { background: var(--as-raw); }
+.ai-setup .works {
+  font-size: 15px; line-height: 22px;
+  display: grid; grid-template-columns: 10.5em 1fr; gap: 16px; padding: 12px 16px;
+  border-top: 1px solid var(--as-divider); border-radius: 0 0 8px 8px; background: var(--as-raw);
+}
+.ai-setup .works > p { margin: 0; color: var(--as-soft); font-size: 14px; font-weight: 600; }
+.ai-setup .works > p strong { font-weight: 600; }
+.ai-setup .works ul { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; padding: 0; list-style: none; }
+.ai-setup .works li { margin: 0; }
+.ai-setup .works li > strong:first-child { margin-right: 4px; color: var(--as-soft); font-weight: 500; }
+.ai-setup .works a { font-weight: 600; }
+
+/* Works with, on a page with no top card (Settings and hooks, Apps): a card of its own */
+.ai-setup .post-content > .works { margin: 0 0 32px; border: 1px solid var(--as-card-line); border-radius: 8px; }
+
+/* The files on the page, as a table */
+.ai-setup .files { margin: 0 0 40px; }
+.ai-setup .files table { font-size: 14px; line-height: 20px; }
+.ai-setup .post-content .files tbody tr td { padding: 9px 10px 9px 0; }
+.ai-setup .files td:first-child a { color: var(--as-link); font-weight: 600; box-shadow: none; }
+.ai-setup .files td:first-child code { margin: 0; padding: 0; background: none; font-size: 13px; }
+.ai-setup .files td:last-child { color: var(--as-soft); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ai-setup .files th:last-child { text-align: right; }
+
+/* The rules: the first column is the rule's link */
+.ai-setup .rules-table { margin: 0 0 24px; }
+.ai-setup .rules-table > h2 { margin-top: 40px; }
+.ai-setup .rules-table td:first-child a { font-weight: 600; }
+
+/* One file */
+.ai-setup .file { margin: 0 0 40px; padding-top: 8px; }
+.ai-setup .file > h2 { margin: 0 0 4px; }
+.ai-setup .file > h2 + p { margin: 0 0 10px; font-size: 13px; line-height: 18px; }
+.ai-setup .file > p { font-size: 15px; line-height: 22px; }
+
+/* Code: a bar with the file's name, its kind and size, and Copy */
+.ai-setup .code {
+  --code-block-bg: var(--as-raw);
+  margin: 12px 0 0; border: 1px solid var(--as-card-line); border-radius: 8px; background: var(--as-raw); overflow: hidden;
+}
+.ai-setup .code-bar {
+  display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 6px 8px 6px 14px;
+  border-bottom: 1px solid var(--as-card-line); background: var(--as-card);
+}
+.ai-setup .code-name { color: var(--as-strong); font-family: var(--as-mono); font-size: 13px; font-weight: 600; line-height: 18px; overflow-wrap: anywhere; }
+.ai-setup .code-meta { color: var(--as-soft); font-size: 12px; line-height: 16px; white-space: nowrap; }
+.ai-setup .code pre { margin: 0; padding: 0; border-radius: 0; background: var(--as-raw); }
+.ai-setup .code pre code {
+  margin: 0; padding: 14px 16px; border-radius: 0; color: var(--as-text);
+  font-size: 13.5px; line-height: 1.55; tab-size: 4;
+}
+.ai-setup .code .copy-code { display: none; }
+.ai-setup .ai-setup-copy {
+  margin-left: auto; height: 28px; padding: 0 12px; border: 1px solid var(--as-control-line); border-radius: 6px;
+  background: var(--as-button); color: var(--as-text); font: inherit; font-size: 12px; font-weight: 500; line-height: 16px; cursor: pointer;
+}
+.ai-setup .ai-setup-copy::before {
+  content: ""; display: inline-block; width: 9px; height: 10px; margin-right: 6px; border: 1.5px solid currentColor;
+  border-radius: 2px; vertical-align: -1px; box-shadow: 2px -2px 0 -0.5px var(--as-button), 2px -2px 0 1px currentColor;
+}
+.ai-setup .ph { padding: 0 2px; border-radius: 3px; background: var(--as-coral-tint); color: var(--as-coral-ink); }
+.ai-setup .fold summary { padding: 10px 14px; color: var(--as-link); font-size: 14px; font-weight: 600; line-height: 20px; cursor: pointer; }
+.ai-setup .fold[open] summary { border-bottom: 1px solid var(--as-card-line); }
+
+/* Orlando's note */
+.ai-setup .ai-setup-note { margin: 0 0 32px; padding: 14px 16px; border-left: 3px solid var(--as-coral); border-radius: 0 8px 8px 0; background: var(--as-card); }
+.ai-setup .ai-setup-note > :first-child { margin-top: 0; }
+.ai-setup .ai-setup-note > :last-child { margin-bottom: 0; }
+
+/* The foot */
+.ai-setup .page-foot { margin: 48px 0 16px; padding-top: 16px; border-top: 1px solid var(--as-divider); font-size: 15px; line-height: 22px; }
+.ai-setup .page-foot a { font-weight: 600; }
+.ai-setup .page-foot p:last-child { color: var(--as-soft); font-size: 13px; line-height: 18px; }
+
+/* ------------------------------------------------------------ a phone's width */
+
+@media (max-width: 600px) {
+  .ai-setup .post-content h2 { font-size: 23px; }
+  .ai-setup .hub-scene { width: 72px; align-self: flex-start; margin-top: 28px; }
+  .ai-setup .start ol { grid-template-columns: 1fr; }
+  .ai-setup .start ol > li::before { float: left; margin: 0 12px 4px 0; }
+  .ai-setup .piece-grid ul { grid-template-columns: 1fr; }
+  .ai-setup .facts > ul > li { padding-left: 0; }
+  .ai-setup .facts > ul > li > strong:first-child { position: static; display: block; width: auto; }
+  .ai-setup .works { grid-template-columns: 1fr; gap: 2px; }
+  /* The tables turn into stacked rows */
+  .ai-setup .ai-box { padding-left: 16px; padding-top: 44px; }
+  .ai-setup .goals ul > li { padding-left: 0; }
+  .ai-setup .goals ul > li > strong:first-child { position: static; display: block; width: auto; margin-bottom: 8px; }
+  .ai-setup .files thead, .ai-setup .rules-table thead { display: none; }
+  .ai-setup .rules-table table, .ai-setup .rules-table tbody, .ai-setup .rules-table tr, .ai-setup .rules-table td,
+  .ai-setup .files table, .ai-setup .files tbody { display: block; width: 100%; }
+  .ai-setup .rules-table tr { padding: 12px 0; border-bottom: 1px solid var(--as-divider); }
+  .ai-setup .post-content .rules-table tbody tr td { padding: 0; border: none; }
+  .ai-setup .rules-table td + td { margin-top: 4px; color: var(--as-soft); }
+  .ai-setup .files tr { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 10px 0; border-bottom: 1px solid var(--as-divider); }
+  .ai-setup .post-content .files tbody tr td { padding: 0; border: none; }
+  .ai-setup .files td:first-child { grid-column: 1; }
+  .ai-setup .files td:last-child { grid-column: 2; grid-row: 1; }
+  .ai-setup .files td:not(:first-child):not(:last-child) { grid-column: 1 / -1; color: var(--as-soft); }
+  .ai-setup .code pre code { font-size: 12.5px; }
+}

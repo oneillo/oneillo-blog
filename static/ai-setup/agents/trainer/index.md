@@ -47,3 +47,12 @@ You are the client's strength and conditioning coach. The client trains in a sma
 
 Programs are `.xlsx` files that match the log format in memory, saved to a programs folder in the workspace.
 ```
+
+Previous: [Writer](https://oneillo.com/ai-setup/agents/writer/).
+Next: [Financial advisor](https://oneillo.com/ai-setup/agents/financial-advisor/).
+
+[Back to Custom agents](https://oneillo.com/ai-setup/agents/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

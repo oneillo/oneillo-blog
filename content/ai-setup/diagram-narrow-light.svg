@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1104" width="360" height="1104" class="light" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 1148" width="360" height="1148" class="light" role="img" aria-labelledby="t d">
 <title id="t">How Orlando&#x27;s AI setup fits together.</title>
 <desc id="d">Orlando chats with a Claude Code session from the Mac or his phone. Orlando uses his apps: Corillo (review documents with an agent), Brega (a to-do list shared with agents), Pregón (publish a post), and Latido (a window onto the heartbeat). Corillo and Brega pass comments, edits, and tasks to a session and back. While Orlando is away, the Heartbeat (jobs on a timer) and the Relay (a roadmap, one fresh session per batch) start sessions. A session reads the rules at the start: global, workspace, and project. Settings and hooks check each step a session takes. A session can use 14 skills: close-shop, save-session, process-feedback, tune-setup, connect, obsidian-to-hugo, publish-prep, publish-post, publish-setup, podcast, video-title-cards, relay, heartbeat, and rex. A session can work as one of 3 custom agents: writer, trainer, and financial advisor. A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files). The files are kept under local version history and backed up to the cloud.</desc>
 <style>
@@ -48,7 +48,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 </defs>
 
 <!-- the owner, and his two ways in -->
-<path class="l-coral" d="M180 52V457" marker-end="url(#a-coral)"/>
+<path class="l-coral" d="M180 52V485" marker-end="url(#a-coral)"/>
 <path class="l-coral" d="M156 28H95a12 12 0 0 0-12 12V73" marker-end="url(#a-coral)"/>
 <circle cx="180" cy="28" r="23" fill="var(--coral)"/>
 <use href="#i-person" class="icon c-on" x="167" y="14" width="26" height="26"/>
@@ -57,95 +57,103 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 <text x="120" y="20" class="t-coral mid">uses</text>
 
 <!-- his apps -->
-<rect class="card" x="1" y="80" width="165" height="290" rx="14"/>
+<rect class="card" id="box-apps" x="1" y="80" width="165" height="318" rx="14"/>
 <text x="14" y="104" class="cap t-coral">His apps</text>
 <g transform="translate(14 120)">
+<rect class="hit" id="box-app-corillo" x="-4" y="-4" width="140" height="70" fill="none"/>
 <use href="#i-doc" class="icon c-coral" width="20" height="20"/>
 <text x="28" y="14" class="name">Corillo</text>
-<text transform="translate(28 30)"><tspan x="0" dy="0">review documents</tspan><tspan x="0" dy="14">with an agent</tspan></text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">review</tspan><tspan x="0" dy="14">documents with</tspan><tspan x="0" dy="14">an agent</tspan></text>
 </g>
-<g transform="translate(14 181)">
+<g transform="translate(14 195)">
+<rect class="hit" id="box-app-brega" x="-4" y="-4" width="140" height="70" fill="none"/>
 <use href="#i-list" class="icon c-coral" width="20" height="20"/>
 <text x="28" y="14" class="name">Brega</text>
-<text transform="translate(28 30)"><tspan x="0" dy="0">a to-do list shared</tspan><tspan x="0" dy="14">with agents</tspan></text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">a to-do list</tspan><tspan x="0" dy="14">shared with</tspan><tspan x="0" dy="14">agents</tspan></text>
 </g>
-<g transform="translate(14 242)">
+<g transform="translate(14 270)">
+<rect class="hit" id="box-app-pregon" x="-4" y="-4" width="140" height="42" fill="none"/>
 <use href="#i-horn" class="icon c-coral" width="20" height="20"/>
 <text x="28" y="14" class="name">Pregón</text>
 <text transform="translate(28 30)"><tspan x="0" dy="0">publish a post</tspan></text>
 </g>
-<g transform="translate(14 303)">
+<g transform="translate(14 331)">
+<rect class="hit" id="box-app-latido" x="-4" y="-4" width="140" height="56" fill="none"/>
 <use href="#i-window" class="icon c-coral" width="20" height="20"/>
 <text x="28" y="14" class="name">Latido</text>
-<text transform="translate(28 30)"><tspan x="0" dy="0">a window onto the</tspan><tspan x="0" dy="14">heartbeat</tspan></text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">a window onto</tspan><tspan x="0" dy="14">the heartbeat</tspan></text>
 </g>
 
 <!-- while he is away -->
 <rect class="card" x="194" y="80" width="165" height="182" rx="14"/>
 <text x="208" y="104" class="cap t-slate">While he is away</text>
 <g transform="translate(208 120)">
+<rect class="hit" id="box-away-heartbeat" x="-4" y="-4" width="140" height="42" fill="none"/>
 <use href="#i-pulse" class="icon c-slate" width="20" height="20"/>
 <text x="28" y="14" class="name">Heartbeat</text>
 <text transform="translate(28 30)"><tspan x="0" dy="0">jobs on a timer</tspan></text>
 </g>
 <g transform="translate(208 181)">
+<rect class="hit" id="box-away-relay" x="-4" y="-4" width="140" height="70" fill="none"/>
 <use href="#i-relay" class="icon c-slate" width="20" height="20"/>
 <text x="28" y="14" class="name">Relay</text>
-<text transform="translate(28 30)"><tspan x="0" dy="0">a roadmap, one</tspan><tspan x="0" dy="14">fresh session per</tspan><tspan x="0" dy="14">batch</tspan></text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">a roadmap, one</tspan><tspan x="0" dy="14">fresh session</tspan><tspan x="0" dy="14">per batch</tspan></text>
 </g>
 
-<path class="l-coral" d="M83 378V422" marker-start="url(#a-coral)" marker-end="url(#a-coral)"/>
-<text transform="translate(94 391)" class="t-coral"><tspan x="0" dy="0">comments,</tspan><tspan x="0" dy="14">edits,</tspan><tspan x="0" dy="14">and tasks</tspan></text>
-<path class="l-slate" d="M277 270V422" marker-end="url(#a-slate)"/>
-<text transform="translate(288 342)" class="t-slate"><tspan x="0" dy="0">start</tspan><tspan x="0" dy="15">sessions</tspan></text>
-<text x="189" y="410" class="t-coral">chats</text>
+<path class="l-coral" d="M83 406V450" marker-start="url(#a-coral)" marker-end="url(#a-coral)"/>
+<text transform="translate(94 419)" class="t-coral"><tspan x="0" dy="0">comments,</tspan><tspan x="0" dy="14">edits,</tspan><tspan x="0" dy="14">and tasks</tspan></text>
+<path class="l-slate" d="M277 270V450" marker-end="url(#a-slate)"/>
+<text transform="translate(288 356)" class="t-slate"><tspan x="0" dy="0">start</tspan><tspan x="0" dy="15">sessions</tspan></text>
+<text x="189" y="438" class="t-coral">chats</text>
 
 <!-- Claude Code: placed below the taller card -->
-<g transform="translate(0 430)">
-<rect x="0" y="0" width="360" height="394" rx="18" fill="var(--slate-tint)"/>
+<g transform="translate(0 458)">
+<rect x="0" y="0" width="360" height="410" rx="18" fill="var(--slate-tint)"/>
 <text x="16" y="25" class="name t-slate">Claude Code</text>
 <rect x="95" y="33" width="170" height="48" rx="24" fill="var(--slate)"/>
 <text x="180" y="63" class="big on mid">A session</text>
 <path class="l-coral" d="M180 0V27" marker-end="url(#a-coral)"/>
 
+<rect class="hit" id="box-rules" x="12" y="96" width="160" height="70" fill="none"/>
 <use href="#i-rules" class="icon c-slate" x="16" y="100" width="20" height="20"/>
 <text x="44" y="114" class="name">Rules</text>
-<text transform="translate(44 130)" class="t-slate"><tspan x="0" dy="0">read at the start: global,</tspan><tspan x="0" dy="14">workspace, and project</tspan></text>
-<use href="#i-guard" class="icon c-slate" x="190" y="100" width="20" height="20"/>
-<text x="218" y="114" class="name">Settings and hooks</text>
-<text x="218" y="130" class="t-slate">check each step</text>
+<text transform="translate(44 130)" class="t-slate"><tspan x="0" dy="0">read at the start:</tspan><tspan x="0" dy="14">global, workspace,</tspan><tspan x="0" dy="14">and project</tspan></text>
+<rect class="hit" id="box-settings" x="172" y="96" width="184" height="40" fill="none"/>
+<use href="#i-guard" class="icon c-slate" x="176" y="100" width="20" height="20"/>
+<text x="200" y="114" class="name">Settings and hooks</text>
+<text x="200" y="130" class="t-slate">check each step</text>
 
-<rect x="14" y="176" width="332" height="112" rx="12" fill="var(--card)"/>
+<rect id="box-skills" x="14" y="176" width="332" height="128" rx="12" fill="var(--card)"/>
 <use href="#i-skill" class="icon c-slate" x="28" y="189" width="20" height="20"/>
 <text x="56" y="204" class="name">14 skills</text>
 <text x="332" y="204" class="end">written routines</text>
-<text transform="translate(30 226)" class="t-slate"><tspan x="0" dy="0">close-shop, save-session, process-feedback,</tspan><tspan x="0" dy="16">tune-setup, connect, obsidian-to-hugo, publish-prep,</tspan><tspan x="0" dy="16">publish-post, publish-setup, podcast, video-title-cards,</tspan><tspan x="0" dy="16">relay, heartbeat, and rex</tspan></text>
+<text transform="translate(30 226)" class="t-slate"><tspan x="0" dy="0">close-shop, save-session, process-feedback,</tspan><tspan x="0" dy="16">tune-setup, connect, obsidian-to-hugo,</tspan><tspan x="0" dy="16">publish-prep, publish-post, publish-setup,</tspan><tspan x="0" dy="16">podcast, video-title-cards, relay, heartbeat,</tspan><tspan x="0" dy="16">and rex</tspan></text>
 
-<g transform="translate(0 298)">
-<rect x="14" y="0" width="332" height="84" rx="12" fill="var(--card)"/>
+<g transform="translate(0 314)">
+<rect id="box-agents" x="14" y="0" width="332" height="84" rx="12" fill="var(--card)"/>
 <use href="#i-agents" class="icon c-slate" x="28" y="13" width="20" height="20"/>
 <text x="56" y="28" class="name">3 custom agents</text>
 <g transform="translate(28 44)">
-<rect width="54" height="26" rx="13" fill="var(--slate-tint)"/>
-<text x="27" y="17.5" class="mid t-slate">writer</text>
+<rect id="box-agent-writer" width="61" height="26" rx="13" fill="var(--slate-tint)"/>
+<text x="30.5" y="17.5" class="mid t-slate">writer</text>
 </g>
-<g transform="translate(88 44)">
-<rect width="58" height="26" rx="13" fill="var(--slate-tint)"/>
-<text x="29" y="17.5" class="mid t-slate">trainer</text>
+<g transform="translate(95 44)">
+<rect id="box-agent-trainer" width="65" height="26" rx="13" fill="var(--slate-tint)"/>
+<text x="32.5" y="17.5" class="mid t-slate">trainer</text>
 </g>
-<g transform="translate(152 44)">
-<rect width="112" height="26" rx="13" fill="var(--slate-tint)"/>
-<text x="56" y="17.5" class="mid t-slate">financial advisor</text>
+<g transform="translate(166 44)">
+<rect id="box-agent-financial-advisor" width="130" height="26" rx="13" fill="var(--slate-tint)"/>
+<text x="65" y="17.5" class="mid t-slate">financial advisor</text>
 </g>
 </g>
 </g>
 
-<path class="l-slate" d="M180 832V860" marker-start="url(#a-slate)" marker-end="url(#a-slate)"/>
-<text x="192" y="851" class="t-slate">reads and writes</text>
+<path class="l-slate" d="M180 876V904" marker-start="url(#a-slate)" marker-end="url(#a-slate)"/>
+<text x="192" y="895" class="t-slate">reads and writes</text>
 
 <!-- files -->
-<g transform="translate(0 868)">
-<rect class="card" x="1" y="0" width="358" height="232" rx="14"/>
+<g transform="translate(0 912)">
+<rect class="card" id="box-files" x="1" y="0" width="358" height="232" rx="14"/>
 <text x="16" y="25" class="cap">Files on the Mac</text>
 <g transform="translate(16 42)">
 <use href="#i-book" class="icon c-ink" width="20" height="20"/>
@@ -160,7 +168,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 <g transform="translate(16 102)">
 <use href="#i-tool" class="icon c-ink" width="20" height="20"/>
 <text x="28" y="14" class="name">Tools</text>
-<text transform="translate(28 30)"><tspan x="0" dy="0">finished and reusable</tspan></text>
+<text transform="translate(28 30)"><tspan x="0" dy="0">finished and</tspan><tspan x="0" dy="14">reusable</tspan></text>
 </g>
 <g transform="translate(180 102)">
 <use href="#i-scratch" class="icon c-ink" width="20" height="20"/>

@@ -45,3 +45,9 @@ Not public yet.
 ## The relay
 
 Its full text is on its skill page: [Relay](https://oneillo.com/ai-setup/skills/relay/).
+
+[Back to AI Setup](https://oneillo.com/ai-setup/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

@@ -15,7 +15,8 @@ Links new knowledge base notes to concept notes, builds concept notes for recurr
 - **To make it yours:** Put your own values where you see `<area>` and `<note>`.
   Taken out for privacy: 3 paths, 1 list of private folders, and 2 names.
 
-**Works with:** [Close shop](https://oneillo.com/ai-setup/skills/close-shop/).
+**Works with:**
+- **Also mentions:** [Close shop](https://oneillo.com/ai-setup/skills/close-shop/).
 
 ## The skill file (`SKILL.md`)
 
@@ -100,3 +101,12 @@ Link both ways at the first mention, when the connection is real. A blog post re
 
 For a big subject, agents can split the candidates, but only one agent edits a given concept note or a given source note at a time. Give each agent its own list of concepts, and collect links into other agents' notes in a report for one agent to apply.
 ````
+
+Previous: [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/).
+Next: [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

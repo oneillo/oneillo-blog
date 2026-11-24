@@ -15,7 +15,10 @@ Researches current Anthropic guidance, updates a guidance file, and proposes spe
 - **To make it yours:** Put your own values where you see `<project-folder>`.
   Taken out for privacy: 1 project folder and 1 path.
 
-**Works with:** [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/) and [Save session](https://oneillo.com/ai-setup/skills/save-session/).
+**Works with:**
+- **Calls:** [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/).
+- **Called by:** [Close shop](https://oneillo.com/ai-setup/skills/close-shop/), [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/), and [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/).
+- **Also mentions:** [Save session](https://oneillo.com/ai-setup/skills/save-session/).
 
 ## The skill file (`SKILL.md`)
 
@@ -76,3 +79,12 @@ Write `~/ai/projects/ai-setup/<yyyymmdd>-tune-setup/proposals.md`: a short summa
 - Never put this material in `~/ai/CLAUDE.md` or workspace memory; every agent loads those.
 - Say plainly when guidance conflicts with how Orlando likes to work, and let Orlando decide.
 ```
+
+Previous: [Save session](https://oneillo.com/ai-setup/skills/save-session/).
+Next: [Connect](https://oneillo.com/ai-setup/skills/connect/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

@@ -14,4 +14,10 @@ Sets the rules agents follow to find, write, link, and check notes in a knowledg
 
 Described only: its text is not shared.
 
-**Works with:** [Close shop](https://oneillo.com/ai-setup/skills/close-shop/), [Connect](https://oneillo.com/ai-setup/skills/connect/), [Corillo](https://oneillo.com/ai-setup/apps/#corillo), and [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/).
+Previous: [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/).
+
+[Back to Rules](https://oneillo.com/ai-setup/rules/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

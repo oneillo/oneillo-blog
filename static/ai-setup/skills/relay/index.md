@@ -15,7 +15,25 @@ Runs a project's roadmap unattended as a relay of fresh Claude Code sessions, ea
 - **To make it yours:** Put your own values where you see `<amount>` and `<default-budget>`.
   Taken out for privacy: 15 dates and incident specifics, 7 amounts, 1 keychain service name, and 1 private project name
 
-**Works with:** [Corillo](https://oneillo.com/ai-setup/apps/#corillo), [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/), [Pregón](https://oneillo.com/ai-setup/apps/#pregon), and [Rex](https://oneillo.com/ai-setup/skills/rex/).
+**Works with:**
+- **Called by:** [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/).
+- **Also mentions:** [Corillo](https://oneillo.com/ai-setup/apps/#corillo), [Pregón](https://oneillo.com/ai-setup/apps/#pregon), and [Rex](https://oneillo.com/ai-setup/skills/rex/).
+
+## Files on this page
+
+| File | What it is | Size |
+| --- | --- | --- |
+| `SKILL.md` | The main guide for the relay skill. | 104 lines |
+| `builder-brief.md` | The brief every builder agent in a relay batch reads first, covering where to work, how to prove the work, and what to put in the final report. | 41 lines |
+| `lead.md` | The instructions a relay lead session follows to lead one batch of a roadmap, from reading the plan to handing off to the next session. | 93 lines |
+| `reviewer-brief.md` | The brief for the fresh reviewer who reads a finished relay batch, with the rules it works under, what to look for, and the form of its findings. | 48 lines |
+| `roadmap-template.md` | The blank form for a project's `roadmap.md`, with its Controls, decisions table, batches, and Log, which the relay scripts read. | 58 lines |
+| `lead-settings.json` | The settings every relay lead session starts with, which turn any permission question into a "no" so a lead never waits on an answer. | 5 lines |
+| `close-pane-later.sh` | Closes a Rex pane once the session in it has been idle for a while, so finished lead sessions don't pile up. `start-lead.sh` starts it, and it can also be run by hand. | 89 lines |
+| `memory-fuse.sh` | Watches the Mac's biggest processes while a relay lead runs and stops any single process a lead started that grows past a quarter of the Mac's memory. `start-lead.sh` starts it, and it can be run with `say` to see what it would stop. | 220 lines |
+| `sdk-run.py` | Runs one Claude Code session through the Agent SDK on an API key, with a hard spending cap, and logs each run's cost. `start-lead.sh` uses it for relays set to `sdk` billing, and it can be run by hand. | 154 lines |
+| `start-lead.sh` | Starts a fresh Claude Code session to lead the next batch of a project's roadmap, puts finished lead panes away, and with options says what it would start or where the relay stands. | 619 lines |
+| `watch-relay.zsh` | Watches one relay from another session and exits with an "EVENT:" line when a batch finishes, no lead is running, the relay's sessions go quiet for 30 minutes, or a time limit passes. | 46 lines |
 
 ## The skill file (`SKILL.md`)
 
@@ -1584,3 +1602,12 @@ while true; do
   fi
 done
 ```
+
+Previous: [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/).
+Next: [Rex](https://oneillo.com/ai-setup/skills/rex/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

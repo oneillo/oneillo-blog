@@ -19,7 +19,11 @@ madeBy: "setup-share"
 
 <div class="post-description">Coaches strength training: builds custom training blocks, adjusts for recovery, and delivers programs as spreadsheets for a workout log.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+
+<section class="facts facts-agent">
+
+<div class="facts-head"><span class="tag tag-agent">Agent</span></div>
 
 - **What it is:** Trainer is a Claude Code custom agent that acts as a strength coach, builds custom training blocks, and delivers them as spreadsheets for a workout log.
 - **How it starts:** Claude hands it a task that fits its description, or you ask for it by name.
@@ -27,11 +31,18 @@ madeBy: "setup-share"
 - **Needs:** uv, Python with openpyxl, and Excel
 - **Taken out for privacy:** 4 paths, 5 training and body details, 1 family detail, 1 name, and 1 schedule detail.
 
+</section>
+
+<section class="file">
+
 ## The agent file (<code>trainer&#46;md</code>) {#trainer-md}
 
 <a href="#trainer-md">Link to this file</a>
 
 The prompt for a strength coach agent. It sets the coach's role, what to check before programming, the hard limits on a session, and how programs are delivered.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">trainer.md</span><span class="code-meta">Markdown · 27 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: trainer
@@ -61,3 +72,20 @@ You are the client&#x27;s strength and conditioning coach. The client trains in 
 
 Programs are `.xlsx` files that match the log format in memory, saved to a programs folder in the workspace.
 </code></pre>
+
+</figure>
+
+</section>
+
+<nav class="page-foot">
+
+Previous: <a href="/ai-setup/agents/writer/">Writer</a>.
+Next: <a href="/ai-setup/agents/financial-advisor/">Financial advisor</a>.
+
+<a href="/ai-setup/agents/">Back to Custom agents</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

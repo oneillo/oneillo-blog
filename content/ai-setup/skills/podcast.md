@@ -19,7 +19,11 @@ madeBy: "setup-share"
 
 <div class="post-description">Turns source documents into a two-host podcast-style MP3 by writing a script, then rendering it locally with a text-to-speech voice.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+
+<section class="facts facts-skill">
+
+<div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/podcast</code></span></div>
 
 - **What it is:** Podcast is a Claude Code skill that turns source documents into a two-host audio conversation and renders it to an MP3 on a Mac.
 - **How it starts:** You type <code>&#47;podcast</code>. Claude can also pick it up when it fits.
@@ -28,11 +32,18 @@ madeBy: "setup-share"
 - **To make it yours:** Put your own values where you see <code>&#60;series name&#62;</code>.
   Taken out for privacy: 1 family detail, 3 career details, and 1 money detail.
 
+</section>
+
+<section class="file">
+
 ## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
 <a href="#skill-md">Link to this file</a>
 
 The skill's instructions for turning source documents into a two-host script and rendering it to a tagged MP3 with a local voice engine, then handing it off.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 75 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: podcast
@@ -55,14 +66,14 @@ Tool folder (render scripts): `~/ai/tools/podcast/`.
 
 ## 2. Write the script
 
-Save to `&lt;project&gt;/podcast/&lt;slug&gt;-script.md`, where `&lt;project&gt;` is the folder the sources belong to (create `podcast/` if needed).
+Save to `<span class="ph">&lt;project&gt;</span>/podcast/<span class="ph">&lt;slug&gt;</span>-script.md`, where `<span class="ph">&lt;project&gt;</span>` is the folder the sources belong to (create `podcast/` if needed).
 
 Format:
 
 ```
 ---
 title: &quot;The big picture&quot;
-album: &quot;&lt;series name&gt;&quot;
+album: &quot;<span class="ph">&lt;series name&gt;</span>&quot;
 track: 1
 sources: ...
 pronounce: GIF=jif; SQL=sequel
@@ -94,7 +105,7 @@ Use Kokoro. Orlando prefers it: it reads exactly what&#x27;s in the script, and 
 
 ```
 cd ~/ai/tools/podcast
-uv run render_kokoro.py &lt;script.md&gt; &lt;project&gt;/podcast/&lt;slug&gt;.mp3
+uv run render_kokoro.py <span class="ph">&lt;script.md&gt;</span> <span class="ph">&lt;project&gt;</span>/podcast/<span class="ph">&lt;slug&gt;</span>.mp3
 ```
 
 - About 7x faster than real time (a 25-minute episode in about 4 minutes).
@@ -110,3 +121,20 @@ Report the MP3 path, length and album, say it is tagged for Apple Music, and off
 
 A re-render doesn&#x27;t update a copy he has already added to Apple Music. Tell him to delete the old track in Music, then add the new file.
 </code></pre>
+
+</figure>
+
+</section>
+
+<nav class="page-foot">
+
+Previous: <a href="/ai-setup/skills/publish-setup/">Publish setup</a>.
+Next: <a href="/ai-setup/skills/video-title-cards/">Video title cards</a>.
+
+<a href="/ai-setup/skills/">Back to Skills</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

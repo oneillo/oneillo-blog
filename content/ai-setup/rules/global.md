@@ -19,20 +19,36 @@ madeBy: "setup-share"
 
 <div class="post-description">Sets global rules for every session: direct style, keeping the Mac awake, file defaults, cleanup, Python with uv, and formatting.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+
+<section class="facts facts-rule">
+
+<div class="facts-head"><span class="tag tag-rule">Rules</span></div>
 
 - **What it is:** Global Steering is a Claude Code global rules file that sets how every session and agent talks, handles files, cleans up, and runs Python.
 - **How it starts:** Every Claude Code session reads it at the start.
 - **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;CLAUDE&#46;md</code>
 - **Needs:** uv, Rex, and macOS
 
-**Works with:** <a href="/ai-setup/skills/rex/">Rex</a>.
+<div class="works">
+
+**Works with:**
+- **Also mentions:** <a href="/ai-setup/skills/rex/">Rex</a>.
+
+</div>
+
+</section>
+
+<section class="file">
 
 ## The rules file (<code>CLAUDE&#46;md</code>) {#claude-md}
 
 <a href="#claude-md">Link to this file</a>
 
 The global rules file read by every Claude Code session and agent, covering style, keeping the Mac awake, file naming, cleanup, Python scripts, and formatting.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">CLAUDE.md</span><span class="code-meta">Markdown · 51 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere"># Global Steering
 
@@ -47,7 +63,7 @@ These rules apply to all Claude Code sessions and agents.
 
 ## Keeping the Mac Awake
 
-- When I say I&#x27;m stepping away, when I work with you over Remote Control, or when a job runs unattended, keep the Mac awake without being asked. Wrap the long job (`caffeinate -ims &lt;command&gt;` lasts exactly as long as it runs), or start one `caffeinate -ims -t &lt;seconds&gt;` in the background sized to the work, unless one is already running. The display may sleep: Remote Control doesn&#x27;t need it. Stop only what you started.
+- When I say I&#x27;m stepping away, when I work with you over Remote Control, or when a job runs unattended, keep the Mac awake without being asked. Wrap the long job (`caffeinate -ims <span class="ph">&lt;command&gt;</span>` lasts exactly as long as it runs), or start one `caffeinate -ims -t <span class="ph">&lt;seconds&gt;</span>` in the background sized to the work, unless one is already running. The display may sleep: Remote Control doesn&#x27;t need it. Stop only what you started.
 - While the front desk (`~/ai/tools/scripts/front-desk.sh`, in its own Rex tab) runs, it already keeps the Mac awake: start nothing more.
 - When I step away and the session isn&#x27;t on Remote Control, suggest `/remote-control`. While it is, send a push notification when work is ready for my feedback or blocked on me, and each time a reply ends with a question for me. Never for routine progress.
 
@@ -86,3 +102,19 @@ These rules apply to all Claude Code sessions and agents.
 - No emojis unless I ask for them.
 - Use commas, periods, colons, or parentheses where an em dash might go. Em dashes read as AI-written, in chat and in files.
 </code></pre>
+
+</figure>
+
+</section>
+
+<nav class="page-foot">
+
+Next: <a href="/ai-setup/rules/workspace/">Workspace rules</a>.
+
+<a href="/ai-setup/rules/">Back to Rules</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

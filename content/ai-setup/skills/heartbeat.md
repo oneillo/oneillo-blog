@@ -19,20 +19,37 @@ madeBy: "setup-share"
 
 <div class="post-description">Adds, changes, pauses, or removes scheduled jobs on the heartbeat, a scheduler that runs a free check and then an agent session with limits.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+
+<section class="facts facts-skill">
+
+<div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/heartbeat</code></span></div>
 
 - **What it is:** Heartbeat is a Claude Code skill that manages the jobs on a scheduler that runs a cheap check and then, if there is work, an agent session with limits.
 - **How it starts:** You type <code>&#47;heartbeat</code>. Claude can also pick it up when it fits.
 - **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;heartbeat&#47;SKILL&#46;md</code>
 - **Needs:** Rex and macOS
 
-**Works with:** <a href="/ai-setup/skills/relay/">Relay</a> and <a href="/ai-setup/skills/rex/">Rex</a>.
+<div class="works">
+
+**Works with:**
+- **Calls:** <a href="/ai-setup/skills/relay/">Relay</a>.
+- **Also mentions:** <a href="/ai-setup/skills/rex/">Rex</a>.
+
+</div>
+
+</section>
+
+<section class="file">
 
 ## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
 <a href="#skill-md">Link to this file</a>
 
 The instructions for adding, changing, pausing, and removing heartbeat jobs, with the settings a job file takes and what to ask before writing risky ones.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 75 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: heartbeat
@@ -52,7 +69,7 @@ The heartbeat lives in `~/ai/tools/heartbeat/`. Each job is one file in its `job
 ## A new job
 
 1. Get what you need, one question at a time, and only what he hasn&#x27;t said: what it should do, when, and how to tell cheaply whether there is any work (the check). Suggest a check yourself when you can: a job without one starts an agent every time.
-2. Write `jobs/&lt;short-name&gt;.md` (lowercase, hyphens). Settings, then the checklist the agent follows, in plain words:
+2. Write `jobs/<span class="ph">&lt;short-name&gt;</span>.md` (lowercase, hyphens). Settings, then the checklist the agent follows, in plain words:
 
 ```
 ---
@@ -101,12 +118,29 @@ Never add anything that turns permission checks off. The heartbeat refuses it, a
 - **When it runs:** change the `when:` line. It applies at the next tick (within 30 minutes).
 - **Pause everything:** `heartbeat pause`, and `heartbeat resume` to start again. Jobs that were due catch up once.
 - **Pause one job:** `enabled: no` in its file, `enabled: yes` to switch it back on.
-- **A job that paused itself** after three failures in a row (a run that works ends the row, and so does a check that finds no work, unless a run in the row failed): say why (`heartbeat log --job &lt;name&gt;`), then `heartbeat resume &lt;name&gt;` once he agrees.
+- **A job that paused itself** after three failures in a row (a run that works ends the row, and so does a check that finds no work, unless a run in the row failed): say why (`heartbeat log --job <span class="ph">&lt;name&gt;</span>`), then `heartbeat resume <span class="ph">&lt;name&gt;</span>` once he agrees.
 - **Remove a job:** with his yes, `trash` its file (and its check, if nothing else uses it).
-- **Watch another relay:** add the relay&#x27;s folder at the end of the `check:` line of `jobs/relay-watchdog.md`. `app/checks/relay-stalled.sh --dry-run &lt;folder&gt;`, run from the heartbeat&#x27;s folder, says what the watchdog sees there. When a relay is finished and its folder moved, take the folder off the check line: the watchdog says once that it has no roadmap.md, and goes on watching the others.
+- **Watch another relay:** add the relay&#x27;s folder at the end of the `check:` line of `jobs/relay-watchdog.md`. `app/checks/relay-stalled.sh --dry-run <span class="ph">&lt;folder&gt;</span>`, run from the heartbeat&#x27;s folder, says what the watchdog sees there. When a relay is finished and its folder moved, take the folder off the check line: the watchdog says once that it has no roadmap.md, and goes on watching the others.
 - **Stop a watched relay:** set Relay to off in its roadmap. Write it in the template&#x27;s form, `- Relay: **off**`: the watchdog starts a lead only when the Controls say exactly `- Relay: **on**`, but the relay skill itself reads other forms differently. Closing its lead&#x27;s pane is not enough: the watchdog restarts a closed pane.
 - **The watchdog says a roadmap can&#x27;t be read:** nothing starts in that relay until the line it names is fixed, in the template&#x27;s form. It says so once.
 - **The watchdog says a lead has sat idle:** it may have stopped at a usage limit in the middle of a turn, and no other lead can start while it is there. He can tell it to carry on in the Claude app, or close its pane; the watchdog then starts a fresh lead.
 
 After any change, run `heartbeat jobs` and show him the lines you changed.
 </code></pre>
+
+</figure>
+
+</section>
+
+<nav class="page-foot">
+
+Previous: <a href="/ai-setup/skills/video-title-cards/">Video title cards</a>.
+Next: <a href="/ai-setup/skills/relay/">Relay</a>.
+
+<a href="/ai-setup/skills/">Back to Skills</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

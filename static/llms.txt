@@ -21,7 +21,7 @@ Every page in one file: https://oneillo.com/ai-setup/llms-full.txt
 - [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/index.md): Converts an Obsidian blog post to Hugo-ready Markdown, fixes links and pictures, and places it in a review folder.
 - [Publish post](https://oneillo.com/ai-setup/skills/publish-post/index.md): Publishes a finished blog post to a Hugo site, checks the build, and pushes it to GitHub.
 - [Publish prep](https://oneillo.com/ai-setup/skills/publish-prep/index.md): Prepares a finished blog post for publishing with title options, a description, a LinkedIn blurb, and a Substack version.
-- [Publish setup](https://oneillo.com/ai-setup/skills/publish-setup/index.md): Publishes an AI setup to a blog section: gathers files, has agents remove private details, checks twice, previews, and asks before going live.
+- [Publish setup](https://oneillo.com/ai-setup/skills/publish-setup/index.md): Publishes the AI Setup section of a blog: agents clean out private details, checks run twice, and it asks before anything goes live.
 - [Podcast](https://oneillo.com/ai-setup/skills/podcast/index.md): Turns source documents into a two-host podcast-style MP3 by writing a script, then rendering it locally with a text-to-speech voice.
 - [Video title cards](https://oneillo.com/ai-setup/skills/video-title-cards/index.md): Makes intro, outro, and interstitial title cards with ffmpeg and joins them to screen recordings.
 - [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/index.md): Adds, changes, pauses, or removes scheduled jobs on the heartbeat, a scheduler that runs a free check and then an agent session with limits.
@@ -33,3 +33,8 @@ Every page in one file: https://oneillo.com/ai-setup/llms-full.txt
 - [Financial advisor](https://oneillo.com/ai-setup/agents/financial-advisor/index.md): A custom agent for the household's money decisions, with its details left out of this section on purpose.
 - [Apps](https://oneillo.com/ai-setup/apps/index.md): The apps around Orlando's AI sessions, each described in a few lines.
 - [Settings and hooks](https://oneillo.com/ai-setup/settings/index.md): The settings and hooks in Orlando's AI setup, described by kind.
+- [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/index.md): Shows how a session ends: it saves project state, files lasting knowledge, keeps corrections, and commits, so the next session starts clean.
+- [How work runs while I'm away](https://oneillo.com/ai-setup/guides/while-im-away/index.md): Shows how the keep-awake rule, the Relay and Heartbeat skills, and the Latido app keep work going while Orlando is away, and how he sees the results.
+- [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/index.md): Shows the three ways Orlando's setup undoes an agent's mistake: the Trash, local version history, and the cloud copy, and when each one helps.
+- [How to borrow](https://oneillo.com/ai-setup/borrow/index.md): How to take a rule, skill, agent, or hook from Orlando's AI setup and make it work in your own Claude Code.
+- [What changed](https://oneillo.com/ai-setup/changes/index.md): Every publish of Orlando's AI setup, newest first, with the pieces each one added, changed, or removed.

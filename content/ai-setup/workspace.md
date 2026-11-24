@@ -19,7 +19,7 @@ madeBy: "setup-share"
 
 <div class="post-description">How Orlando's AI workspace is organized: its folders, the knowledge base, version history, backups, and Python scripts.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
 This page explains how Orlando's setup is organized: one workspace for agents, a knowledge base, local git history, an automatic cloud backup, and Python scripts that carry their own needs.
 
@@ -66,6 +66,14 @@ Every script runs with <code>uv run</code> and declares its Python version and p
 # ///
 </code></pre>
 
-**Works with:** <a href="/ai-setup/apps/#brega">Brega</a>, <a href="/ai-setup/skills/close-shop/">Close shop</a>, <a href="/ai-setup/apps/#corillo">Corillo</a>, <a href="/ai-setup/agents/financial-advisor/">Financial advisor</a>, <a href="/ai-setup/skills/heartbeat/">Heartbeat</a>, <a href="/ai-setup/skills/process-feedback/">Process feedback</a>, <a href="/ai-setup/skills/rex/">Rex</a>, <a href="/ai-setup/skills/save-session/">Save session</a>, <a href="/ai-setup/agents/trainer/">Trainer</a>, <a href="/ai-setup/skills/tune-setup/">Tune setup</a>, and <a href="/ai-setup/agents/writer/">Writer</a>.
-
 The same rules appear as text on the <a href="/ai-setup/rules/global/">Global rules</a> and <a href="/ai-setup/rules/workspace/">Workspace rules</a> pages.
+
+<nav class="page-foot">
+
+<a href="/ai-setup/">Back to AI Setup</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

@@ -15,6 +15,9 @@ Saves where a project stands in a context file so the next session can pick up w
 - **To make it yours:** Put your own values where you see `<project-folder>`.
   Taken out for privacy: 1 private project folder pattern.
 
+**Works with:**
+- **Called by:** [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/).
+
 ## The skill file (`SKILL.md`)
 
 The instructions for saving a project's context at the end of a working session. It tells Claude how to find the project folder and write or update a context file there.
@@ -82,3 +85,12 @@ last-updated: [YYYY-MM-DD]
 - Only include information that would actually help a future session. Skip ephemeral details.
 - Do not include information that can be derived from the code, git history, or existing project files.
 ````
+
+Previous: [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/).
+Next: [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

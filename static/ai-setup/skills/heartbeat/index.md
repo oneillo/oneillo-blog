@@ -13,7 +13,9 @@ Adds, changes, pauses, or removes scheduled jobs on the heartbeat, a scheduler t
 - **Where the file goes:** `~/.claude/skills/heartbeat/SKILL.md`
 - **Needs:** Rex and macOS
 
-**Works with:** [Relay](https://oneillo.com/ai-setup/skills/relay/) and [Rex](https://oneillo.com/ai-setup/skills/rex/).
+**Works with:**
+- **Calls:** [Relay](https://oneillo.com/ai-setup/skills/relay/).
+- **Also mentions:** [Rex](https://oneillo.com/ai-setup/skills/rex/).
 
 ## The skill file (`SKILL.md`)
 
@@ -96,3 +98,12 @@ Never add anything that turns permission checks off. The heartbeat refuses it, a
 
 After any change, run `heartbeat jobs` and show him the lines you changed.
 ````
+
+Previous: [Video title cards](https://oneillo.com/ai-setup/skills/video-title-cards/).
+Next: [Relay](https://oneillo.com/ai-setup/skills/relay/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

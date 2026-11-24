@@ -14,6 +14,14 @@ Rules come in layers. The global rules apply to every session, anywhere on the M
 - [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/): Sets the shared rules for every session in a workspace: how to work together, where files live, how projects start, and how history is kept.
 - [Knowledge base rules](https://oneillo.com/ai-setup/rules/knowledge-base/): Sets the rules agents follow to find, write, link, and check notes in a knowledge base kept as a vault of Markdown notes.
 
+## Where each file lives
+
+| File | Where it lives | When a session reads it |
+|---|---|---|
+| [Global rules](https://oneillo.com/ai-setup/rules/global/) | `~/.claude/CLAUDE.md` | Every Claude Code session reads it at the start. |
+| [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/) | `<your-workspace>/CLAUDE.md` | Every Claude Code session started in the workspace, or in a folder inside it, reads it at the start. |
+| [Knowledge base rules](https://oneillo.com/ai-setup/rules/knowledge-base/) | In the knowledge base's own folder | Sessions read it before they work in the knowledge base. |
+
 ## Project rules and context files
 
 Each project adds its own rules file, and a context file that holds the project's goal, constraints, and decisions. A session reads them before it starts, so it can pick up where the last one stopped. They hold each project's private detail, so their text is not shared here.

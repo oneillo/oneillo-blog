@@ -19,7 +19,11 @@ madeBy: "setup-share"
 
 <div class="post-description">Converts an Obsidian blog post to Hugo-ready Markdown, fixes links and pictures, and places it in a review folder.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-23.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-23">2026-11-23</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+
+<section class="facts facts-skill">
+
+<div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/obsidian-to-hugo</code></span><span class="facts-files">3 files</span></div>
 
 - **What it is:** Obsidian to Hugo is a Claude Code skill that converts a blog post written in Obsidian into Hugo-compatible Markdown and places it in a folder for review.
 - **How it starts:** You type <code>&#47;obsidian&#45;to&#45;hugo</code>. Claude can also pick it up when it fits.
@@ -28,15 +32,41 @@ madeBy: "setup-share"
 - **To make it yours:** Put your own values where you see <code>&#60;blog&#45;folder&#62;</code>, <code>&#60;vault&#45;folder&#62;</code>, and <code>&#60;yyyymmdd&#62;</code>.
   Taken out for privacy: 4 paths, 1 blog folder name, and 6 dated project folder names.
 
+</section>
+
 This skill is specific to Orlando's blog. It is here because it is part of his setup, and its steps may still be worth borrowing.
 
-**Works with:** <a href="/ai-setup/apps/#corillo">Corillo</a>, <a href="/ai-setup/skills/relay/">Relay</a>, and <a href="/ai-setup/agents/writer/">Writer</a>.
+<div class="works">
+
+**Works with:**
+- **Calls:** <a href="/ai-setup/agents/writer/">Writer</a>.
+- **Called by:** <a href="/ai-setup/skills/publish-post/">Publish post</a> and <a href="/ai-setup/agents/writer/">Writer</a>.
+- **Also mentions:** <a href="/ai-setup/apps/#corillo">Corillo</a> and <a href="/ai-setup/skills/relay/">Relay</a>.
+
+</div>
+
+<div class="files">
+
+## Files on this page {#files-on-this-page}
+
+| File | What it is | Size |
+| --- | --- | --- |
+| <a href="#skill-md"><code>SKILL&#46;md</code></a> | The instructions for the skill that converts an Obsidian blog post to Hugo Markdown. | 52 lines |
+| <a href="#convert-py"><code>convert&#46;py</code></a> | The script that turns an Obsidian post into Hugo Markdown. | 323 lines |
+| <a href="#test-convert-py"><code>test&#95;convert&#46;py</code></a> | The tests for the conversion script, run on made-up posts in a temporary folder. | 93 lines |
+
+</div>
+
+<section class="file">
 
 ## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
 <a href="#skill-md">Link to this file</a>
 
 The instructions for the skill that converts an Obsidian blog post to Hugo Markdown. It is used when a post is ready to move from the notes vault to review.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 52 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: obsidian-to-hugo
@@ -50,7 +80,7 @@ Convert a blog post written in Obsidian to Hugo-compatible markdown and place it
 
 ## Paths
 
-- **Obsidian source**: `&lt;vault-folder&gt;/writing/blog/`
+- **Obsidian source**: `<span class="ph">&lt;vault-folder&gt;</span>/writing/blog/`
 - **Destination**: `~/ai/projects/blog/posts-to-review/`
 
 If the Obsidian path does not exist, ask the user for the correct vault location.
@@ -68,12 +98,12 @@ Match flexibly -- the user might give a partial name, a slug, or a title. Find t
 Run the conversion script:
 
 ```bash
-uv run ~/.claude/skills/obsidian-to-hugo/scripts/convert.py --file &quot;&lt;filename&gt;&quot; [--verbose]
+uv run ~/.claude/skills/obsidian-to-hugo/scripts/convert.py --file &quot;<span class="ph">&lt;filename&gt;</span>&quot; [--verbose]
 ```
 
 Run it without asking. If it says the converted file already exists, ask before running again with `--force`: the copy may hold review edits. The script does not modify the original Obsidian file.
 
-A `[[link]]` becomes a link only when the post exists in `&lt;blog-folder&gt;/content/posts/`; any other link (a note, a heading) is kept as text without a link, with a warning. Pictures, both `![[...]]` embeds and standard links such as Corillo&#x27;s, are copied next to the converted post.
+A `[[link]]` becomes a link only when the post exists in `<span class="ph">&lt;blog-folder&gt;</span>/content/posts/`; any other link (a note, a heading) is kept as text without a link, with a warning. Pictures, both `![[...]]` embeds and standard links such as Corillo&#x27;s, are copied next to the converted post.
 
 Tests: `uv run --offline ~/.claude/skills/obsidian-to-hugo/scripts/test_convert.py`.
 
@@ -92,9 +122,15 @@ If the script fails, show the error output and suggest a fix. Common issues:
 - Destination directory missing -- this shouldn&#x27;t happen, but create it if needed
 </code></pre>
 
+</figure>
+
+</section>
+
 ## Scripts
 
 These scripts are one person's working code, shared from Orlando's setup with private details replaced by placeholders. They are not a supported tool: read each one before you run it, and expect to change it to fit your own setup.
+
+<section class="file">
 
 ### <code>convert&#46;py</code> {#convert-py}
 
@@ -103,6 +139,11 @@ These scripts are one person's working code, shared from Orlando's setup with pr
 The script that turns an Obsidian post into Hugo Markdown. It rewrites picture embeds and links to other posts, copies the pictures, and saves the result in the review folder without touching the original.
 
 **Needs to run:** uv.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">convert.py</span><span class="code-meta">Python · 323 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (323 lines)</summary>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere"># /// script
 # requires-python = &quot;&gt;=3.12&quot;
@@ -128,10 +169,10 @@ from urllib.parse import quote, unquote
 # Default paths (macOS Obsidian vault)
 DEFAULT_SOURCE = (
     Path.home()
-    / &quot;&lt;vault-folder&gt;/writing/blog&quot;
+    / &quot;<span class="ph">&lt;vault-folder&gt;</span>/writing/blog&quot;
 )
 DEFAULT_DEST = Path.home() / &quot;ai/projects/blog/posts-to-review&quot;
-DEFAULT_BLOG = Path.home() / &quot;&lt;blog-folder&gt;/content/posts&quot;
+DEFAULT_BLOG = Path.home() / &quot;<span class="ph">&lt;blog-folder&gt;</span>/content/posts&quot;
 
 # Obsidian&#x27;s size suffix on an embed: |400 or |400x300
 SIZE_ONLY = re.compile(r&quot;^\d+(x\d+)?$&quot;)
@@ -141,7 +182,7 @@ def slugify(title: str) -&gt; str:
     &quot;&quot;&quot;Convert a post title to a Hugo-compatible slug.
 
     &#x27;My Great Post&#x27; -&gt; &#x27;my-great-post&#x27;
-    &#x27;&lt;yyyymmdd&gt;-my-post&#x27; -&gt; &#x27;my-post&#x27;
+    &#x27;<span class="ph">&lt;yyyymmdd&gt;</span>-my-post&#x27; -&gt; &#x27;my-post&#x27;
     &quot;&quot;&quot;
     slug = title.lower().strip()
     # Strip leading date prefix (YYYYMMDD- or YYYY-MM-DD-)
@@ -429,6 +470,13 @@ if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
 
+</details>
+</figure>
+
+</section>
+
+<section class="file">
+
 ### <code>test&#95;convert&#46;py</code> {#test-convert-py}
 
 <a href="#test-convert-py">Link to this file</a>
@@ -436,6 +484,11 @@ if __name__ == &quot;__main__&quot;:
 The tests for the conversion script, run on made-up posts in a temporary folder. They check links, pictures, the guard against overwriting review edits, and file name matching.
 
 **Needs to run:** uv.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">test_convert.py</span><span class="code-meta">Python · 93 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (93 lines)</summary>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere"># /// script
 # requires-python = &quot;&gt;=3.12&quot;
@@ -531,3 +584,21 @@ class ConvertTest(unittest.TestCase):
 if __name__ == &quot;__main__&quot;:
     unittest.main()
 </code></pre>
+
+</details>
+</figure>
+
+</section>
+
+<nav class="page-foot">
+
+Previous: <a href="/ai-setup/skills/connect/">Connect</a>.
+Next: <a href="/ai-setup/skills/publish-post/">Publish post</a>.
+
+<a href="/ai-setup/skills/">Back to Skills</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

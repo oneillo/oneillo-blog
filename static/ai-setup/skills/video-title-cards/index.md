@@ -276,3 +276,12 @@ The user may request different colors, durations, or fonts. Adjust the ffmpeg pa
 - Keep each bullet on a single line by default. Only wrap to a second line when the text physically exceeds the available width (card width minus left margin minus a small right margin).
 - Do not pre-wrap lines for aesthetics or conservative spacing -- use the full available width.
 ````
+
+Previous: [Podcast](https://oneillo.com/ai-setup/skills/podcast/).
+Next: [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

@@ -15,7 +15,9 @@ Prepares a finished blog post for publishing with title options, a description, 
 
 This skill is specific to Orlando's blog. It is here because it is part of his setup, and its steps may still be worth borrowing.
 
-**Works with:** [Publish post](https://oneillo.com/ai-setup/skills/publish-post/).
+**Works with:**
+- **Calls:** [Publish post](https://oneillo.com/ai-setup/skills/publish-post/).
+- **Called by:** [Writer](https://oneillo.com/ai-setup/agents/writer/).
 
 ## The skill file (`SKILL.md`)
 
@@ -106,3 +108,12 @@ Prepare a finished blog post for publishing by generating its title, description
 
 List the files created with their paths so the author can verify everything is saved.
 ````
+
+Previous: [Publish post](https://oneillo.com/ai-setup/skills/publish-post/).
+Next: [Publish setup](https://oneillo.com/ai-setup/skills/publish-setup/).
+
+[Back to Skills](https://oneillo.com/ai-setup/skills/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).

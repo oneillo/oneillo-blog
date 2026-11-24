@@ -19,7 +19,11 @@ madeBy: "setup-share"
 
 <div class="post-description">Researches current Anthropic guidance, updates a guidance file, and proposes specific improvements to a Claude Code setup.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-22.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+
+<section class="facts facts-skill">
+
+<div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/tune-setup</code></span></div>
 
 - **What it is:** Tune setup is a Claude Code skill that checks a Claude Code setup against current Anthropic guidance and proposes ranked improvements without applying them.
 - **How it starts:** You type <code>&#47;tune&#45;setup</code>. Claude doesn't start it by itself.
@@ -28,13 +32,27 @@ madeBy: "setup-share"
 - **To make it yours:** Put your own values where you see <code>&#60;project&#45;folder&#62;</code>.
   Taken out for privacy: 1 project folder and 1 path.
 
-**Works with:** <a href="/ai-setup/skills/process-feedback/">Process feedback</a> and <a href="/ai-setup/skills/save-session/">Save session</a>.
+<div class="works">
+
+**Works with:**
+- **Calls:** <a href="/ai-setup/skills/process-feedback/">Process feedback</a>.
+- **Called by:** <a href="/ai-setup/skills/close-shop/">Close shop</a>, <a href="/ai-setup/skills/process-feedback/">Process feedback</a>, and <a href="/ai-setup/rules/workspace/">Workspace rules</a>.
+- **Also mentions:** <a href="/ai-setup/skills/save-session/">Save session</a>.
+
+</div>
+
+</section>
+
+<section class="file">
 
 ## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
 <a href="#skill-md">Link to this file</a>
 
 The instructions for a skill that researches current Anthropic guidance, updates one knowledge file, reviews the setup against it, and writes proposals for the owner to approve.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 53 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: tune-setup
@@ -53,7 +71,7 @@ Run it when a new Claude model or major Claude Code release ships, or when Orlan
 
 Read `~/.claude/skills/tune-setup/llm-guidance.md`. If it doesn&#x27;t exist, create it with the structure in step 3. Note the last-run date, which models it covered and the folder that holds that run&#x27;s lookup; read that lookup and research only what&#x27;s new since then.
 
-For a full review, use `~/ai/projects/ai-setup/&lt;project-folder&gt;/` (in `ai-setup/zzCompleted/` once closed) as the pattern: parallel readers by area, a checker that tries to disprove each finding, and one page for Orlando.
+For a full review, use `~/ai/projects/ai-setup/<span class="ph">&lt;project-folder&gt;</span>/` (in `ai-setup/zzCompleted/` once closed) as the pattern: parallel readers by area, a checker that tries to disprove each finding, and one page for Orlando.
 
 ## 2. Research
 
@@ -82,7 +100,7 @@ Also:
 
 ## 5. Propose, don&#x27;t apply
 
-Write `~/ai/projects/ai-setup/&lt;yyyymmdd&gt;-tune-setup/proposals.md`: a short summary, then proposals ranked by value. For each: what to change (file and passage), why (with source), expected effect, and risk. Also write a `context.md` there (format in `~/.claude/skills/save-session/SKILL.md`). Make no changes until Orlando approves specific proposals. When every proposal is applied or decided, move the folder to `~/ai/projects/ai-setup/zzCompleted/`.
+Write `~/ai/projects/ai-setup/<span class="ph">&lt;yyyymmdd&gt;</span>-tune-setup/proposals.md`: a short summary, then proposals ranked by value. For each: what to change (file and passage), why (with source), expected effect, and risk. Also write a `context.md` there (format in `~/.claude/skills/save-session/SKILL.md`). Make no changes until Orlando approves specific proposals. When every proposal is applied or decided, move the folder to `~/ai/projects/ai-setup/zzCompleted/`.
 
 ## Rules
 
@@ -90,3 +108,20 @@ Write `~/ai/projects/ai-setup/&lt;yyyymmdd&gt;-tune-setup/proposals.md`: a short
 - Never put this material in `~/ai/CLAUDE.md` or workspace memory; every agent loads those.
 - Say plainly when guidance conflicts with how Orlando likes to work, and let Orlando decide.
 </code></pre>
+
+</figure>
+
+</section>
+
+<nav class="page-foot">
+
+Previous: <a href="/ai-setup/skills/save-session/">Save session</a>.
+Next: <a href="/ai-setup/skills/connect/">Connect</a>.
+
+<a href="/ai-setup/skills/">Back to Skills</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

@@ -19,7 +19,11 @@ madeBy: "setup-share"
 
 <div class="post-description">Runs a project's roadmap unattended as a relay of fresh Claude Code sessions, each leading one batch with parallel agents and handing off to the next.</div>
 
-> **Written by AI.** This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated 2026-11-23.
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-23">2026-11-23</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+
+<section class="facts facts-skill">
+
+<div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/relay</code></span><span class="facts-files">11 files</span></div>
 
 - **What it is:** Relay is a Claude Code skill that runs a project's roadmap while its owner is away, with a fresh session leading each batch.
 - **How it starts:** You type <code>&#47;relay</code>. Claude can also pick it up when it fits.
@@ -28,13 +32,46 @@ madeBy: "setup-share"
 - **To make it yours:** Put your own values where you see <code>&#60;amount&#62;</code> and <code>&#60;default&#45;budget&#62;</code>.
   Taken out for privacy: 15 dates and incident specifics, 7 amounts, 1 keychain service name, and 1 private project name
 
-**Works with:** <a href="/ai-setup/apps/#corillo">Corillo</a>, <a href="/ai-setup/skills/heartbeat/">Heartbeat</a>, <a href="/ai-setup/apps/#pregon">Pregón</a>, and <a href="/ai-setup/skills/rex/">Rex</a>.
+<div class="works">
+
+**Works with:**
+- **Called by:** <a href="/ai-setup/skills/heartbeat/">Heartbeat</a>.
+- **Also mentions:** <a href="/ai-setup/apps/#corillo">Corillo</a>, <a href="/ai-setup/apps/#pregon">Pregón</a>, and <a href="/ai-setup/skills/rex/">Rex</a>.
+
+</div>
+
+</section>
+
+<div class="files">
+
+## Files on this page {#files-on-this-page}
+
+| File | What it is | Size |
+| --- | --- | --- |
+| <a href="#skill-md"><code>SKILL&#46;md</code></a> | The main guide for the relay skill. | 104 lines |
+| <a href="#builder-brief-md"><code>builder&#45;brief&#46;md</code></a> | The brief every builder agent in a relay batch reads first, covering where to work, how to prove the work, and what to put in the final report. | 41 lines |
+| <a href="#lead-md"><code>lead&#46;md</code></a> | The instructions a relay lead session follows to lead one batch of a roadmap, from reading the plan to handing off to the next session. | 93 lines |
+| <a href="#reviewer-brief-md"><code>reviewer&#45;brief&#46;md</code></a> | The brief for the fresh reviewer who reads a finished relay batch, with the rules it works under, what to look for, and the form of its findings. | 48 lines |
+| <a href="#roadmap-template-md"><code>roadmap&#45;template&#46;md</code></a> | The blank form for a project's <code>roadmap&#46;md</code>, with its Controls, decisions table, batches, and Log, which the relay scripts read. | 58 lines |
+| <a href="#lead-settings-json"><code>lead&#45;settings&#46;json</code></a> | The settings every relay lead session starts with, which turn any permission question into a "no" so a lead never waits on an answer. | 5 lines |
+| <a href="#close-pane-later-sh"><code>close&#45;pane&#45;later&#46;sh</code></a> | Closes a Rex pane once the session in it has been idle for a while, so finished lead sessions don't pile up. <code>start&#45;lead&#46;sh</code> starts it, and it can also be run by hand. | 89 lines |
+| <a href="#memory-fuse-sh"><code>memory&#45;fuse&#46;sh</code></a> | Watches the Mac's biggest processes while a relay lead runs and stops any single process a lead started that grows past a quarter of the Mac's memory. <code>start&#45;lead&#46;sh</code> starts it, and it can be run with <code>say</code> to see what it would stop. | 220 lines |
+| <a href="#sdk-run-py"><code>sdk&#45;run&#46;py</code></a> | Runs one Claude Code session through the Agent SDK on an API key, with a hard spending cap, and logs each run's cost. <code>start&#45;lead&#46;sh</code> uses it for relays set to <code>sdk</code> billing, and it can be run by hand. | 154 lines |
+| <a href="#start-lead-sh"><code>start&#45;lead&#46;sh</code></a> | Starts a fresh Claude Code session to lead the next batch of a project's roadmap, puts finished lead panes away, and with options says what it would start or where the relay stands. | 619 lines |
+| <a href="#watch-relay-zsh"><code>watch&#45;relay&#46;zsh</code></a> | Watches one relay from another session and exits with an "EVENT:" line when a batch finishes, no lead is running, the relay's sessions go quiet for 30 minutes, or a time limit passes. | 46 lines |
+
+</div>
+
+<section class="file">
 
 ## The skill file (<code>SKILL&#46;md</code>) {#skill-md}
 
 <a href="#skill-md">Link to this file</a>
 
 The main guide for the relay skill. It explains what a relay is, when it fits, how to set one up, and how to start, check, pause, stop, and recover it.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 104 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: relay
@@ -53,7 +90,7 @@ Why it is built this way:
 - **He can watch and steer.** Every lead runs with Remote Control on, named &quot;&lt;Project&gt;: Batch N&quot;, and the Controls at the top of the roadmap are his to change at any time. A relay on `sdk` billing runs without Remote Control (see &quot;Who pays&quot;).
 - **It tidies up after itself.** In Rex a relay keeps to one tab, named after the session leading now (&quot;Heartbeat: Batch 3&quot;). Each new lead opens as a pane beside the last, and a finished lead&#x27;s pane closes by itself once it has been idle for 15 minutes, the last lead&#x27;s included. So the tab holds one pane most of the time and goes when the relay ends. What a session did is in the roadmap&#x27;s Log and in git, not in an open pane.
 
-`&lt;skill&gt;` below is this file&#x27;s folder.
+`<span class="ph">&lt;skill&gt;</span>` below is this file&#x27;s folder.
 
 | File | For |
 |---|---|
@@ -64,7 +101,7 @@ Why it is built this way:
 | `tests/memory-fuse.test.zsh` | Proves the fuse on made-up processes in about 30 seconds. Run it after changing the fuse, or after a macOS update |
 | `tests/start-lead.test.zsh` | Proves how `start-lead.sh` reads a roadmap, on made-up roadmaps: what it starts, and that text in a Log can&#x27;t steer it. Starts nothing. Run it after changing that script |
 | `lead-settings.json` | Settings every lead starts with: a permission question becomes a &quot;no&quot;, so a lead never waits all night on one. Leads only, not Orlando&#x27;s own sessions |
-| `scripts/sdk-run.py` | Runs one session through the Agent SDK on Orlando&#x27;s API key, with a budget cap. `start-lead.sh` uses it when the Controls say `- Billing: **sdk**`; it works by hand too (`uv run &lt;skill&gt;/scripts/sdk-run.py --help`) |
+| `scripts/sdk-run.py` | Runs one session through the Agent SDK on Orlando&#x27;s API key, with a budget cap. `start-lead.sh` uses it when the Controls say `- Billing: **sdk**`; it works by hand too (`uv run <span class="ph">&lt;skill&gt;</span>/scripts/sdk-run.py --help`) |
 | `lead.md` | What a lead session does. A lead reads it; you don&#x27;t need to unless you are changing how leads work |
 | `builder-brief.md`, `reviewer-brief.md` | What every builder and reviewer is told |
 | `roadmap-template.md` | The form of `roadmap.md` |
@@ -82,26 +119,26 @@ It doesn&#x27;t fit work that needs his judgment at each step (writing in his vo
 ## Set one up
 
 1. **Agree the plan with Orlando first.** The roadmap is his: what gets built, in what order, and what is left out. If no plan exists, make one with him (one question per message), or from reviews he has asked for. Never queue work he hasn&#x27;t agreed to.
-2. **Write `roadmap.md`** at the project&#x27;s root from `&lt;skill&gt;/roadmap-template.md`. What makes a roadmap run well unattended:
+2. **Write `roadmap.md`** at the project&#x27;s root from `<span class="ph">&lt;skill&gt;</span>/roadmap-template.md`. What makes a roadmap run well unattended:
    - Each item says what the person gets, how big it is, and which files are its own, so two builders never edit the same file.
    - Items in one batch are independent. Work that builds on other work goes in a later batch.
    - Every decision that is Orlando&#x27;s is in the table with a recommendation. Anything that truly needs him (an account, a purchase, a judgment only he can make) goes under &quot;Later&quot;, or in a batch marked `Status: **queued, low**`, which the relay skips.
    - &quot;How this project runs&quot; is filled in from the project itself: find the real command for the checks and run it once, so the first lead doesn&#x27;t discover that it fails. Write down the delivery step and whether Orlando has agreed it may be done without asking.
    - **Keep the template&#x27;s form for what the scripts read.** The relay is on only when the `## Controls` section has one Relay line and it is exactly `- Relay: **on**`, with nothing after it (a note goes on a line of its own). A batch&#x27;s `Status:` is the line right under its `### Batch N` heading, in the `## Batches` section. Anything written another way reads as off or not there, and nothing starts. That is on purpose: a Log entry, a quoted line or a pasted example must never be able to switch a relay on or queue a batch (a security review of the heartbeat found this). The heartbeat&#x27;s watchdog reads a roadmap the same way.
 3. **Make sure the project can carry it.** Code needs its own git repo for builders to work side by side in worktrees (follow the workspace&#x27;s rules for a repo inside `~/ai`). The project needs a `CLAUDE.md` and a `context.md`: every lead and builder starts from them. The folder must be one Claude Code has been used in before, or the new session stops at a question about trusting it. A new git repo gets that question even inside `~/ai`: trust goes by the repo&#x27;s root. Who answers it depends on who made the folder:
-   - **A folder you made yourself inside `~/ai`, in this same sitting** (your own `git init`, and nothing cloned, downloaded or unpacked in it): answer it yourself. Orlando&#x27;s rule: &quot;~/ai is my agent workspace. You all have permission to do anything you want in that folder including anything contained within it.&quot; Open a plain `claude` there in its own Rex pane without focus (`rex run --json --focus=false --label &quot;&lt;Name&gt;: trust this folder&quot; -c &lt;project folder&gt; -s &quot;$REX_SESSION&quot; -- ~/.local/bin/claude`), read the pane (`rex capture -b &lt;block id&gt;`) and go on only if it shows the question. Send the Down arrow (`rex send -b &lt;block id&gt; $&#x27;\e[B&#x27;`), read the pane again to see &quot;Yes, I trust this folder&quot; picked, send Return (`$&#x27;\r&#x27;`), and check that Claude Code recorded it: `jq &#x27;.projects[&quot;&lt;full path&gt;&quot;].hasTrustDialogAccepted&#x27; ~/.claude.json` says `true`. Then end that session (`/exit`, Return) and say in the project&#x27;s log that you answered it. Never write to `~/.claude.json` yourself.
-   - **Any other folder** (a clone, a download, something another program made, anything outside `~/ai`): only Orlando answers, at the Mac&#x27;s keyboard, not from his phone. Open the pane the same way, name its tab (`rex window rename &lt;window id&gt; &quot;&lt;Name&gt;: trust this folder&quot; -s &lt;session&gt;`), and put on his list: that tab, Down arrow once, Return.
-4. **Dry run:** `&lt;skill&gt;/scripts/start-lead.sh &lt;project folder&gt; --dry-run` says which batch would start and under what name.
+   - **A folder you made yourself inside `~/ai`, in this same sitting** (your own `git init`, and nothing cloned, downloaded or unpacked in it): answer it yourself. Orlando&#x27;s rule: &quot;~/ai is my agent workspace. You all have permission to do anything you want in that folder including anything contained within it.&quot; Open a plain `claude` there in its own Rex pane without focus (`rex run --json --focus=false --label &quot;&lt;Name&gt;: trust this folder&quot; -c <span class="ph">&lt;project folder&gt;</span> -s &quot;$REX_SESSION&quot; -- ~/.local/bin/claude`), read the pane (`rex capture -b <span class="ph">&lt;block id&gt;</span>`) and go on only if it shows the question. Send the Down arrow (`rex send -b <span class="ph">&lt;block id&gt;</span> $&#x27;\e[B&#x27;`), read the pane again to see &quot;Yes, I trust this folder&quot; picked, send Return (`$&#x27;\r&#x27;`), and check that Claude Code recorded it: `jq &#x27;.projects[&quot;<span class="ph">&lt;full path&gt;</span>&quot;].hasTrustDialogAccepted&#x27; ~/.claude.json` says `true`. Then end that session (`/exit`, Return) and say in the project&#x27;s log that you answered it. Never write to `~/.claude.json` yourself.
+   - **Any other folder** (a clone, a download, something another program made, anything outside `~/ai`): only Orlando answers, at the Mac&#x27;s keyboard, not from his phone. Open the pane the same way, name its tab (`rex window rename <span class="ph">&lt;window id&gt;</span> &quot;&lt;Name&gt;: trust this folder&quot; -s <span class="ph">&lt;session&gt;</span>`), and put on his list: that tab, Down arrow once, Return.
+4. **Dry run:** `<span class="ph">&lt;skill&gt;</span>/scripts/start-lead.sh <span class="ph">&lt;project folder&gt;</span> --dry-run` says which batch would start and under what name.
 5. **Tell Orlando what will happen and what it will cost** (how many batches, how many agents in each), then start it on his word.
 
 ## Start, check, pause, stop
 
-- **Start, or start again:** `&lt;skill&gt;/scripts/start-lead.sh &lt;project folder&gt;`. It starts the first batch that is running or queued, never a second lead for the same project, and nothing if the Controls say the relay is off. Then read the new pane once with the `rex capture` command it prints, to see that the session began work.
-- **Check:** `&lt;skill&gt;/scripts/start-lead.sh &lt;project folder&gt; --status` lists the Controls, each batch&#x27;s status, whether a lead is running and what its pane reports (&quot;working&quot;, or &quot;idle for 2 h 10 min&quot;), and what a new lead would start on. A line it can&#x27;t read (a batch&#x27;s Status, Stop after batch, Lead, Billing, and on sdk Lead budget) is named there, and nothing starts until it is fixed. The roadmap&#x27;s Log has what each finished batch did. To see what a lead is doing right now, read its pane with `rex capture`, or tell Orlando the session&#x27;s name so he can open it in the Claude app.
+- **Start, or start again:** `<span class="ph">&lt;skill&gt;</span>/scripts/start-lead.sh <span class="ph">&lt;project folder&gt;</span>`. It starts the first batch that is running or queued, never a second lead for the same project, and nothing if the Controls say the relay is off. Then read the new pane once with the `rex capture` command it prints, to see that the session began work.
+- **Check:** `<span class="ph">&lt;skill&gt;</span>/scripts/start-lead.sh <span class="ph">&lt;project folder&gt;</span> --status` lists the Controls, each batch&#x27;s status, whether a lead is running and what its pane reports (&quot;working&quot;, or &quot;idle for 2 h 10 min&quot;), and what a new lead would start on. A line it can&#x27;t read (a batch&#x27;s Status, Stop after batch, Lead, Billing, and on sdk Lead budget) is named there, and nothing starts until it is fixed. The roadmap&#x27;s Log has what each finished batch did. To see what a lead is doing right now, read its pane with `rex capture`, or tell Orlando the session&#x27;s name so he can open it in the Claude app.
 - **Pause after a batch:** set &quot;Stop after batch&quot; in the Controls to that batch&#x27;s number. To stop when the current batch ends, set Relay to **off**. A lead reads the Controls again just before it hands off.
 - **Stop now:** tell the live lead to stop cleanly (type into its pane with `rex send`, or Orlando tells it over Remote Control). It commits what is finished, writes where things stand, and ends. Closing its pane instead leaves the batch &quot;running&quot; with its work in the files, which the next start also picks up, but any agents in flight are lost. If the heartbeat&#x27;s relay watchdog watches the project (its job file lists the folder), a relay that is on is started again within about an hour of its lead going away, so set Relay to **off** first when the stop is meant to last.
 - **Add work:** only what Orlando has agreed. His bugs and ideas for an app wait in the `feedback.md` at its root; a new batch starts from the open ones there and marks each one it builds. If a lead is running, tell it and let it write the batches in at its write-up, so two sessions don&#x27;t edit the roadmap at once. Otherwise add them to `roadmap.md` in the template&#x27;s form.
-- **Telling a live lead something:** read its pane first (`rex capture -b &lt;pane&gt;`), and never type while it shows a permission question. Then `rex send -b &lt;pane&gt; &#x27;&lt;one short line&gt;&#x27;` and `rex send-key -b &lt;pane&gt; enter`. Say which session is writing and that Orlando did not type it. Anything longer goes in a file the lead can read, and the line points at it: a note of about 2,700 characters typed this way once arrived as its last 30 characters, and a line of 220 arrived whole. Read the pane again afterwards to see that the lead answered what you sent.
+- **Telling a live lead something:** read its pane first (`rex capture -b <span class="ph">&lt;pane&gt;</span>`), and never type while it shows a permission question. Then `rex send -b <span class="ph">&lt;pane&gt;</span> &#x27;<span class="ph">&lt;one short line&gt;</span>&#x27;` and `rex send-key -b <span class="ph">&lt;pane&gt;</span> enter`. Say which session is writing and that Orlando did not type it. Anything longer goes in a file the lead can read, and the line points at it: a note of about 2,700 characters typed this way once arrived as its last 30 characters, and a line of 220 arrived whole. Read the pane again afterwards to see that the lead answered what you sent.
 
 A project that already has its own launcher keeps using it until Orlando asks to move it over to this skill. Corillo does (`scripts/next-orchestrator.sh`): its leads follow the project&#x27;s own prompt under their own name, so this script would not see them and could start a second lead.
 
@@ -114,7 +151,7 @@ One memory fuse watches every relay on the Mac. A single process that a lead or 
 The Controls&#x27; Billing line picks one of three modes. Change it only on Orlando&#x27;s word. Each lead starts the next with `start-lead.sh`, so the line holds until someone changes it. `--status` shows it, and a Billing line it can&#x27;t read starts nothing.
 
 - **plan** (or no line): his plan, with Remote Control, as everything above describes.
-- **sdk**: his API key through the Agent SDK, which his plan&#x27;s promotional credit covers (Claude Code itself is not covered). The lead runs as `uv run &lt;skill&gt;/scripts/sdk-run.py` in the relay&#x27;s Rex tab, with the same first message, model, effort, `lead-settings.json` and permission mode auto, and with user, project and local settings loaded. Its cap is the Controls&#x27; `- Lead budget: **&lt;amount&gt;**` line (in US dollars, with a default when there is no line); a lead that spends it is stopped, and `sdk-run.py` adds an entry to the Log. Every run&#x27;s cost goes to `~/.claude/sdk-costs.log`. Claude Code reads the key from the Keychain itself, through an `apiKeyHelper` that `sdk-run.py` passes in the run&#x27;s settings, so the key is never in the environment of the commands, hooks and MCP servers the lead starts, and auto mode stays on (the `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` route forces permission mode to default, so don&#x27;t use it). There is no Remote Control: Orlando reads the lead&#x27;s pane in Rex, or the Log. Nothing typed into its pane reaches it, so &quot;Telling a live lead something&quot; and the memory fuse&#x27;s line in its pane don&#x27;t work: to stop one, set Relay to **off** (it stops at its next hand-off) or close its pane.
+- **sdk**: his API key through the Agent SDK, which his plan&#x27;s promotional credit covers (Claude Code itself is not covered). The lead runs as `uv run <span class="ph">&lt;skill&gt;</span>/scripts/sdk-run.py` in the relay&#x27;s Rex tab, with the same first message, model, effort, `lead-settings.json` and permission mode auto, and with user, project and local settings loaded. Its cap is the Controls&#x27; `- Lead budget: **<span class="ph">&lt;amount&gt;</span>**` line (in US dollars, with a default when there is no line); a lead that spends it is stopped, and `sdk-run.py` adds an entry to the Log. Every run&#x27;s cost goes to `~/.claude/sdk-costs.log`. Claude Code reads the key from the Keychain itself, through an `apiKeyHelper` that `sdk-run.py` passes in the run&#x27;s settings, so the key is never in the environment of the commands, hooks and MCP servers the lead starts, and auto mode stays on (the `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` route forces permission mode to default, so don&#x27;t use it). There is no Remote Control: Orlando reads the lead&#x27;s pane in Rex, or the Log. Nothing typed into its pane reaches it, so &quot;Telling a live lead something&quot; and the memory fuse&#x27;s line in its pane don&#x27;t work: to stop one, set Relay to **off** (it stops at its next hand-off) or close its pane.
 - **api**: refused, nothing starts. It ran interactive `claude` with an `apiKeyHelper`, which is billed as Claude Code, not covered by the credit: it once drained his paid balance until every call was refused.
 
 The heartbeat&#x27;s relay watchdog checks the plan&#x27;s `/usage` before it starts a lead, so while the plan is at its limit it does not restart an sdk relay either: start that one by hand. It does restart an sdk lead stopped at its budget once no lead is alive, so each restart can spend another Lead budget (it starts a limited number a day).
@@ -123,30 +160,41 @@ The heartbeat&#x27;s relay watchdog checks the plan&#x27;s `/usage` before it st
 
 Look first: `--status`, and in a git repo `git log --oneline -5` and `git worktree list`. Then one of:
 
-- **A usage limit, and the lead&#x27;s pane is still open.** A lead stopped by a limit in the middle of a turn stays alive and idle: `--status` shows it as running, &quot;idle for&quot; a long while, and `start-lead.sh` refuses every new start while it sits there. Remote Control sessions don&#x27;t resume by themselves after a limit. After the reset, either send it one line to carry on (see &quot;Telling a live lead something&quot;), or close its pane (`rex block close &lt;pane&gt;`) and start again as below.
+- **A usage limit, and the lead&#x27;s pane is still open.** A lead stopped by a limit in the middle of a turn stays alive and idle: `--status` shows it as running, &quot;idle for&quot; a long while, and `start-lead.sh` refuses every new start while it sits there. Remote Control sessions don&#x27;t resume by themselves after a limit. After the reset, either send it one line to carry on (see &quot;Telling a live lead something&quot;), or close its pane (`rex block close <span class="ph">&lt;pane&gt;</span>`) and start again as below.
 - **Start again** with `start-lead.sh`, once no lead of this relay is alive. A fresh lead carries on the batch marked &quot;running&quot; from what is in the files.
 - **Bring the stopped lead back,** when it stopped a short while ago with builders in the middle of their work. Resuming keeps the lead&#x27;s context and lets it continue each builder with its own, at the price of reading all of that context once more. Find the session&#x27;s id (the newest `.jsonl` in the project&#x27;s folder under `~/.claude/projects/`), then start it the way the script would, so it is named and guarded like any lead:
 
   ```
-  rex run --focus=false --label &quot;&lt;Name&gt;: Batch N&quot; -c &lt;project folder&gt; -- ~/.local/bin/claude --remote-control &quot;&lt;Name&gt;: Batch N&quot; --permission-mode auto --settings &lt;skill&gt;/lead-settings.json --resume &lt;session id&gt; &quot;&lt;one plain line: what happened, what was lost, carry on&gt;&quot;
+  rex run --focus=false --label &quot;&lt;Name&gt;: Batch N&quot; -c <span class="ph">&lt;project folder&gt;</span> -- ~/.local/bin/claude --remote-control &quot;&lt;Name&gt;: Batch N&quot; --permission-mode auto --settings <span class="ph">&lt;skill&gt;</span>/lead-settings.json --resume <span class="ph">&lt;session id&gt;</span> &quot;&lt;one plain line: what happened, what was lost, carry on&gt;&quot;
   ```
 
   An sdk lead can&#x27;t be resumed this way: start a fresh one.
 
   Tell it that everything running at the time is gone (its builders, its `caffeinate`, any checks in flight), and to continue each builder with SendMessage.
 
-Either way, confirm with `rex capture` that the session came up and began work, and that it started its own `caffeinate`. `--status` says whether the memory fuse is watching: a lead brought back by hand has none until you start it, with `( &lt;skill&gt;/scripts/memory-fuse.sh watch &lt;/dev/null &gt;/dev/null 2&gt;&amp;1 &amp; )`. A session brought back by hand opens in a tab with no name: name it with `rex window rename &lt;window id&gt; &quot;&lt;Name&gt;: Batch N&quot;` (the id is in `rex window ls`), so Orlando can tell his tabs apart.
+Either way, confirm with `rex capture` that the session came up and began work, and that it started its own `caffeinate`. `--status` says whether the memory fuse is watching: a lead brought back by hand has none until you start it, with `( <span class="ph">&lt;skill&gt;</span>/scripts/memory-fuse.sh watch &lt;/dev/null &gt;/dev/null 2&gt;&amp;1 &amp; )`. A session brought back by hand opens in a tab with no name: name it with `rex window rename <span class="ph">&lt;window id&gt;</span> &quot;&lt;Name&gt;: Batch N&quot;` (the id is in `rex window ls`), so Orlando can tell his tabs apart.
 
 ## What it needs
 
 Rex (the sessions run in its panes), Remote Control (on the plan), `uv` (on sdk), permission mode &quot;auto&quot; (the lead isn&#x27;t asked before each step, so the project&#x27;s `CLAUDE.md` must say what is off limits), `caffeinate`, and `jq` (part of macOS), which names the relay&#x27;s tab and finds finished panes. It has been proven on one code project, Corillo. On other kinds of work, treat the first batch as a trial and read its Log entry before letting the rest run.
 </code></pre>
 
+</figure>
+
+</section>
+
+<section class="file">
+
 ## <code>builder&#45;brief&#46;md</code> {#builder-brief-md}
 
 <a href="#builder-brief-md">Link to this file</a>
 
 The brief every builder agent in a relay batch reads first, covering where to work, how to prove the work, and what to put in the final report.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">builder-brief.md</span><span class="code-meta">Markdown · 41 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (41 lines)</summary>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere"># Brief for every builder in a relay batch
 
@@ -159,8 +207,8 @@ The project&#x27;s `CLAUDE.md`, its `context.md` if it has one, &quot;How this p
 ## Where you work
 
 - Only in the place your prompt names: your worktree and branch, or your own files. With a worktree, never the main checkout. Never another agent&#x27;s files, an installed or live copy of the project, or real data.
-- Shell state doesn&#x27;t carry between commands: start each with `cd &lt;your place&gt; &amp;&amp;`, and use absolute paths with the file tools.
-- Scratch files go where the project says, or under `~/ai/tmp/&lt;project&gt;/&lt;your name&gt;/`. Not in the project folder.
+- Shell state doesn&#x27;t carry between commands: start each with `cd <span class="ph">&lt;your place&gt;</span> &amp;&amp;`, and use absolute paths with the file tools.
+- Scratch files go where the project says, or under `~/ai/tmp/<span class="ph">&lt;project&gt;</span>/<span class="ph">&lt;your name&gt;</span>/`. Not in the project folder.
 - Don&#x27;t edit `roadmap.md` or `context.md`: the lead writes those from your report.
 - Never deliver, install, publish, push or merge. The lead does that once the whole batch passes.
 
@@ -170,7 +218,7 @@ The project&#x27;s `CLAUDE.md`, its `context.md` if it has one, &quot;How this p
 - **Prove it.** For code: write the test that shows the thing missing or wrong, see it fail, build, see it pass. Orlando doesn&#x27;t read code, so tests are his review. For anything else: check the result against what the item promised and say how you checked (the source for each claim, the numbers worked again, the file opened and read).
 - **Decisions.** The roadmap&#x27;s table decides, and a decision without an answer goes by its recommendation. For a small call nobody covered, choose what Orlando would most plausibly want, keep it small, and list it under &quot;Calls for Orlando&quot;. For a big one, don&#x27;t build it: report it.
 - **Other agents are working on this computer right now.** While iterating, run only the checks you need. Before you finish, run the project&#x27;s full checks once. A check that measures time and fails under load: run it alone twice before deciding, and say so in your report rather than changing it. Never loosen or delete a check to get a pass. If a check is wrong, say why.
-- **Never find a limit by hitting it.** A command whose memory grows with its input can ask for hundreds of GB within seconds. macOS then raises its out-of-memory alarm for the whole Mac and stops other programs, while most memory is still free. So when your item is about very large input, hostile input or load: measure at three or four small sizes (`/usr/bin/time -l &lt;command&gt;` prints the peak memory), work out the rest, and prove the limit with a test at a small size. Small means a peak under 200 MB. One size per command, smallest first, never a loop over sizes, and stop the series at the first size that passes 500 MB or is stopped. A command that ends with exit code 137 or &quot;Killed: 9&quot; was stopped for memory, by macOS or by the relay&#x27;s memory fuse (it stops any one process that passes a quarter of the Mac&#x27;s memory). Never run it again as it was: make it smaller, and say in your report what happened.
+- **Never find a limit by hitting it.** A command whose memory grows with its input can ask for hundreds of GB within seconds. macOS then raises its out-of-memory alarm for the whole Mac and stops other programs, while most memory is still free. So when your item is about very large input, hostile input or load: measure at three or four small sizes (`/usr/bin/time -l <span class="ph">&lt;command&gt;</span>` prints the peak memory), work out the rest, and prove the limit with a test at a small size. Small means a peak under 200 MB. One size per command, smallest first, never a loop over sizes, and stop the series at the first size that passes 500 MB or is stopped. A command that ends with exit code 137 or &quot;Killed: 9&quot; was stopped for memory, by macOS or by the relay&#x27;s memory fuse (it stops any one process that passes a quarter of the Mac&#x27;s memory). Never run it again as it was: make it smaller, and say in your report what happened.
 - **Never use `git stash`.** It is shared by every worktree of a repo, so one agent&#x27;s stash can land in another&#x27;s work. To set work aside, make a temporary commit on your branch.
 - **Clean up after yourself.** Whatever you made that isn&#x27;t the deliverable (temporary folders, test data, builds, downloads, programs you started) is gone before you finish. Leftovers that grow with use are a leak.
 - **Never take the computer&#x27;s focus.** Don&#x27;t bring any app to the front.
@@ -191,11 +239,23 @@ Under 400 words:
 Say plainly what is verified and what isn&#x27;t. If the full checks don&#x27;t pass, say so and name what fails. Don&#x27;t present unfinished work as done.
 </code></pre>
 
+</details>
+</figure>
+
+</section>
+
+<section class="file">
+
 ## <code>lead&#46;md</code> {#lead-md}
 
 <a href="#lead-md">Link to this file</a>
 
 The instructions a relay lead session follows to lead one batch of a roadmap, from reading the plan to handing off to the next session.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">lead.md</span><span class="code-meta">Markdown · 93 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (93 lines)</summary>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere"># Leading one batch of a relay
 
@@ -205,11 +265,11 @@ Each batch gets a fresh lead so that no session&#x27;s context grows through the
 
 The project&#x27;s own rules win over this file: its `CLAUDE.md`, and the &quot;How this project runs&quot; section of `roadmap.md`.
 
-`&lt;skill&gt;` below means the folder this file is in.
+`<span class="ph">&lt;skill&gt;</span>` below means the folder this file is in.
 
 ## Before anything else
 
-1. **Keep the computer awake.** Start `caffeinate -ims -t &lt;seconds&gt;` in the background, sized to the batch (6 hours if you can&#x27;t tell), and note its process id. Start your own even if another is running: another session stops its own before your batch ends. The display may sleep: Remote Control doesn&#x27;t need it (Orlando&#x27;s call).
+1. **Keep the computer awake.** Start `caffeinate -ims -t <span class="ph">&lt;seconds&gt;</span>` in the background, sized to the batch (6 hours if you can&#x27;t tell), and note its process id. Start your own even if another is running: another session stops its own before your batch ends. The display may sleep: Remote Control doesn&#x27;t need it (Orlando&#x27;s call).
 2. **Read** the project&#x27;s `CLAUDE.md`, its `context.md` if it has one, and `roadmap.md`: the Controls, &quot;How this project runs&quot;, the decisions, your batch, and the Log&#x27;s last entry. Don&#x27;t read long reference files whole (a spec, research notes): the builders read the parts they need.
 3. **Find your batch:** the first one whose status is &quot;running&quot; or &quot;queued&quot;. One marked &quot;queued, low&quot; is skipped.
 4. **Look at where things stand.** In a git repo: `git status`, `git log --oneline -15`, `git worktree list`, `git branch`, and `git status --short` in each worktree. Anywhere: which of the batch&#x27;s files already exist, and free disk space (`df -h`).
@@ -219,22 +279,22 @@ The project&#x27;s own rules win over this file: its `CLAUDE.md`, and the &quot;
 ## Do the batch
 
 1. **Builders.** One agent per numbered item, at most three at once, with the model and effort the Controls give (Agent tool). An item that is a few minutes&#x27; work you may do yourself. Each builder&#x27;s prompt:
-   - read `&lt;skill&gt;/builder-brief.md` first, then the project&#x27;s rules;
+   - read `<span class="ph">&lt;skill&gt;</span>/builder-brief.md` first, then the project&#x27;s rules;
    - its item, quoted from `roadmap.md`, and the notes it points to;
    - where it works, the files that are its own, and the files the other builders are in;
    - the decisions that apply (a decision Orlando hasn&#x27;t answered goes by its recommendation);
    - what the other builders&#x27; work will show where the two meet. Message a builder that is still running when another&#x27;s work lands and changes what it will see.
 
    Where they work depends on the project:
-   - **Code in its own git repo:** each builder in its own worktree under `.claude/worktrees/&lt;name&gt;`, on its own branch (`relay/b&lt;batch&gt;-&lt;short-name&gt;`). Link in large untracked folders (such as `node_modules`) rather than installing them again.
+   - **Code in its own git repo:** each builder in its own worktree under `.claude/worktrees/<span class="ph">&lt;name&gt;</span>`, on its own branch (`relay/b<span class="ph">&lt;batch&gt;</span>-<span class="ph">&lt;short-name&gt;</span>`). Link in large untracked folders (such as `node_modules`) rather than installing them again.
    - **Anything else** (documents, research, a folder inside a larger repo): no worktrees. Each builder writes only its own files.
 
    Builders never deliver, never merge, and never edit `roadmap.md` or `context.md`. You do that from their reports.
 2. **Bring it together.** With worktrees: merge each branch with `git merge --no-ff` when its builder reports its checks green. Settle small conflicts yourself (both sides added something: keep both) and send large ones back to the builder. Build straight after each merge: two branches can merge without conflict and still not work together. Then run the project&#x27;s full checks once, on the whole. Failures that no builder had alone are expected: find the cause, never loosen a check.
-3. **Review.** One fresh reviewer, read-only, on everything the batch changed, briefed with `&lt;skill&gt;/reviewer-brief.md` plus what to review (the commit range, or the files) and where to write its findings: a scratch file outside the project, unless the project names a place. What matters from it goes in the Log, so the file needn&#x27;t be kept. Fresh eyes find real problems in work that passes its checks, so don&#x27;t skip this for a batch that built something. Give what is serious to one fix agent, then run the checks again. List the rest in the Log. If the reviewer couldn&#x27;t write its findings file, its last message carries them.
+3. **Review.** One fresh reviewer, read-only, on everything the batch changed, briefed with `<span class="ph">&lt;skill&gt;</span>/reviewer-brief.md` plus what to review (the commit range, or the files) and where to write its findings: a scratch file outside the project, unless the project names a place. What matters from it goes in the Log, so the file needn&#x27;t be kept. Fresh eyes find real problems in work that passes its checks, so don&#x27;t skip this for a batch that built something. Give what is serious to one fix agent, then run the checks again. List the rest in the Log. If the reviewer couldn&#x27;t write its findings file, its last message carries them.
 4. **Deliver.** When the checks pass on the final state, do the delivery step that &quot;How this project runs&quot; describes, if it says that step may be done without asking. If it doesn&#x27;t say, don&#x27;t deliver: write in the Log that the batch is ready and what delivering it would take.
 5. **Write it down.**
-   - In `roadmap.md`: the batch&#x27;s `Status: **done** (&lt;date&gt;; &lt;the result in a few words&gt;)`, and an entry in the Log: what was built, what was left and why, the calls you made for Orlando (what you chose, why, and the other option), what was delivered, and what he should try by hand.
+   - In `roadmap.md`: the batch&#x27;s `Status: **done** (<span class="ph">&lt;date&gt;</span>; <span class="ph">&lt;the result in a few words&gt;</span>)`, and an entry in the Log: what was built, what was left and why, the calls you made for Orlando (what you chose, why, and the other option), what was delivered, and what he should try by hand.
    - `context.md`, if the project has one, brought up to date: the state, decisions, where things are. Keep it short.
    - Work you think should come next goes in the Log as a suggestion. Only Orlando adds batches to the queue. If he has told you to queue something, write it as a batch in the form the others have.
    - Commit, with only this project&#x27;s files. Never `git add -A` in a repo that holds other work.
@@ -255,11 +315,11 @@ It is Orlando&#x27;s usage. Use no more agents than the batch needs, no second f
 - Read the part of a file the work needs, not the whole of a long one twice.
 - Unless a roadmap&#x27;s Agents line says otherwise: builders and fix agents on Opus 5.5 at effort high, a batch&#x27;s one reviewer at xhigh.
 
-**On the API key (sdk).** When the Controls say `- Billing: **sdk**`, you run through the Agent SDK (`&lt;skill&gt;/scripts/sdk-run.py`) on Orlando&#x27;s API key, not his plan: his plan&#x27;s promotional credit covers it, and every token is money, so the rules above count double. Your agents run in your process and bill the key too, with nothing for you to set. You have a hard cap, the Controls&#x27; `- Lead budget` (in US dollars, with a default when there is no such line): when it is spent you are stopped mid-turn with no chance to write anything, and `sdk-run.py` adds a short entry to the Log saying so. So commit finished work as you go, and keep the Log&#x27;s account of where things stand current at each step, not only at the end. You have no Remote Control (it needs the plan), and nothing typed into your pane reaches you: Orlando reads your pane in Rex and the Log. Your cost is written to `~/.claude/sdk-costs.log` when you end; in your Log entry say that&#x27;s where it is. Never read, print or pass the key, and never run the Keychain command yourself: Claude Code reads it through the `apiKeyHelper` that `sdk-run.py` sets, and the commands you run don&#x27;t see it. The next lead keeps the Billing and Lead budget lines as they are: change them only on Orlando&#x27;s word.
+**On the API key (sdk).** When the Controls say `- Billing: **sdk**`, you run through the Agent SDK (`<span class="ph">&lt;skill&gt;</span>/scripts/sdk-run.py`) on Orlando&#x27;s API key, not his plan: his plan&#x27;s promotional credit covers it, and every token is money, so the rules above count double. Your agents run in your process and bill the key too, with nothing for you to set. You have a hard cap, the Controls&#x27; `- Lead budget` (in US dollars, with a default when there is no such line): when it is spent you are stopped mid-turn with no chance to write anything, and `sdk-run.py` adds a short entry to the Log saying so. So commit finished work as you go, and keep the Log&#x27;s account of where things stand current at each step, not only at the end. You have no Remote Control (it needs the plan), and nothing typed into your pane reaches you: Orlando reads your pane in Rex and the Log. Your cost is written to `~/.claude/sdk-costs.log` when you end; in your Log entry say that&#x27;s where it is. Never read, print or pass the key, and never run the Keychain command yourself: Claude Code reads it through the `apiKeyHelper` that `sdk-run.py` sets, and the commands you run don&#x27;t see it. The next lead keeps the Billing and Lead budget lines as they are: change them only on Orlando&#x27;s word.
 
 **When an action is denied.** You run with permission questions turned into a &quot;no&quot; (the skill&#x27;s `lead-settings.json`), so nothing waits for Orlando. When an action the batch needs is denied, don&#x27;t look for a way round it: finish what can be finished, say in the Log what was denied and why it was needed, and stop cleanly if the batch can&#x27;t be done without it.
 
-If you are about to run out of usage, or the batch is going badly: stop cleanly. Commit what is finished and passing, write in the Log exactly where things stand, leave the status &quot;running&quot;, stop your `caffeinate`, and run `&lt;skill&gt;/scripts/start-lead.sh &lt;project folder&gt; --close-me`. That starts nothing while your batch is marked running. It puts your pane away once you have been idle for 15 minutes, so no stopped session is left open in Rex. Then write your last message and end.
+If you are about to run out of usage, or the batch is going badly: stop cleanly. Commit what is finished and passing, write in the Log exactly where things stand, leave the status &quot;running&quot;, stop your `caffeinate`, and run `<span class="ph">&lt;skill&gt;</span>/scripts/start-lead.sh <span class="ph">&lt;project folder&gt;</span> --close-me`. That starts nothing while your batch is marked running. It puts your pane away once you have been idle for 15 minutes, so no stopped session is left open in Rex. Then write your last message and end.
 
 The next start carries on from there, and it may come without anyone asking: if the heartbeat&#x27;s watchdog watches this relay, it starts a fresh lead once no lead is alive and the usage allows. So if a fresh lead would only meet the same trouble, also set Relay to **off** in the Controls and say why in the Log.
 
@@ -267,7 +327,7 @@ The next start carries on from there, and it may come without anyone asking: if 
 
 It is Orlando&#x27;s own Mac. His apps and other relays share it. A process that grows without bound can raise macOS&#x27;s out-of-memory alarm for the whole Mac within seconds, while most memory is still free: a test of a very long answer once did that nine times.
 
-- **The memory fuse** (`&lt;skill&gt;/scripts/memory-fuse.sh`) started with you. It stops any single process that you or your agents started once it passes a quarter of the Mac&#x27;s memory, and types one line into your pane when it does. When that line comes: tell the agent whose command it was, see that the command isn&#x27;t run again as it was, and say in the Log what was stopped and why it grew. `&lt;skill&gt;/scripts/memory-fuse.sh say` shows what it sees.
+- **The memory fuse** (`<span class="ph">&lt;skill&gt;</span>/scripts/memory-fuse.sh`) started with you. It stops any single process that you or your agents started once it passes a quarter of the Mac&#x27;s memory, and types one line into your pane when it does. When that line comes: tell the agent whose command it was, see that the command isn&#x27;t run again as it was, and say in the Log what was stopped and why it grew. `<span class="ph">&lt;skill&gt;</span>/scripts/memory-fuse.sh say` shows what it sees.
 - **Exit code 137, or &quot;Killed: 9&quot;,** means a command was stopped for memory, by the fuse or by macOS. The same goes: never again as it was.
 - **Limits are tested small.** An agent whose item is about very large input, hostile input or load must not find a limit by hitting it. The builder brief says how; point to that rule in its prompt.
 
@@ -284,7 +344,7 @@ Every lead ends the same way, whether or not another batch follows, so no finish
 
 1. Read the Controls again: Orlando may have changed them while you worked. If the relay stops here (Relay is off, your batch is the one to stop after, or no other batch is queued), write in the Log why, and commit.
 2. Stop your `caffeinate` (the next lead starts its own).
-3. Run `&lt;skill&gt;/scripts/start-lead.sh &lt;project folder&gt;` once, in every case. It reads the Controls itself:
+3. Run `<span class="ph">&lt;skill&gt;</span>/scripts/start-lead.sh <span class="ph">&lt;project folder&gt;</span>` once, in every case. It reads the Controls itself:
    - If another batch is to run, it starts the next lead in a pane beside yours, in this relay&#x27;s Rex tab, says that the session came up, and prints the command that reads its pane. Read that pane once to see that it has begun work.
    - If not, it starts nothing and says why.
 
@@ -292,11 +352,23 @@ Every lead ends the same way, whether or not another batch follows, so no finish
 4. Finish with a short message for Orlando: what he can do now that he couldn&#x27;t before, what he should try by hand, and what waits for his decision. Then end your turn and do nothing more.
 </code></pre>
 
+</details>
+</figure>
+
+</section>
+
+<section class="file">
+
 ## <code>reviewer&#45;brief&#46;md</code> {#reviewer-brief-md}
 
 <a href="#reviewer-brief-md">Link to this file</a>
 
 The brief for the fresh reviewer who reads a finished relay batch, with the rules it works under, what to look for, and the form of its findings.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">reviewer-brief.md</span><span class="code-meta">Markdown · 48 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (48 lines)</summary>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere"># Brief for the reviewer of a relay batch
 
@@ -334,7 +406,7 @@ Don&#x27;t report style, naming, or what you would have done differently.
 Write your findings to the file your prompt names, most serious first:
 
 ```
-### &lt;ID&gt;: &lt;short title&gt;
+### &lt;ID&gt;: <span class="ph">&lt;short title&gt;</span>
 - Severity: P0 (loss of data, safety) | P1 (a problem people will hit) | P2 (an edge case, a leak, slowness, wrong words) | P3 (minor)
 - Where: path:line (every place involved)
 - What happens: the concrete failure, as steps or inputs and the wrong result
@@ -348,11 +420,23 @@ Start the file with one sentence: would you let Orlando use this as it is, and i
 Be honest about confidence, and don&#x27;t pad: if the batch is sound, a short file is the right answer. Your final message to the lead, under 200 words: the count by severity, the most important findings as one line each with their ids, and anything the lead must know. If you couldn&#x27;t write the file, put the findings in that message instead.
 </code></pre>
 
+</details>
+</figure>
+
+</section>
+
+<section class="file">
+
 ## <code>roadmap&#45;template&#46;md</code> {#roadmap-template-md}
 
 <a href="#roadmap-template-md">Link to this file</a>
 
 The blank form for a project's <code>roadmap&#46;md</code>, with its Controls, decisions table, batches, and Log, which the relay scripts read.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">roadmap-template.md</span><span class="code-meta">Markdown · 58 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (58 lines)</summary>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere"># &lt;Project&gt; roadmap
 
@@ -365,10 +449,10 @@ This file is also the queue. A fresh Claude session leads one batch, checks it, 
 - Name: **&lt;Project&gt;** (sessions are named &quot;&lt;Project&gt;: Batch 1&quot;, and so on)
 - Relay: **on**
 - Stop after batch: **none** (write a batch number in the bold to pause after it, such as **2**; any other form starts nothing)
-- Agents: &lt;model&gt; at &lt;effort&gt;, at most three builders and one reviewer per batch
+- Agents: <span class="ph">&lt;model&gt;</span> at <span class="ph">&lt;effort&gt;</span>, at most three builders and one reviewer per batch
 - Lead: **opus high** (the lead&#x27;s model and effort, so its cost doesn&#x27;t move with the level saved elsewhere; **default** uses the saved ones)
 - Billing: **plan** (who pays for the leads: **plan**, with Remote Control, or **sdk**, Orlando&#x27;s API key through the Agent SDK, without it)
-- Lead budget: **&lt;amount&gt;** (US dollars, the most one lead may spend on **sdk**; the plan ignores it)
+- Lead budget: **<span class="ph">&lt;amount&gt;</span>** (US dollars, the most one lead may spend on **sdk**; the plan ignores it)
 
 To stop the relay after the current batch, change **on** to **off** in the Relay line. Keep that line to those words alone: with anything else on it, nothing starts.
 
@@ -377,7 +461,7 @@ To stop the relay after the current batch, change **on** to **off** in the Relay
 - **Checks:** &lt;what must pass before a batch counts as done: a command such as `npm test`, or what a fresh reader must confirm&gt;
 - **Deliver:** &lt;what happens when a batch passes, and whether it may be done without asking. &quot;Nothing&quot; if there is no such step.&gt;
 - **Where builders work:** &lt;worktrees of this repo, or each in its own files; the scratch folder; anything to link in rather than install again&gt;
-- **Never:** &lt;what no session may do here&gt;
+- **Never:** <span class="ph">&lt;what no session may do here&gt;</span>
 
 ## Decisions that are yours
 
@@ -391,7 +475,7 @@ Each has a recommendation. A batch that depends on one goes ahead with the recom
 
 Sizes: S is one agent&#x27;s short piece of work, M two or three times that, L a batch of its own.
 
-### Batch 1: &lt;what you get from it&gt;
+### Batch 1: <span class="ph">&lt;what you get from it&gt;</span>
 Status: **queued**
 
 1. **&lt;Item&gt;** (needs D1). &lt;What you see today, and what you will see.&gt; Size S. Owner of: &lt;the files or folders that are this item&#x27;s own&gt;.
@@ -399,7 +483,7 @@ Status: **queued**
 
 Check before delivering: &lt;anything beyond the usual checks, or leave this line out&gt;
 
-### Batch 2: &lt;what you get from it&gt;
+### Batch 2: <span class="ph">&lt;what you get from it&gt;</span>
 Status: **queued**
 
 1. **&lt;Item&gt;.** &lt;...&gt;
@@ -414,9 +498,16 @@ Status: **not queued**
 (Each session adds an entry when its batch is done: what was built, what was left and why, the calls made for Orlando, what was delivered, and what he should try by hand.)
 </code></pre>
 
+</details>
+</figure>
+
+</section>
+
 ## Scripts
 
 These scripts are one person's working code, shared from Orlando's setup with private details replaced by placeholders. They are not a supported tool: read each one before you run it, and expect to change it to fit your own setup.
+
+<section class="file">
 
 ### <code>lead&#45;settings&#46;json</code> {#lead-settings-json}
 
@@ -424,12 +515,24 @@ These scripts are one person's working code, shared from Orlando's setup with pr
 
 The settings every relay lead session starts with, which turn any permission question into a "no" so a lead never waits on an answer.
 
+<figure class="code">
+<div class="code-bar"><span class="code-name">lead-settings.json</span><span class="code-meta">JSON · 5 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (5 lines)</summary>
+
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">&#123;
   &quot;permissions&quot;: &#123;
     &quot;denyInsteadOfPrompting&quot;: true
   &#125;
 &#125;
 </code></pre>
+
+</details>
+</figure>
+
+</section>
+
+<section class="file">
 
 ### <code>close&#45;pane&#45;later&#46;sh</code> {#close-pane-later-sh}
 
@@ -439,13 +542,18 @@ Closes a Rex pane once the session in it has been idle for a while, so finished 
 
 **Needs to run:** Rex, jq, and macOS.
 
+<figure class="code">
+<div class="code-bar"><span class="code-name">close-pane-later.sh</span><span class="code-meta">Shell · 89 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (89 lines)</summary>
+
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">#!/bin/zsh -f
 # Closes a Rex pane once the session in it has been idle for a while. This is
 # how a finished lead session is put away (start-lead.sh starts it), so old
 # sessions don&#x27;t pile up for Orlando to close by hand.
 #
-#   close-pane-later.sh &lt;block id&gt; [idle seconds, default 900]
-#   close-pane-later.sh &lt;block id&gt; [idle seconds] --say   say what it would do now, and do nothing
+#   close-pane-later.sh <span class="ph">&lt;block id&gt;</span> [idle seconds, default 900]
+#   close-pane-later.sh <span class="ph">&lt;block id&gt;</span> [idle seconds] --say   say what it would do now, and do nothing
 #
 # It runs on its own, in no pane. A timer in a tab of its own was one more tab
 # to wonder about, and closing that tab stopped the clean-up.
@@ -530,6 +638,13 @@ done
 exit 0
 </code></pre>
 
+</details>
+</figure>
+
+</section>
+
+<section class="file">
+
 ### <code>memory&#45;fuse&#46;sh</code> {#memory-fuse-sh}
 
 <a href="#memory-fuse-sh">Link to this file</a>
@@ -537,6 +652,11 @@ exit 0
 Watches the Mac's biggest processes while a relay lead runs and stops any single process a lead started that grows past a quarter of the Mac's memory. <code>start&#45;lead&#46;sh</code> starts it, and it can be run with <code>say</code> to see what it would stop.
 
 **Needs to run:** Rex, jq, and macOS.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">memory-fuse.sh</span><span class="code-meta">Shell · 220 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (220 lines)</summary>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">#!/bin/zsh -f
 # The relay&#x27;s memory fuse.
@@ -591,7 +711,7 @@ jq_bin=$(command -v jq) || jq_bin=&quot;&quot;
 # gb &lt;MB&gt;: the same amount in GB, with one decimal.
 gb() &#123; printf &#x27;%.1f&#x27; $(( $1 / 1024.0 )) &#125;
 
-# note &lt;words&gt;: one dated line in the log, which keeps its last 200 lines.
+# note <span class="ph">&lt;words&gt;</span>: one dated line in the log, which keeps its last 200 lines.
 note() &#123;
   print -r -- &quot;$(strftime &#x27;%Y-%m-%d %H:%M:%S&#x27; $EPOCHSECONDS) $1&quot; &gt;&gt; &quot;$log&quot;
   if (( $(/usr/bin/wc -l &lt; &quot;$log&quot;) &gt; 200 )); then
@@ -599,7 +719,7 @@ note() &#123;
   fi
 &#125;
 
-# lead_of &lt;process id&gt;: the relay lead that process runs under. Sets REPLY.
+# lead_of <span class="ph">&lt;process id&gt;</span>: the relay lead that process runs under. Sets REPLY.
 lead_of() &#123;
   REPLY=&quot;&quot;
   local q=&quot;$1&quot; n=0
@@ -622,14 +742,14 @@ name_of() &#123;
   /bin/ps -o args= -p &quot;$1&quot; 2&gt;/dev/null | /usr/bin/sed -n -E &#x27;s/.*--(remote-control|name|label) (.*: Batch [0-9]+).*/\2/p&#x27;
 &#125;
 
-# family &lt;process id&gt;: everything that process started, then the process.
+# family <span class="ph">&lt;process id&gt;</span>: everything that process started, then the process.
 family() &#123;
   local p
   for p in $(/usr/bin/pgrep -P &quot;$1&quot;); do family &quot;$p&quot;; done
   print -r -- &quot;$1&quot;
 &#125;
 
-# pane_of &lt;process id&gt;: the Rex pane that process runs in. Sets REPLY.
+# pane_of <span class="ph">&lt;process id&gt;</span>: the Rex pane that process runs in. Sets REPLY.
 pane_of() &#123;
   REPLY=&quot;&quot;
   [[ -x &quot;$rex_bin&quot; &amp;&amp; -n &quot;$jq_bin&quot; ]] || return 1
@@ -643,14 +763,14 @@ pane_of() &#123;
   return 1
 &#125;
 
-# tell_lead &lt;a lead&#x27;s process id&gt; &lt;one line&gt;: types the line into its pane.
+# tell_lead &lt;a lead&#x27;s process id&gt; <span class="ph">&lt;one line&gt;</span>: types the line into its pane.
 tell_lead() &#123;
   pane_of &quot;$1&quot; || return 1
   &quot;$rex_bin&quot; send -b &quot;$REPLY&quot; &quot;$2&quot; &gt;/dev/null 2&gt;&amp;1 || return 1
   &quot;$rex_bin&quot; send-key -b &quot;$REPLY&quot; enter &gt;/dev/null 2&gt;&amp;1
 &#125;
 
-# check &lt;process id&gt; &lt;its memory in MB&gt;: stops it if it is over the limit and
+# check <span class="ph">&lt;process id&gt;</span> &lt;its memory in MB&gt;: stops it if it is over the limit and
 # a relay lead started it. Ends with 3 when the process is not this fuse&#x27;s to
 # touch: no relay lead started it, or it is a lead itself.
 check() &#123;
@@ -683,7 +803,7 @@ check() &#123;
   return 0
 &#125;
 
-# What is over the limit in what top prints: &quot;&lt;process id&gt; &lt;MB&gt;&quot; a line.
+# What is over the limit in what top prints: &quot;<span class="ph">&lt;process id&gt;</span> &lt;MB&gt;&quot; a line.
 over_limit=&#x27;
   function mb(s,    u, n) &#123;
     sub(/[+-]$/, &quot;&quot;, s)
@@ -760,6 +880,13 @@ case &quot;$mode&quot; in
 esac
 </code></pre>
 
+</details>
+</figure>
+
+</section>
+
+<section class="file">
+
 ### <code>sdk&#45;run&#46;py</code> {#sdk-run-py}
 
 <a href="#sdk-run-py">Link to this file</a>
@@ -767,6 +894,11 @@ esac
 Runs one Claude Code session through the Agent SDK on an API key, with a hard spending cap, and logs each run's cost. <code>start&#45;lead&#46;sh</code> uses it for relays set to <code>sdk</code> billing, and it can be run by hand.
 
 **Needs to run:** uv, macOS, and the Keychain (through the <code>security</code> command).
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">sdk-run.py</span><span class="code-meta">Python · 154 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (154 lines)</summary>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere"># /// script
 # requires-python = &quot;&gt;=3.12&quot;
@@ -780,7 +912,7 @@ while interactive claude with an apiKeyHelper was billed as Claude Code; an
 SDK run with the same apiKeyHelper came out of the promo credit too).
 
 Usage:
-  uv run sdk-run.py --cwd &lt;folder&gt; --budget &lt;usd&gt; [--model M] [--effort E]
+  uv run sdk-run.py --cwd <span class="ph">&lt;folder&gt;</span> --budget <span class="ph">&lt;usd&gt;</span> [--model M] [--effort E]
       [--label TEXT] [--settings FILE] [--read-dir DIR ...] [--roadmap FILE]
       (--prompt TEXT | --prompt-file PATH)
 
@@ -924,6 +1056,13 @@ if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
 
+</details>
+</figure>
+
+</section>
+
+<section class="file">
+
 ### <code>start&#45;lead&#46;sh</code> {#start-lead-sh}
 
 <a href="#start-lead-sh">Link to this file</a>
@@ -931,6 +1070,11 @@ if __name__ == &quot;__main__&quot;:
 Starts a fresh Claude Code session to lead the next batch of a project's roadmap, puts finished lead panes away, and with options says what it would start or where the relay stands.
 
 **Needs to run:** Rex, uv, jq, git, and macOS.
+
+<figure class="code">
+<div class="code-bar"><span class="code-name">start-lead.sh</span><span class="code-meta">Shell · 619 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (619 lines)</summary>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">#!/bin/zsh
 # Starts a fresh Claude Code session to lead the next batch of a project&#x27;s
@@ -1095,7 +1239,7 @@ stop_after=$(awk &quot;$awk_lib&quot;&#x27;
 unclear_stop=&#x27;roadmap.md&#x27;&quot;&#x27;&quot;&#x27;s Stop after batch line can&#x27;&quot;&#x27;&quot;&#x27;t be read: nothing starts. Write it as &quot;- Stop after batch: **none**&quot; or with a batch number in the bold, such as &quot;- Stop after batch: **2**&quot;.&#x27;
 
 # The lead&#x27;s model and effort, from the Controls&#x27; Lead line: default (or no
-# line), &lt;model&gt;, &lt;model&gt; &lt;effort&gt;, or &lt;model&gt; at &lt;effort&gt;. Anything else,
+# line), <span class="ph">&lt;model&gt;</span>, <span class="ph">&lt;model&gt;</span> <span class="ph">&lt;effort&gt;</span>, or <span class="ph">&lt;model&gt;</span> at <span class="ph">&lt;effort&gt;</span>. Anything else,
 # such as an effort alone, is &quot;?&quot;: it would start a session that fails at its
 # first request.
 efforts=&#x27;^(low|medium|high|xhigh|max)$&#x27;
@@ -1146,7 +1290,7 @@ unclear_billing=&#x27;roadmap.md&#x27;&quot;&#x27;&quot;&#x27;s Billing line can
 refused_api=&#x27;roadmap.md says &quot;- Billing: **api**&quot;, which is refused: nothing starts. It bills Claude Code to the API key, which the credit does not cover. Write &quot;- Billing: **sdk**&quot; instead.&#x27;
 
 # The most an sdk lead may spend, in US dollars: the Controls&#x27; &quot;- Lead
-# budget: **&lt;amount&gt;**&quot; line, a default with no such line. &quot;?&quot; for a line that is there
+# budget: **<span class="ph">&lt;amount&gt;</span>**&quot; line, a default with no such line. &quot;?&quot; for a line that is there
 # but not a plain number above 0, or more than one: an sdk lead doesn&#x27;t
 # start without a cap it can read.
 budget=$(awk &quot;$awk_lib&quot;&#x27;
@@ -1155,13 +1299,13 @@ budget=$(awk &quot;$awk_lib&quot;&#x27;
   /^## / &#123; sec = (!seen &amp;&amp; $0 ~ /^## Controls([ \t]|$)/); if (sec) seen = 1; next &#125;
   sec &amp;&amp; tolower($0) ~ /^[ \t]*([-*+][ \t]*)?(\*\*)?[ \t]*lead[ \t]+budget/ &#123; n++; line = $0 &#125;
   END &#123;
-    if (!n) &#123; print &quot;&lt;default-budget&gt;&quot;; exit &#125;
+    if (!n) &#123; print &quot;<span class="ph">&lt;default-budget&gt;</span>&quot;; exit &#125;
     if (n &gt; 1) &#123; print &quot;?&quot;; exit &#125;
     if (line ~ /^- Lead budget: \*\*\$?[0-9]+(\.[0-9]+)?\*\*/) &#123; v = line; sub(/^- Lead budget: \*\*\$?/, &quot;&quot;, v); sub(/\*\*.*/, &quot;&quot;, v); if (v + 0 &gt; 0) &#123; print v; exit &#125; &#125;
     print &quot;?&quot;
   &#125;
 &#x27; &quot;$roadmap&quot;)
-unclear_budget=&#x27;roadmap.md&#x27;&quot;&#x27;&quot;&#x27;s Lead budget line can&#x27;&quot;&#x27;&quot;&#x27;t be read: nothing starts on sdk. Write it as &quot;- Lead budget: **&lt;amount&gt;**&quot; (US dollars, above 0), once, or leave it out for the default.&#x27;
+unclear_budget=&#x27;roadmap.md&#x27;&quot;&#x27;&quot;&#x27;s Lead budget line can&#x27;&quot;&#x27;&quot;&#x27;t be read: nothing starts on sdk. Write it as &quot;- Lead budget: **<span class="ph">&lt;amount&gt;</span>**&quot; (US dollars, above 0), once, or leave it out for the default.&#x27;
 case &quot;$billing&quot; in
   sdk)  billing_says=&quot;the API key through the Agent SDK, without Remote Control, at most \$$budget a lead&quot; ;;
   plan) billing_says=&quot;the plan, with Remote Control&quot; ;;
@@ -1169,9 +1313,9 @@ case &quot;$billing&quot; in
   *)    billing_says=&quot;?&quot; ;;
 esac
 # How a lead&#x27;s process is told apart, by its command line. On the plan:
-# &quot;claude --remote-control &lt;its name&gt; ...&quot;. An older lead on the key: &quot;claude
-# --name &lt;its name&gt; ...&quot;. On sdk: &quot;uv run &lt;this folder&gt;/sdk-run.py ...
-# --label &lt;its name&gt; ...&quot;, the uv process being the pane&#x27;s own program. Each
+# &quot;claude --remote-control <span class="ph">&lt;its name&gt;</span> ...&quot;. An older lead on the key: &quot;claude
+# --name <span class="ph">&lt;its name&gt;</span> ...&quot;. On sdk: &quot;uv run <span class="ph">&lt;this folder&gt;</span>/sdk-run.py ...
+# --label <span class="ph">&lt;its name&gt;</span> ...&quot;, the uv process being the pane&#x27;s own program. Each
 # is followed by &quot;&lt;Name&gt;: Batch N&quot;. Two groups: the batch number is \3.
 lead_re=&#x27;^([^ ]*claude --(remote-control|name) |[^ ]*uv run [^ ]*sdk-run\.py .*--label )&#x27;
 
@@ -1233,7 +1377,7 @@ jq_bin=$(command -v jq || true)
 # How long a finished pane must be idle before it closes. Tests shorten it.
 close_after=&quot;$&#123;RELAY_CLOSE_AFTER:-900&#125;&quot;
 
-# pane_of &lt;process id&gt;: the Rex pane that process runs in. Rex knows each
+# pane_of <span class="ph">&lt;process id&gt;</span>: the Rex pane that process runs in. Rex knows each
 # pane&#x27;s program by its process id. Sets REPLY to the pane&#x27;s block id.
 pane_of() &#123;
   REPLY=&quot;&quot;
@@ -1248,7 +1392,7 @@ pane_of() &#123;
   return 1
 &#125;
 
-# pane_state &lt;process id&gt;: what that lead&#x27;s pane reports, for --status:
+# pane_state <span class="ph">&lt;process id&gt;</span>: what that lead&#x27;s pane reports, for --status:
 # &quot;working&quot;, &quot;idle for 2 h 10 min&quot;, or nothing when it can&#x27;t be read. Read the
 # same way close-pane-later.sh reads it. Sets REPLY, and LEAD_IDLE to the idle
 # seconds (0 when working or unknown).
@@ -1322,7 +1466,7 @@ if [[ &quot;$mode&quot; == status ]]; then
   exit 0
 fi
 
-# close_later &lt;block id&gt;: closes that pane once its session has been idle
+# close_later <span class="ph">&lt;block id&gt;</span>: closes that pane once its session has been idle
 # long enough. The timer runs on its own, in no pane, one to a pane.
 close_later() &#123;
   if pgrep -f &quot;close-pane-later.sh $1 &quot; &gt;/dev/null 2&gt;&amp;1; then return 0; fi
@@ -1553,6 +1697,13 @@ fi
 put_away
 </code></pre>
 
+</details>
+</figure>
+
+</section>
+
+<section class="file">
+
 ### <code>watch&#45;relay&#46;zsh</code> {#watch-relay-zsh}
 
 <a href="#watch-relay-zsh">Link to this file</a>
@@ -1561,9 +1712,14 @@ Watches one relay from another session and exits with an "EVENT:" line when a ba
 
 **Needs to run:** macOS, and the relay's <code>start&#45;lead&#46;sh</code> script.
 
+<figure class="code">
+<div class="code-bar"><span class="code-name">watch-relay.zsh</span><span class="code-meta">zsh · 46 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<details class="ai-setup-fold fold">
+<summary>Show the file (46 lines)</summary>
+
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">#!/bin/zsh
 # Watches one relay and exits when something needs a look. It costs nothing while it waits.
-# Usage: watch-relay.zsh &lt;project folder&gt; [minutes before it stops waiting]
+# Usage: watch-relay.zsh <span class="ph">&lt;project folder&gt;</span> [minutes before it stops waiting]
 # It prints a line starting &quot;EVENT:&quot; and exits when:
 #   - a batch has been marked done since it started watching
 #   - no lead session is running
@@ -1608,3 +1764,21 @@ while true; do
   fi
 done
 </code></pre>
+
+</details>
+</figure>
+
+</section>
+
+<nav class="page-foot">
+
+Previous: <a href="/ai-setup/skills/heartbeat/">Heartbeat</a>.
+Next: <a href="/ai-setup/skills/rex/">Rex</a>.
+
+<a href="/ai-setup/skills/">Back to Skills</a>
+
+<a href="https://www.linkedin.com/in/oneillo/" target="_blank" rel="noopener">Borrowed something? Tell me how it went</a>
+
+Text: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a>. Scripts: <a href="https://opensource.org/license/mit" target="_blank" rel="license noopener">MIT</a>.
+
+</nav>

@@ -1,7 +1,8 @@
-{{- /* Written by setup-share: the AI Setup section's pages. The theme's own _default/single.html with only these changes: the heading shows the page's short name (front matter heading) and the breadcrumbs each page's short link title (linkTitle), an "Open as plain text" link to the page's plain copy, and no empty tags list. A publish puts its own copy back here, so change the copy in setup-share instead. */ -}}
+{{- /* Written by setup-share: the AI Setup section's pages. The theme's own _default/single.html with only these changes: the heading shows the page's short name (front matter heading) and the breadcrumbs each page's short link title (linkTitle), an "Open as plain text" link to the page's plain copy, no empty tags list, the section's own look (static/ai-setup/look.css, linked here, and the article's classes), and a small script that shows each file's copy button and copies the file's text exactly. A publish puts its own copy back here, so change the copy in setup-share instead. */ -}}
 {{- define "main" }}
+<link rel="stylesheet" href="{{ "ai-setup/look.css" | relURL }}">
 
-<article class="post-single">
+<article class="post-single ai-setup ai-page">
   <header class="post-header">
     {{- if (.Param "ShowBreadCrumbs") }}
     <div class="breadcrumbs">
@@ -74,5 +75,20 @@
   {{- partial "comments.html" . }}
   {{- end }}
 </article>
+<script>
+document.querySelectorAll("button.ai-setup-copy").forEach(function (button) {
+  var label = button.textContent;
+  button.hidden = false;
+  button.addEventListener("click", function () {
+    var box = this.closest("figure.code, .ai-setup-file");
+    var code = box && box.querySelector("pre > code");
+    if (!code || !navigator.clipboard) return;
+    navigator.clipboard.writeText(code.textContent).then(function () {
+      button.textContent = "Copied";
+      setTimeout(function () { button.textContent = label; }, 2000);
+    });
+  });
+});
+</script>
 
 {{- end }}{{/* end main */}}
