@@ -1,6 +1,6 @@
 ---
 title: "Building the Knowledge Base: Fixing the First Gaps in Your AI Team"
-date: 2026-03-27
+date: "2026-03-27"
 draft: false
 description: "The first gaps you'll notice on your AI team are knowledge gaps. Here's how to build a knowledge base that fixes them without overwhelming your agents."
 tags: ["ai", "llm", "productivity", "agents", "managed-ai-framework"]
@@ -8,6 +8,7 @@ cover:
   image: "managed-ai-framework-manage-your-team.jpg"
   alt: "Managing your AI team"
   hidden: true
+  relative: true
 ---
 
 In the last post, you [built your team]({{< ref "managed-ai-framework-build-your-team" >}}), and now you can start managing your team. Pick the agent that makes the most sense for the task at hand, and work with them on it. When you move on to a new task, open a new session with the appropriate agent for that task.
