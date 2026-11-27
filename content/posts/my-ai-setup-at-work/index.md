@@ -1,13 +1,14 @@
 ---
 title: "My AI Setup at Work: The Apps, Agents, and Automations I Use Daily"
-date: 2026-10-24
+date: "2026-10-24"
 draft: false
 description: "A marketer's tour of an AI setup that triages my to-dos, pulls my data, and backs itself up. The good news: my agents built almost all of it."
 tags: ["ai", "llm", "agents", "productivity"]
 cover:
-  image: ""
-  alt: ""
+  image: "glosa.png"
+  alt: "Glosa editor next to two terminal sessions: Claude Code answers a comment on a poem and revises the stanza"
   hidden: true
+  relative: true
 ---
 
 Over the past year, [the way I work has completely changed](https://oneillo.com/posts/my-llm-journey/). I now spend over 80% of my workday in the terminal working with [a team of AI agents](https://oneillo.com/posts/managed-ai-framework-overview/). They plan my day, triage my to-dos, pull and analyze my data, and even build the tools I use. When they need my judgment, they pull me in.
@@ -28,7 +29,7 @@ Here are the core apps I use every day.
 - [Obsidian](https://obsidian.md) - for browsing my AI workspace. It's the fastest way I've found to move around folders and open specific Markdown files.
 - Glosa (right side of the image below) - an app I built with Kiro CLI to enable me to collaborate with my AI agents on Markdown documents the same way I do with my teammates in Word. I started working on it when I realized how slow it was to copy and paste passages back into the terminal or point the agent at the thing I wanted it to change. I leave comments on specific parts of a document, and my agents pick them up and act on them. I can tag different agents on the same doc, even ones running in different apps. For example, I can ask my Data Wizard to check some calculations while my Writer reworks a separate passage (more on my agents below). It has sped up how quickly I get from an AI-written draft to something I'm comfortable sharing. Kiro IDE recently shipped [Markdown Review](https://kiro.dev/changelog/ide/1-3-11/), which is kind of like this.
 
-![glosa](glosa.png)
+![Glosa editor next to two terminal sessions: Claude Code answers a comment on a poem and revises the stanza](glosa.png)
 
 ## Agents
 
@@ -117,8 +118,3 @@ Second, none of this happened at once. My setup last March was drastically simpl
 When it comes to my setup, my goal is to use the minimum number of things I need. I don't like complexity for the sake of complexity, and I'm still pruning. My Marketing Strategist might not survive the year.
 
 At this point, I can't imagine going back to the way I worked before agentic AI. To me, AI agents have been as transformative to how I work as computers, laptops, and wifi. There's no going back.
-
----
-
-*A note on how this post was written: I wrote the first draft myself, including all of the ideas, examples, and details about my setup. Then I used AI to help me tighten and refine it into the final version. Given the topic, it only seemed fitting.*
-
