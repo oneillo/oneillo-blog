@@ -1,13 +1,14 @@
 ---
 title: "How to Actually Improve Your AI Team Over Time"
-date: 2026-04-11
+date: "2026-04-11"
 draft: false
 description: "A feedback log, a weekly audit, and a simple decision framework — that's all it takes to keep your AI team getting better over time."
 tags: ["ai", "llm", "productivity", "agents", "managed-ai-framework"]
 cover:
-  image: ""
-  alt: ""
+  image: "managed-ai-framework-manage-your-team.png"
+  alt: "The Managed AI framework's six steps, with the three Manage your team steps highlighted: work with your team, spot the gaps, and apply fixes at the right level, which loops back to the start"
   hidden: true
+  relative: true
 ---
 
 It's Friday afternoon, and you are reviewing the week's feedback logs with one of your agents. You notice that your Copywriter keeps using a formal tone for your social copy. Your Data Wizard keeps stating hypotheses as facts. Your Chief of Staff keeps forgetting to block 45 minutes for launch when you plan your day each morning. 
@@ -16,7 +17,7 @@ To address the first issue, you need to update your Copywriter's persona. The se
 
 This is what managing your team of AI agents looks like in practice. It's not a big project or one-time effort. It's a small, regular process that helps you identify and correct issues with your team as you work with them. Those small fixes compound into big improvements over time.
 
-![](managed-ai-framework-manage-your-team.png)
+![The Managed AI framework's six steps, with the three Manage your team steps highlighted: work with your team, spot the gaps, and apply fixes at the right level, which loops back to the start](managed-ai-framework-manage-your-team.png)
 
 ## Why you need a feedback loop
 
