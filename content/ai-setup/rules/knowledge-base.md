@@ -1,8 +1,8 @@
 ---
 title: "Knowledge base rules: a Claude Code rules file that guides agents through a notes vault"
 date: 2026-11-22
-lastmod: 2026-11-22
-summary: "AI-written: Sets the rules agents follow to find, write, link, and check notes in a knowledge base kept as a vault of Markdown notes."
+lastmod: 2026-11-27
+summary: "AI-written: Sets the rules agents follow in a notes vault: where to start, how notes are named and linked, where drafts for review go, and how history is kept."
 heading: "Knowledge base rules"
 linkTitle: "Knowledge base rules"
 author: "Orlando O'Neill"
@@ -17,15 +17,15 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
-<div class="post-description">Sets the rules agents follow to find, write, link, and check notes in a knowledge base kept as a vault of Markdown notes.</div>
+<div class="post-description">Sets the rules agents follow in a notes vault: where to start, how notes are named and linked, where drafts for review go, and how history is kept.</div>
 
-<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-27">2026-11-27</time>. Also changed: <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
 <section class="facts facts-rule">
 
 <div class="facts-head"><span class="tag tag-rule">Rules</span></div>
 
-- **What it is:** The knowledge base's rules file is a Claude Code rules file that tells agents where to start, how to name, write, and link notes, where drafts for review go, and how history is kept.
+- **What it is:** The knowledge base's rules are a Claude Code rules file that tells agents how to find, write, link, and check notes in an Obsidian vault, and how to keep its history.
 - **How it starts:** Sessions read it before they work in the knowledge base.
 - **Needs:** Obsidian, uv, and git
 

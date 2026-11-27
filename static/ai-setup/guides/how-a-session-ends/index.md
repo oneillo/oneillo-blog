@@ -2,35 +2,37 @@
 
 - Kind: Claude Code walk-through
 - Address: https://oneillo.com/ai-setup/guides/how-a-session-ends/
-- Last updated: 2026-11-24
+- Last updated: 2026-11-27
 
 > AI-written and cleaned from one person's working setup. Placeholders in angle brackets are not real values: ask your user for theirs. The newest version is at https://oneillo.com/ai-setup/guides/how-a-session-ends/.
 
-Shows how a session ends: it saves project state, files lasting knowledge, keeps corrections, and commits, so the next session starts clean.
+Shows how a session saves project state, turns corrections into lasting lessons, links new notes, and commits, so the next session starts clean.
 
-A working session ends with a short routine, so nothing learned is lost. Orlando starts it with `/close-shop`. The Close shop skill runs three steps in order, and it calls on other skills along the way.
-
-## Where the habits come from
-
-The Workspace rules, which every session in the workspace loads, set the habits behind all of this. They say every project folder has a `context.md` file, and that decisions go into it right away so they survive a long session. They also say the full update happens at the end, and that durable knowledge moves into the knowledge base when the session closes.
+When a working session ends, nothing learned should be lost. In this setup, Orlando types `/close-shop`, and the Close shop skill runs the whole routine in three steps. Each step leans on habits set in the Workspace rules, the file every session in the workspace reads first.
 
 ## Step 1: Save where the project stands
 
-If the session changed a project, the Close shop skill hands over to the Save session skill. It finds the project folder, then creates or updates the `context.md` file there. If the file exists, it reads it first and merges, so earlier decisions are kept. The file holds the goal, constraints, current state, key decisions, next steps, and open questions. The current state is rewritten each time, not stacked up with dated notes. The skill checks the files before it writes that something is done. If the session was only conversation, Close shop says so in one line and moves on.
+The Close shop skill first looks at each project the session changed. For each one, it follows the Save session skill. That skill reviews the conversation and writes or updates a `context.md` file at the project's root. The file holds the goal, the constraints, the current state, key decisions, next steps, and open questions.
 
-Next, anything that will stay true after the project ends moves into the knowledge base. That includes facts, reference material, and finished notes. Close shop notes the move in `context.md`. Then the Connect skill runs on the notes that were added or changed. It links them to the ideas they discuss, builds concept notes for ideas that now recur across sources, and adds links between areas. It finishes with checks on the knowledge base.
+The Save session skill keeps the file short. It merges with what is already there, keeps earlier decisions, and rewrites the current state each time instead of stacking dated updates. It also checks the files, not memory, before saying something is done. If the session was only conversation, the step is skipped, and the skill says why.
 
-## Step 2: Keep the corrections
+The Workspace rules set this habit. They say every project folder gets a `context.md`, and that decisions go into it right away so they survive a long session. `/save-session` then does the full update at the end.
 
-Close shop scans the session for moments when Orlando corrected the approach or had to repeat himself. Each lesson that would change how an agent works next time is saved as a `feedback` memory, unless it is already written down somewhere. Later, the Process feedback skill reviews those memories during a regular tune-up. It decides whether each one stays, moves into a rules file, an agent, or a skill, merges, or goes. Orlando approves before anything changes.
+Next, the Close shop skill moves anything that will stay true after the project ends into the knowledge base. Then it follows the Connect skill. That skill links the new or changed notes to the concept notes they discuss. It also creates a concept note when an idea now shows up across several sources, and it adds links between areas.
+
+## Step 2: Turn corrections into lessons
+
+The Close shop skill scans the session for moments Orlando corrected the approach or repeated himself. Each lesson that would change how an agent works goes into auto memory as a feedback memory.
+
+Later, the Process feedback skill reviews those memories. It suggests one action for each: keep it, promote it to a rules file, agent, or skill, merge it, or delete it. It waits for Orlando's input before changing anything.
 
 ## Step 3: Commit
 
-Close shop commits this session's changes in each of the three local repos, staging only the files it touched. It never pushes. It then lists any leftover changes it didn't make and asks Orlando before committing them.
+Last, the Close shop skill commits the session's changes in the workspace, the Claude Code config folder, and the knowledge base. It adds files by exact path and never pushes. The Workspace rules require this, so no finished work is left uncommitted.
 
 ## What you get
 
-A project folder that tells the next session where to pick up, with knowledge filed, lessons saved, and the history committed.
+A project folder with a current `context.md`, new knowledge filed and linked, corrections kept as lessons, and a clean commit history. The next session reads the context file first and knows where to pick up.
 
 ## The pieces it joins
 

@@ -24,7 +24,7 @@ The diagram as text:
 - While Orlando is away, the Heartbeat (jobs on a timer) and the Relay (a roadmap, one fresh session per batch) start sessions.
 - A session reads the rules at the start: global, workspace, and project.
 - Settings and hooks check each step a session takes.
-- A session can use 14 skills: close-shop, save-session, process-feedback, tune-setup, connect, obsidian-to-hugo, publish-prep, publish-post, publish-setup, podcast, video-title-cards, relay, heartbeat, and rex.
+- A session can use 11 skills: close-shop, save-session, process-feedback, tune-setup, connect, publish-setup, podcast, relay, heartbeat, rex, and evals.
 - A session can work as one of 3 custom agents: writer, trainer, and financial advisor.
 - A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files).
 - The files are kept under local version history and backed up to the cloud.
@@ -41,13 +41,13 @@ The diagram as text:
 - **Let work run while you're away:** [Relay](https://oneillo.com/ai-setup/skills/relay/), [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/), and [the keep-awake rule](https://oneillo.com/ai-setup/rules/global/).
 - **Undo an agent's mistake:** version history, backups, and the Trash, all on [How it's organized](https://oneillo.com/ai-setup/workspace/).
 - **Keep the setup lean:** [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/) and [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/).
-- **Write and publish:** [Writer](https://oneillo.com/ai-setup/agents/writer/), [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/), [Publish prep](https://oneillo.com/ai-setup/skills/publish-prep/), and [Publish post](https://oneillo.com/ai-setup/skills/publish-post/).
+- **Write and publish:** [Writer](https://oneillo.com/ai-setup/agents/writer/).
 
 ## The pieces
 
 - [How it's organized](https://oneillo.com/ai-setup/workspace/): the workspace's folders, the knowledge base's shape, version history, backups, and how Python scripts run.
 - [Rules](https://oneillo.com/ai-setup/rules/): the rules every session starts from (3 rules files).
-- [Skills](https://oneillo.com/ai-setup/skills/): written routines a session can run (14 skills).
+- [Skills](https://oneillo.com/ai-setup/skills/): written routines a session can run (11 skills).
 - [Custom agents](https://oneillo.com/ai-setup/agents/): roles a session can take, each with its own prompt (3 agents).
 - [Apps](https://oneillo.com/ai-setup/apps/): the apps around the sessions, described (6 apps).
 - [Settings and hooks](https://oneillo.com/ai-setup/settings/): the switches underneath (2 hooks).
@@ -58,9 +58,9 @@ Orlando's weekly AI digest is public too, as the [Newsletter](https://oneillo.co
 
 Each one follows a job across several pieces, and links to each.
 
-- [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/): Shows how a session ends: it saves project state, files lasting knowledge, keeps corrections, and commits, so the next session starts clean.
-- [How work runs while I'm away](https://oneillo.com/ai-setup/guides/while-im-away/): Shows how the keep-awake rule, the Relay and Heartbeat skills, and the Latido app keep work going while Orlando is away, and how he sees the results.
-- [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/): Shows the three ways Orlando's setup undoes an agent's mistake: the Trash, local version history, and the cloud copy, and when each one helps.
+- [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/): Shows how a session saves project state, turns corrections into lasting lessons, links new notes, and commits, so the next session starts clean.
+- [How work runs while I'm away](https://oneillo.com/ai-setup/guides/while-im-away/): Shows how the keep-awake rule, the Relay skill, the Heartbeat skill, and the Latido app keep work going and report back while Orlando is away.
+- [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/): Shows three ways to undo an agent's mistake, from the Trash to local version history to a cloud copy, and when each one helps.
 
 ## What this setup runs on
 

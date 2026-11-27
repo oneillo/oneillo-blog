@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 839" width="720" height="839" class="light" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 823" width="720" height="823" class="light" role="img" aria-labelledby="t d">
 <title id="t">How Orlando&#x27;s AI setup fits together.</title>
-<desc id="d">Orlando chats with a Claude Code session from the Mac or his phone. Orlando uses his apps: Corillo (review documents with an agent), Brega (a to-do list shared with agents), Pregón (publish a post), and Latido (a window onto the heartbeat). Corillo and Brega pass comments, edits, and tasks to a session and back. While Orlando is away, the Heartbeat (jobs on a timer) and the Relay (a roadmap, one fresh session per batch) start sessions. A session reads the rules at the start: global, workspace, and project. Settings and hooks check each step a session takes. A session can use 14 skills: close-shop, save-session, process-feedback, tune-setup, connect, obsidian-to-hugo, publish-prep, publish-post, publish-setup, podcast, video-title-cards, relay, heartbeat, and rex. A session can work as one of 3 custom agents: writer, trainer, and financial advisor. A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files). The files are kept under local version history and backed up to the cloud.</desc>
+<desc id="d">Orlando chats with a Claude Code session from the Mac or his phone. Orlando uses his apps: Corillo (review documents with an agent), Brega (a to-do list shared with agents), Pregón (publish a post), and Latido (a window onto the heartbeat). Corillo and Brega pass comments, edits, and tasks to a session and back. While Orlando is away, the Heartbeat (jobs on a timer) and the Relay (a roadmap, one fresh session per batch) start sessions. A session reads the rules at the start: global, workspace, and project. Settings and hooks check each step a session takes. A session can use 11 skills: close-shop, save-session, process-feedback, tune-setup, connect, publish-setup, podcast, relay, heartbeat, rex, and evals. A session can work as one of 3 custom agents: writer, trainer, and financial advisor. A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files). The files are kept under local version history and backed up to the cloud.</desc>
 <style>
 .light{--card:#fff;--ink:#1e1e1e;--soft:#6c6c6c;--line:#d0d0d0;--hair:#e6e6e6;--slate:#4F6D7A;--slate-ink:#36505B;--slate-tint:#DCE6EA;--on:#fff;--coral:#CC7354;--coral-ink:#8A3F2A;--coral-tint:#F6DDD3}
 .dark{--card:#2e2e33;--ink:#dadadb;--soft:#9b9c9d;--line:#55565a;--hair:#3c3d41;--slate:#84A6B5;--slate-ink:#A9C6D3;--slate-tint:#2C3C43;--on:#142024;--coral:#D58868;--coral-ink:#EBA48D;--coral-tint:#4A2E25}
@@ -109,7 +109,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 <text x="568" y="320" class="t-slate">start sessions</text>
 
 <!-- Claude Code -->
-<rect x="0" y="340" width="720" height="292" rx="18" fill="var(--slate-tint)"/>
+<rect x="0" y="340" width="720" height="276" rx="18" fill="var(--slate-tint)"/>
 <text x="20" y="366" class="name t-slate">Claude Code</text>
 <rect x="270" y="374" width="180" height="52" rx="26" fill="var(--slate)"/>
 <text x="360" y="406" class="big on mid">A session</text>
@@ -127,12 +127,12 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 <text x="518" y="414" class="t-slate">check each step</text>
 
 <path class="l-slate" d="M360 426V440M185 452V446a6 6 0 0 1 6-6H529a6 6 0 0 1 6 6V452"/>
-<rect id="box-skills" x="20" y="452" width="330" height="160" rx="12" fill="var(--card)"/>
+<rect id="box-skills" x="20" y="452" width="330" height="144" rx="12" fill="var(--card)"/>
 <use href="#i-skill" class="icon c-slate" x="36" y="468" width="22" height="22"/>
-<text x="66" y="482" class="name">14 skills</text>
+<text x="66" y="482" class="name">11 skills</text>
 <text x="66" y="499">written routines</text>
-<text transform="translate(38 526)" class="t-slate"><tspan x="0" dy="0">close-shop, save-session,</tspan><tspan x="0" dy="16">process-feedback, tune-setup, connect,</tspan><tspan x="0" dy="16">obsidian-to-hugo, publish-prep, publish-post,</tspan><tspan x="0" dy="16">publish-setup, podcast, video-title-cards,</tspan><tspan x="0" dy="16">relay, heartbeat, and rex</tspan></text>
-<rect id="box-agents" x="370" y="452" width="330" height="160" rx="12" fill="var(--card)"/>
+<text transform="translate(38 526)" class="t-slate"><tspan x="0" dy="0">close-shop, save-session,</tspan><tspan x="0" dy="16">process-feedback, tune-setup, connect,</tspan><tspan x="0" dy="16">publish-setup, podcast, relay, heartbeat, rex,</tspan><tspan x="0" dy="16">and evals</tspan></text>
+<rect id="box-agents" x="370" y="452" width="330" height="144" rx="12" fill="var(--card)"/>
 <use href="#i-agents" class="icon c-slate" x="386" y="468" width="22" height="22"/>
 <text x="416" y="484" class="name">3 custom agents</text>
 <g transform="translate(388 508)">
@@ -149,7 +149,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 </g>
 
 <!-- everything below moves down when the skills or agents grow -->
-<g transform="translate(0 48)">
+<g transform="translate(0 32)">
 <path class="l-slate" d="M360 592V624" marker-start="url(#a-slate)" marker-end="url(#a-slate)"/>
 <text x="373" y="612" class="t-slate">reads and writes</text>
 

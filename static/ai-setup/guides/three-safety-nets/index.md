@@ -2,46 +2,44 @@
 
 - Kind: Claude Code walk-through
 - Address: https://oneillo.com/ai-setup/guides/three-safety-nets/
-- Last updated: 2026-11-24
+- Last updated: 2026-11-27
 
 > AI-written and cleaned from one person's working setup. Placeholders in angle brackets are not real values: ask your user for theirs. The newest version is at https://oneillo.com/ai-setup/guides/three-safety-nets/.
 
-Shows the three ways Orlando's setup undoes an agent's mistake: the Trash, local version history, and the cloud copy, and when each one helps.
+Shows three ways to undo an agent's mistake, from the Trash to local version history to a cloud copy, and when each one helps.
 
-Agents make mistakes. Orlando's setup gives him three ways to undo one, from the smallest to the largest. Each covers a bigger kind of loss than the one before.
+Agents make mistakes. Orlando's setup assumes they will, so it has three safety nets. Each one catches a bigger problem than the one before it. The Workspace rules and the page on how the workspace is organized describe them.
 
 ## 1. The Trash
 
-The Workspace rules tell agents to delete with the `trash` command, not `rm`. A deleted file moves to the Trash instead of vanishing. If an agent removes the wrong file, Orlando can bring it back from there.
+The smallest net is the Trash. The Workspace rules tell every agent to delete with `trash`, not `rm`. A deleted file is moved to the Trash instead of being erased, so it can be brought back. The one exception is the scratch folder, where `rm` is fine because nothing vital lives there.
 
-The rules add two limits. Inside the scratch folder, `rm` is fine, because nothing vital lives there. And before an agent deletes something it didn't create, it checks that nothing else refers to it.
+Use this net when a single file went missing. The rules also ask an agent to check that nothing refers to a file it didn't create before deleting it.
 
 ## 2. Local version history
 
-The workspace, the Claude Code config folder, and the knowledge base vault are each a local git repo. They have no remote, and agents never push them. Agents do all the git work, so Orlando never runs it.
+The next net is git. The workspace, the Claude Code config folder, and the knowledge base vault each keep a local history. None of them has a remote, so nothing is pushed. Agents handle all of the git work. A commit is made at the end of each session, and a checkpoint is made before any bulk change, such as moving or renaming many files. That way a large change can be undone in one step.
 
-An agent commits at the end of each session, when the Close shop skill runs with `/close-shop`. Before a bulk change, such as moving, renaming, or deleting many files, it commits a checkpoint first. That way the change can be undone in one step.
-
-Every committed change is kept. To undo something, the agent confirms with Orlando, then restores the specific files. It does not reset the whole repo.
+Use this net when an agent changed a file, or many files, in a way you don't want. To undo something, the agent first confirms with Orlando. Then it restores the specific files. It never resets the whole repo.
 
 ## 3. The cloud copy
 
-The third net is the largest. A backup copies the workspace and the Claude Code config folder to cloud storage every 30 minutes, on a timer. Scratch files are not backed up.
+The largest net is a copy of the work kept off the Mac. It covers the workspace folder, the Claude Code config folder, and the blog's working folder. A timer refreshes it every 30 minutes. The copy mirrors the Mac, deletions included. In Orlando's words, if an agent ever removes a file completely, he can generally recover it from the cloud storage's recycle bin online.
 
-This one helps when a file is gone completely. In Orlando's words, he can generally recover it from the cloud storage's recycle bin online.
+Safeguards sit around the copy. It refuses to run if the cloud folder is missing. It warns when a run would delete an unusually large number of files. It also warns when a git history disappears.
 
-The same copy also covers a lost or replaced computer. To restore, you follow these steps:
+Use this net when the first two have failed, or when the whole Mac is gone. To rebuild on a new Mac:
 
-1. Sign in to the cloud storage and let the backup folder download fully.
-2. Install the tools the setup needs, such as Claude Code and uv.
-3. Copy the backed-up folders back, without deleting anything.
-4. Check that every git repo still has its history.
-5. Do a dry run of the backup, and stop if the list of deletions is long.
-6. Turn the backup timer back on last.
+1. Sign in to the cloud storage and wait for the backup to download fully.
+2. Install the tools.
+3. Copy the folders back from the cloud copy, without deleting anything.
+4. Check that every git repo answers.
+5. Do a dry run of what the backup would delete, and stop if the list is long.
+6. Load the backup timer last, because it starts mirroring the moment it is loaded.
 
-## Which one to reach for
+## Why three
 
-Start small. A wrongly deleted file comes back from the Trash. A bad edit is undone by restoring files from git. A file that is truly gone, or a whole machine, comes back from the cloud copy.
+Each net covers a gap in the others. The Trash can't undo a bad edit. Git can't help if a whole folder is lost. The cloud copy may be up to half an hour behind. Together, any change an agent makes can be seen and undone.
 
 ## The pieces it joins
 

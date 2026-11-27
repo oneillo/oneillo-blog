@@ -9,32 +9,29 @@ Every page in one file: https://oneillo.com/ai-setup/llms-full.txt
 - [AI Setup](https://oneillo.com/ai-setup/index.md): A tour of Orlando's personal AI setup: how it's organized, rules, skills, agents, apps, and settings.
 - [How it's organized](https://oneillo.com/ai-setup/workspace/index.md): How Orlando's AI workspace is organized: its folders, the knowledge base, version history, backups, and Python scripts.
 - [Rules](https://oneillo.com/ai-setup/rules/index.md): The rules files in Orlando's AI setup, the instructions every session starts from.
-- [Global rules](https://oneillo.com/ai-setup/rules/global/index.md): Sets global rules for every session: direct style, keeping the Mac awake, file defaults, cleanup, Python with uv, and formatting.
-- [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/index.md): Sets the shared rules for every session in a workspace: how to work together, where files live, how projects start, and how history is kept.
-- [Knowledge base rules](https://oneillo.com/ai-setup/rules/knowledge-base/index.md): Sets the rules agents follow to find, write, link, and check notes in a knowledge base kept as a vault of Markdown notes.
+- [Global rules](https://oneillo.com/ai-setup/rules/global/index.md): Sets the style, file habits, cleanup duties, and Python rules that every Claude Code session and agent follows.
+- [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/index.md): Sets shared rules for every agent session in a workspace: how to push back, where files go, how to treat outside text, and how to keep history.
+- [Knowledge base rules](https://oneillo.com/ai-setup/rules/knowledge-base/index.md): Sets the rules agents follow in a notes vault: where to start, how notes are named and linked, where drafts for review go, and how history is kept.
 - [Skills](https://oneillo.com/ai-setup/skills/index.md): The skills in Orlando's AI setup, the written routines a session can run.
-- [Close shop](https://oneillo.com/ai-setup/skills/close-shop/index.md): Ends a working session in three steps: saves project context, checks corrections are in memory, and commits the session's changes.
-- [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/index.md): Reviews saved memories, promotes lasting lessons to the right place, and prunes the rest so memory stays lean.
-- [Save session](https://oneillo.com/ai-setup/skills/save-session/index.md): Saves where a project stands in a context file so the next session can pick up where this one left off.
-- [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/index.md): Researches current Anthropic guidance, updates a guidance file, and proposes specific improvements to a Claude Code setup.
-- [Connect](https://oneillo.com/ai-setup/skills/connect/index.md): Links new knowledge base notes to concept notes, builds concept notes for recurring ideas, and adds cross-area links.
-- [Obsidian to Hugo](https://oneillo.com/ai-setup/skills/obsidian-to-hugo/index.md): Converts an Obsidian blog post to Hugo-ready Markdown, fixes links and pictures, and places it in a review folder.
-- [Publish post](https://oneillo.com/ai-setup/skills/publish-post/index.md): Publishes a finished blog post to a Hugo site, checks the build, and pushes it to GitHub.
-- [Publish prep](https://oneillo.com/ai-setup/skills/publish-prep/index.md): Prepares a finished blog post for publishing with title options, a description, a LinkedIn blurb, and a Substack version.
-- [Publish setup](https://oneillo.com/ai-setup/skills/publish-setup/index.md): Publishes the AI Setup section of a blog: agents clean out private details, checks run twice, and it asks before anything goes live.
-- [Podcast](https://oneillo.com/ai-setup/skills/podcast/index.md): Turns source documents into a two-host podcast-style MP3 by writing a script, then rendering it locally with a text-to-speech voice.
-- [Video title cards](https://oneillo.com/ai-setup/skills/video-title-cards/index.md): Makes intro, outro, and interstitial title cards with ffmpeg and joins them to screen recordings.
-- [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/index.md): Adds, changes, pauses, or removes scheduled jobs on the heartbeat, a scheduler that runs a free check and then an agent session with limits.
-- [Relay](https://oneillo.com/ai-setup/skills/relay/index.md): Runs a project's roadmap unattended as a relay of fresh Claude Code sessions, each leading one batch with parallel agents and handing off to the next.
-- [Rex](https://oneillo.com/ai-setup/skills/rex/index.md): Manages Rex sessions, tabs, and panes, runs commands, and reads terminal output from the command line.
+- [Close shop](https://oneillo.com/ai-setup/skills/close-shop/index.md): Ends a working session in order: saves project context, checks corrections are in memory, and commits the session's changes.
+- [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/index.md): Reviews saved memories, promotes lasting lessons to the right rules file, agent, skill, or hook, and prunes the rest.
+- [Save session](https://oneillo.com/ai-setup/skills/save-session/index.md): Saves a project's goal, decisions, and next steps at the end of a session so the next session can pick up where this one left off.
+- [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/index.md): Researches current Anthropic guidance, then proposes improvements to the agents, skills, and rules of a Claude Code setup.
+- [Connect](https://oneillo.com/ai-setup/skills/connect/index.md): Links new knowledge base notes to concept notes, creates concept notes for recurring ideas, and adds cross-area links.
+- [Publish setup](https://oneillo.com/ai-setup/skills/publish-setup/index.md): Publishes the AI Setup section of a blog: cleans private details, checks twice, builds pages, and asks before going live.
+- [Podcast](https://oneillo.com/ai-setup/skills/podcast/index.md): Turns source documents into a two-host podcast MP3, writing the script and rendering the voices on the Mac.
+- [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/index.md): Adds, changes, pauses, or removes scheduled jobs on a Mac scheduler that runs a free check first, then a capped agent session if there is work.
+- [Relay](https://oneillo.com/ai-setup/skills/relay/index.md): Runs a project's roadmap unattended as a relay of fresh Claude Code sessions, each leading one batch with parallel agents.
+- [Rex](https://oneillo.com/ai-setup/skills/rex/index.md): Manages Rex terminal sessions, tabs, and panes, runs commands in them, and reads their output.
+- [Evals](https://oneillo.com/ai-setup/skills/evals/index.md): Checks that a decided change to an agent or instruction file is no worse than the current version, using a blind panel of judges.
 - [Custom agents](https://oneillo.com/ai-setup/agents/index.md): The custom agents in Orlando's AI setup, the roles a session can take.
-- [Writer](https://oneillo.com/ai-setup/agents/writer/index.md): Co-drafts and edits blog, newsletter, and LinkedIn posts in the owner's voice, from his ideas and drafts, with an editor's eye.
-- [Trainer](https://oneillo.com/ai-setup/agents/trainer/index.md): Coaches strength training: builds custom training blocks, adjusts for recovery, and delivers programs as spreadsheets for a workout log.
+- [Writer](https://oneillo.com/ai-setup/agents/writer/index.md): Co-drafts and edits blog, newsletter, LinkedIn, and career writing in Orlando's voice, without inventing facts or experiences.
+- [Trainer](https://oneillo.com/ai-setup/agents/trainer/index.md): Coaches strength training: builds custom training blocks, adjusts for recovery and injuries, and delivers programs as Excel files.
 - [Financial advisor](https://oneillo.com/ai-setup/agents/financial-advisor/index.md): A custom agent for the household's money decisions, with its details left out of this section on purpose.
 - [Apps](https://oneillo.com/ai-setup/apps/index.md): The apps around Orlando's AI sessions, each described in a few lines.
 - [Settings and hooks](https://oneillo.com/ai-setup/settings/index.md): The settings and hooks in Orlando's AI setup, described by kind.
-- [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/index.md): Shows how a session ends: it saves project state, files lasting knowledge, keeps corrections, and commits, so the next session starts clean.
-- [How work runs while I'm away](https://oneillo.com/ai-setup/guides/while-im-away/index.md): Shows how the keep-awake rule, the Relay and Heartbeat skills, and the Latido app keep work going while Orlando is away, and how he sees the results.
-- [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/index.md): Shows the three ways Orlando's setup undoes an agent's mistake: the Trash, local version history, and the cloud copy, and when each one helps.
+- [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/index.md): Shows how a session saves project state, turns corrections into lasting lessons, links new notes, and commits, so the next session starts clean.
+- [How work runs while I'm away](https://oneillo.com/ai-setup/guides/while-im-away/index.md): Shows how the keep-awake rule, the Relay skill, the Heartbeat skill, and the Latido app keep work going and report back while Orlando is away.
+- [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/index.md): Shows three ways to undo an agent's mistake, from the Trash to local version history to a cloud copy, and when each one helps.
 - [How to borrow](https://oneillo.com/ai-setup/borrow/index.md): How to take a rule, skill, agent, or hook from Orlando's AI setup and make it work in your own Claude Code.
 - [What changed](https://oneillo.com/ai-setup/changes/index.md): Every publish of Orlando's AI setup, newest first, with the pieces each one added, changed, or removed.

@@ -1,8 +1,8 @@
 ---
 title: "How work runs while I'm away: a walk-through of Orlando's Claude Code setup"
 date: 2026-11-24
-lastmod: 2026-11-24
-summary: "AI-written: Shows how the keep-awake rule, the Relay and Heartbeat skills, and the Latido app keep work going while Orlando is away, and how he sees the results."
+lastmod: 2026-11-27
+summary: "AI-written: Shows how the keep-awake rule, the Relay skill, the Heartbeat skill, and the Latido app keep work going and report back while Orlando is away."
 heading: "How work runs while I'm away"
 linkTitle: "How work runs while I'm away"
 author: "Orlando O'Neill"
@@ -17,37 +17,39 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
-<div class="post-description">Shows how the keep-awake rule, the Relay and Heartbeat skills, and the Latido app keep work going while Orlando is away, and how he sees the results.</div>
+<div class="post-description">Shows how the keep-awake rule, the Relay skill, the Heartbeat skill, and the Latido app keep work going and report back while Orlando is away.</div>
 
-<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-24">2026-11-24</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-27">2026-11-27</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
-Work can keep going when nobody is at the computer. Four pieces make that happen, and each does a different job.
+When Orlando steps away, several pieces of his setup keep work moving. Each has a different job.
 
-## Keeping the Mac awake
+## Staying awake
 
-The Global rules file is read by every session and agent. One rule covers time away: when Orlando says he is stepping away, works over Remote Control, or a job runs unattended, the session keeps the Mac awake without being asked. It does this with <code>caffeinate</code>, either around the long job or as one background timer sized to the work. The screen may sleep. The session stops only what it started.
+The Global rules say what happens first. When he steps away, works over Remote Control, or a job runs unattended, the session keeps the Mac awake without being asked. It wraps the long job in <code>caffeinate &#45;ims</code>, or starts one background <code>caffeinate</code> sized to the work. The screen may sleep. A session stops only the <code>caffeinate</code> it started.
 
-## Running a plan
+The same rules say what to do when he is away from a session that isn't on Remote Control: suggest <code>&#47;remote&#45;control</code>. While it is on, the session sends a push notification when work is ready for his feedback or blocked on him. Routine progress never gets one.
 
-The Relay skill runs a plan as a chain of fresh sessions. The plan lives in a project's <code>roadmap&#46;md</code>, cut into batches. One session, called the lead, takes one batch. It briefs builders, brings their work together, runs the project's checks, has a fresh reviewer read the result, and writes it up. Then it starts the next lead and ends.
+## Long plans: the Relay skill
 
-A fresh session per batch keeps cost down, because no session carries a growing pile of context. The state lives in the roadmap, <code>context&#46;md</code>, and git, so a relay can be stopped and started anywhere, even after a crash or a usage limit. Each lead also starts its own <code>caffeinate</code>. Orlando can pause it by editing the Controls at the top of the roadmap.
+The Relay skill runs a plan as a chain of fresh sessions. The plan is a <code>roadmap&#46;md</code> cut into batches. One fresh session leads one batch. It briefs up to three builders, merges their work, runs the project's checks, has a fresh reviewer read the result, delivers, writes it up, and starts the next session.
 
-## Running on a schedule
+Nothing waits for Orlando. His decisions sit in the roadmap with recommendations, and those are followed unless he has answered. State lives in the roadmap, <code>context&#46;md</code>, and git, so a batch interrupted by a power cut or usage limit is picked up from the files. Each lead also keeps the Mac awake with its own <code>caffeinate</code>.
 
-The Heartbeat skill adds jobs that run at set times. Each job is one file: when it runs, a free check for whether there is any work, and a checklist for an agent. The agent starts only if the check finds work, and it runs with limits on its tools, its folders, its time, and its cost. One job is a relay watchdog. If a relay that is switched on loses its lead, the watchdog can start a new one.
+## Scheduled jobs: the Heartbeat skill
 
-## Seeing what happened
+The Heartbeat skill manages jobs that run on a schedule. Each job is one file that says when it runs, what the agent should do, and which tools and folders it may use. A job can also have a cheap check. The check decides whether there is any work, so an agent session starts only when there is.
 
-The Latido app shows what the heartbeat is doing, in a small window.
+One job is a relay watchdog. It restarts a relay that is switched on if its lead has gone away.
 
-When Orlando comes back, he has several places to look:
+## Finding out what happened
 
-- The roadmap's Log and git hold what each finished batch did.
-- <code>&#45;&#45;status</code> on the relay's start script says where a relay stands.
-- <code>heartbeat log</code> shows recent job runs and what they cost.
-- <code>heartbeat doctor</code> names anything that needs him.
-- Latido shows the heartbeat at a glance.
+The Latido app shows what the heartbeat is doing: its jobs, when they run, how each run ended, and whether anything is wrong. Its page says nothing more than that.
+
+For a relay, the record is the roadmap's Log and git. A relay's status can also be read at any time, and each lead ends with a short message saying what he can now do and what waits for his decision.
+
+## How they fit
+
+The Heartbeat skill starts scheduled work, and Orlando starts a relay. The keep-awake rule keeps the Mac running while that work goes on. Latido, the roadmap's Log, and the push notifications are how he finds out what happened when he is back.
 
 ## The pieces it joins
 

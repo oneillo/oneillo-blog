@@ -2,7 +2,8 @@
 
 - Kind: Apps around Claude Code
 - Address: https://oneillo.com/ai-setup/apps/
-- Last updated: 2026-11-22
+- Last updated: 2026-11-27
+- Also changed: 2026-11-22
 
 > AI-written and cleaned from one person's working setup. Placeholders in angle brackets are not real values: ask your user for theirs. The newest version is at https://oneillo.com/ai-setup/apps/.
 
@@ -18,19 +19,19 @@ Public: [its code](https://github.com/oneillo/corillo).
 
 ## Brega
 
-Keeps your tasks in a small Mac to-do app that AI agents can read, add to, and finish from any Claude Code session.
+Keeps your tasks in a small Mac to-do app, and lets Claude Code sessions read, add, and finish them.
 
 Not public yet.
 
 ## Pregón
 
-Publishes a finished post from an Obsidian vault to a blog with one button.
+Takes a finished blog post from your notes to your Hugo blog with one button, showing the post as the site will.
 
 Not public yet.
 
 ## The heartbeat
 
-Runs agent jobs on a timer, checks for work for free first, and starts a Claude Code session only when there is something to do.
+Runs AI agent jobs on a Mac on a timer, starting a Claude Code session only when a free check finds work to do.
 
 Not public yet.
 
@@ -38,7 +39,7 @@ Its skill has its own page: [Heartbeat](https://oneillo.com/ai-setup/skills/hear
 
 ## Latido
 
-Shows what the heartbeat, the helper that runs scheduled jobs on your Mac, is doing, in a small window.
+Shows what the heartbeat is doing: its jobs, when they run, how each run ended, and whether anything is wrong.
 
 Not public yet.
 

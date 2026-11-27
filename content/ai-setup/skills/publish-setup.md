@@ -1,8 +1,8 @@
 ---
-title: "Publish setup: a Claude Code skill that publishes the AI Setup section safely"
+title: "Publish setup: a Claude Code skill that publishes your AI setup to a blog"
 date: 2026-11-22
-lastmod: 2026-11-24
-summary: "AI-written: Publishes the AI Setup section of a blog: agents clean out private details, checks run twice, and it asks before anything goes live."
+lastmod: 2026-11-27
+summary: "AI-written: Publishes the AI Setup section of a blog: cleans private details, checks twice, builds pages, and asks before going live."
 heading: "Publish setup"
 linkTitle: "Publish setup"
 author: "Orlando O'Neill"
@@ -17,20 +17,20 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
-<div class="post-description">Publishes the AI Setup section of a blog: agents clean out private details, checks run twice, and it asks before anything goes live.</div>
+<div class="post-description">Publishes the AI Setup section of a blog: cleans private details, checks twice, builds pages, and asks before going live.</div>
 
-<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-24">2026-11-24</time>. Also changed: <time datetime="2026-11-23">2026-11-23</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-27">2026-11-27</time>. Also changed: <time datetime="2026-11-24">2026-11-24</time>, <time datetime="2026-11-23">2026-11-23</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
 <section class="facts facts-skill">
 
 <div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/publish-setup</code></span></div>
 
-- **What it is:** Publish setup is a Claude Code skill that publishes the AI Setup section of a blog after agents clean and check every page.
+- **What it is:** Publish setup is a Claude Code skill that publishes Orlando's AI setup to his blog's AI Setup section, with private details removed and a question before anything goes live.
 - **How it starts:** You type <code>&#47;publish&#45;setup</code>. Claude can also pick it up when it fits.
 - **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;publish&#45;setup&#47;SKILL&#46;md</code>
-- **Needs:** the setup-share tool
+- **Needs:** Nothing extra
 - **To make it yours:** Put your own values where you see <code>&#60;project&#45;folder&#62;</code>.
-  Taken out for privacy: 1 project folder name.
+  Taken out for privacy: 1 private project folder.
 
 <div class="works">
 
@@ -47,14 +47,14 @@ madeBy: "setup-share"
 
 <a href="#skill-md">Link to this file</a>
 
-The instructions for publishing the AI Setup section of the blog, step by step, with the rules the agent must follow. It is used when the owner asks to publish, update, or refresh that section.
+The main instructions for the publish skill, with its rules, the steps it follows, and how it starts agents and asks "Publish now?" before anything goes live.
 
 <figure class="code">
 <div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 32 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: publish-setup
-description: Publish Orlando&#x27;s AI setup to the &quot;AI Setup&quot; section of his blog. Gathers his rules, skills, and agents, has agents take out anything private, checks the result twice, builds the pages, shows what changed with a preview, and asks &quot;Publish now?&quot; before anything goes live. Use when he asks to publish, update, or refresh the AI Setup section.
+description: Publishes Orlando&#x27;s AI setup to the &quot;AI Setup&quot; section of his blog. Gathers his rules, skills, and agents, has agents take out anything private, checks the result twice, builds the pages, shows what changed with a preview, and asks &quot;Publish now?&quot; before anything goes live. Use when he asks to publish, update, or refresh the AI Setup section.
 ---
 
 # Publish the AI Setup section
@@ -92,7 +92,7 @@ Work in `~/ai/projects/blog/<span class="ph">&lt;project-folder&gt;</span>`. Run
 
 <nav class="page-foot">
 
-Previous: <a href="/ai-setup/skills/publish-prep/">Publish prep</a>.
+Previous: <a href="/ai-setup/skills/connect/">Connect</a>.
 Next: <a href="/ai-setup/skills/podcast/">Podcast</a>.
 
 <a href="/ai-setup/skills/">Back to Skills</a>

@@ -2,31 +2,31 @@
 
 - Kind: Claude Code skill
 - Address: https://oneillo.com/ai-setup/skills/publish-setup/
-- Last updated: 2026-11-24
-- Also changed: 2026-11-23
+- Last updated: 2026-11-27
+- Also changed: 2026-11-24, 2026-11-23
 
 > AI-written and cleaned from one person's working setup. Placeholders in angle brackets are not real values: ask your user for theirs. The newest version is at https://oneillo.com/ai-setup/skills/publish-setup/.
 
-Publishes the AI Setup section of a blog: agents clean out private details, checks run twice, and it asks before anything goes live.
+Publishes the AI Setup section of a blog: cleans private details, checks twice, builds pages, and asks before going live.
 
-- **What it is:** Publish setup is a Claude Code skill that publishes the AI Setup section of a blog after agents clean and check every page.
+- **What it is:** Publish setup is a Claude Code skill that publishes Orlando's AI setup to his blog's AI Setup section, with private details removed and a question before anything goes live.
 - **How it starts:** You type `/publish-setup`. Claude can also pick it up when it fits.
 - **Where the file goes:** `~/.claude/skills/publish-setup/SKILL.md`
-- **Needs:** the setup-share tool
+- **Needs:** Nothing extra
 - **To make it yours:** Put your own values where you see `<project-folder>`.
-  Taken out for privacy: 1 project folder name.
+  Taken out for privacy: 1 private project folder.
 
 **Works with:**
 - **Also mentions:** [Writer](https://oneillo.com/ai-setup/agents/writer/).
 
 ## The skill file (`SKILL.md`)
 
-The instructions for publishing the AI Setup section of the blog, step by step, with the rules the agent must follow. It is used when the owner asks to publish, update, or refresh that section.
+The main instructions for the publish skill, with its rules, the steps it follows, and how it starts agents and asks "Publish now?" before anything goes live.
 
 ```
 ---
 name: publish-setup
-description: Publish Orlando's AI setup to the "AI Setup" section of his blog. Gathers his rules, skills, and agents, has agents take out anything private, checks the result twice, builds the pages, shows what changed with a preview, and asks "Publish now?" before anything goes live. Use when he asks to publish, update, or refresh the AI Setup section.
+description: Publishes Orlando's AI setup to the "AI Setup" section of his blog. Gathers his rules, skills, and agents, has agents take out anything private, checks the result twice, builds the pages, shows what changed with a preview, and asks "Publish now?" before anything goes live. Use when he asks to publish, update, or refresh the AI Setup section.
 ---
 
 # Publish the AI Setup section
@@ -58,7 +58,7 @@ Work in `~/ai/projects/blog/<project-folder>`. Run every command below from ther
 - **The end.** The run says it published (with the live section's address), that nothing changed, or why it stopped. Tell him in plain words, and show what stopped it as the run lists it (page, file, line, and kind; a finding in a name means he renames that folder or file). If it says a file is already in the blog and wasn't written by the tool (such as `static/robots.txt`), it never replaces his file: he decides whether to move his file away. If it went live without asking, show him the list of pages that changed with their live addresses, so he can look at them. Pass on the line that says how many agents the run started. If the run suggests asking only for substantive changes, pass that on. Don't change the setting.
 ```
 
-Previous: [Publish prep](https://oneillo.com/ai-setup/skills/publish-prep/).
+Previous: [Connect](https://oneillo.com/ai-setup/skills/connect/).
 Next: [Podcast](https://oneillo.com/ai-setup/skills/podcast/).
 
 [Back to Skills](https://oneillo.com/ai-setup/skills/)

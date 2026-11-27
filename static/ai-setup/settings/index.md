@@ -2,23 +2,22 @@
 
 - Kind: Claude Code settings and hooks
 - Address: https://oneillo.com/ai-setup/settings/
-- Last updated: 2026-11-23
+- Last updated: 2026-11-27
+- Also changed: 2026-11-23
 
 > AI-written and cleaned from one person's working setup. Placeholders in angle brackets are not real values: ask your user for theirs. The newest version is at https://oneillo.com/ai-setup/settings/.
 
 The settings and hooks in Orlando's AI setup, described by kind.
 
-Sets up hooks, a plugin, a status line, and permissions so Claude Code sessions start and run the way the setup expects.
-
-Two hooks run before tools are used and when a session starts. The frontend-design plugin is turned on.
+The settings run small checks before tools are used and when a session starts. They also turn on a design plugin and set up a status line.
 
 ## Permissions
 
-There is a default mode setting left open, and no list of things sessions must refuse.
+There is a list of things sessions must refuse, which keeps private folders and risky commands out of reach.
 
 ## Plugins and the status line
 
-One plugin is turned on: frontend-design. The status line shows the model, the folder, and how much of the context window is used.
+One plugin is turned on: frontend-design@claude-plugins-official. The status line shows the model, the folder, and how much of the context window is used.
 
 ## Hooks
 

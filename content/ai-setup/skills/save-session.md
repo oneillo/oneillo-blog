@@ -1,8 +1,8 @@
 ---
 title: "Save session: a Claude Code skill that saves project context for the next session"
 date: 2026-11-22
-lastmod: 2026-11-22
-summary: "AI-written: Saves where a project stands in a context file so the next session can pick up where this one left off."
+lastmod: 2026-11-27
+summary: "AI-written: Saves a project's goal, decisions, and next steps at the end of a session so the next session can pick up where this one left off."
 heading: "Save session"
 linkTitle: "Save session"
 author: "Orlando O'Neill"
@@ -17,25 +17,26 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
-<div class="post-description">Saves where a project stands in a context file so the next session can pick up where this one left off.</div>
+<div class="post-description">Saves a project's goal, decisions, and next steps at the end of a session so the next session can pick up where this one left off.</div>
 
-<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-27">2026-11-27</time>. Also changed: <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
 <section class="facts facts-skill">
 
 <div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/save-session</code></span></div>
 
-- **What it is:** Save session is a Claude Code skill that writes a project's goal, decisions, and next steps into a context file at the end of a working session.
+- **What it is:** Save session is a Claude Code skill that saves a project's context file at the end of a working session so the next session can continue.
 - **How it starts:** You type <code>&#47;save&#45;session</code>. Claude doesn't start it by itself.
 - **Where the file goes:** <code>&#126;&#47;&#46;claude&#47;skills&#47;save&#45;session&#47;SKILL&#46;md</code>
 - **Needs:** Nothing extra
 - **To make it yours:** Put your own values where you see <code>&#60;project&#45;folder&#62;</code>.
-  Taken out for privacy: 1 private project folder pattern.
+  Taken out for privacy: 1 private project folder name.
 
 <div class="works">
 
 **Works with:**
 - **Called by:** <a href="/ai-setup/rules/workspace/">Workspace rules</a>.
+- **Also mentions:** <a href="/ai-setup/skills/close-shop/">Close shop</a>.
 
 </div>
 
@@ -47,36 +48,29 @@ madeBy: "setup-share"
 
 <a href="#skill-md">Link to this file</a>
 
-The instructions for saving a project's context at the end of a working session. It tells Claude how to find the project folder and write or update a context file there.
+The instructions Claude follows to write or update a project's context file, with its structure and the rules for keeping it short and accurate.
 
 <figure class="code">
-<div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 61 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
+<div class="code-bar"><span class="code-name">SKILL.md</span><span class="code-meta">Markdown · 51 lines</span><button type="button" class="ai-setup-copy copy" hidden>Copy</button></div>
 
 <pre><code style="white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere">---
 name: save-session
-description: Save project context at end of a working session for continuity in future sessions
+description: Saves project context at the end of a session so the next one can continue. Use when Orlando types /save-session; close-shop also runs it.
 disable-model-invocation: true
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 # Save Session Context
 
-Review the full conversation and save a structured context file so a future session can pick up where this one left off.
+Review the full conversation and save a context file so a future session can pick up where this one left off.
 
-## Determine the project folder
+## Project folder
 
-Identify the project the user has been working on this session. Look at:
-- The files that were read, edited, or created during the conversation
-- The working directory and any directory changes
-- The user&#x27;s explicit mentions of a project name or folder
-
-The project folder is the root directory of whatever project the user was working on (e.g., `~/ai/projects/<span class="ph">&lt;area&gt;</span>/<span class="ph">&lt;project-folder&gt;</span>/`, `~/ai/tools/<span class="ph">&lt;tool&gt;</span>/`). If you cannot confidently determine the project folder, ask the user before proceeding.
+The root of the project worked on this session (e.g. `~/ai/projects/<span class="ph">&lt;area&gt;</span>/<span class="ph">&lt;project-folder&gt;</span>/`, `~/ai/tools/<span class="ph">&lt;tool&gt;</span>/`). Judge from files read, edited or created, the working directory and directory changes, and project names or folders the user mentioned. If unsure, ask before proceeding.
 
 ## Write context.md
 
-Create or update a `context.md` file in the root of the project folder.
-
-Use this structure:
+Create or update `context.md` at the folder&#x27;s root with this structure:
 
 ```markdown
 ---
@@ -106,13 +100,10 @@ last-updated: [YYYY-MM-DD]
 
 ## Rules
 
-- If `context.md` already exists, read it first and merge. Don&#x27;t overwrite prior decisions or context that&#x27;s still relevant. Update the `last-updated` date.
-- If this is the first time, create the file from scratch based on the conversation.
-- Current State describes the project now. Rewrite it each time; don&#x27;t stack dated updates.
-- Before writing that something is done or not done, check the files. Don&#x27;t rely on memory of the conversation.
-- Be concise. This file is for an LLM to read at the start of a session, not a full history.
-- Only include information that would actually help a future session. Skip ephemeral details.
-- Do not include information that can be derived from the code, git history, or existing project files.
+- Existing file: read it first and merge. Keep prior decisions and still-relevant context. Update `last-updated`.
+- Current State describes the project now: rewrite it each time, don&#x27;t stack dated updates.
+- Before writing that something is or isn&#x27;t done, check the files, not your memory of the conversation.
+- Concise: an LLM reads this at session start; it is not a history. Only what helps a future session: no ephemeral details, nothing derivable from the code, git history or existing project files.
 </code></pre>
 
 </figure>

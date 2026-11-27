@@ -1,7 +1,7 @@
 ---
 title: "Skills: the Claude Code skills in Orlando's setup"
 date: 2026-11-22
-lastmod: 2026-11-24
+lastmod: 2026-11-27
 summary: "AI-written: the skills in Orlando's AI setup, the written routines a session can run."
 heading: "Skills"
 linkTitle: "Skills"
@@ -19,7 +19,7 @@ madeBy: "setup-share"
 
 <div class="post-description">The skills in Orlando's AI setup, the written routines a session can run.</div>
 
-<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-24">2026-11-24</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-27">2026-11-27</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
 A skill is a written routine. Orlando starts one with a slash, or Claude picks it up when it fits.
 
@@ -27,10 +27,10 @@ A skill is a written routine. Orlando starts one with a slash, or Claude picks i
 
 <div class="piece-grid">
 
-- <a href="/ai-setup/skills/close-shop/">Close shop</a>: Ends a working session in three steps: saves project context, checks corrections are in memory, and commits the session's changes.
-- <a href="/ai-setup/skills/process-feedback/">Process feedback</a>: Reviews saved memories, promotes lasting lessons to the right place, and prunes the rest so memory stays lean.
-- <a href="/ai-setup/skills/save-session/">Save session</a>: Saves where a project stands in a context file so the next session can pick up where this one left off.
-- <a href="/ai-setup/skills/tune-setup/">Tune setup</a>: Researches current Anthropic guidance, updates a guidance file, and proposes specific improvements to a Claude Code setup.
+- <a href="/ai-setup/skills/close-shop/">Close shop</a>: Ends a working session in order: saves project context, checks corrections are in memory, and commits the session's changes.
+- <a href="/ai-setup/skills/process-feedback/">Process feedback</a>: Reviews saved memories, promotes lasting lessons to the right rules file, agent, skill, or hook, and prunes the rest.
+- <a href="/ai-setup/skills/save-session/">Save session</a>: Saves a project's goal, decisions, and next steps at the end of a session so the next session can pick up where this one left off.
+- <a href="/ai-setup/skills/tune-setup/">Tune setup</a>: Researches current Anthropic guidance, then proposes improvements to the agents, skills, and rules of a Claude Code setup.
 
 </div>
 
@@ -38,7 +38,7 @@ A skill is a written routine. Orlando starts one with a slash, or Claude picks i
 
 <div class="piece-grid">
 
-- <a href="/ai-setup/skills/connect/">Connect</a>: Links new knowledge base notes to concept notes, builds concept notes for recurring ideas, and adds cross-area links.
+- <a href="/ai-setup/skills/connect/">Connect</a>: Links new knowledge base notes to concept notes, creates concept notes for recurring ideas, and adds cross-area links.
 
 </div>
 
@@ -46,10 +46,7 @@ A skill is a written routine. Orlando starts one with a slash, or Claude picks i
 
 <div class="piece-grid">
 
-- <a href="/ai-setup/skills/obsidian-to-hugo/">Obsidian to Hugo</a>: Converts an Obsidian blog post to Hugo-ready Markdown, fixes links and pictures, and places it in a review folder.
-- <a href="/ai-setup/skills/publish-post/">Publish post</a>: Publishes a finished blog post to a Hugo site, checks the build, and pushes it to GitHub.
-- <a href="/ai-setup/skills/publish-prep/">Publish prep</a>: Prepares a finished blog post for publishing with title options, a description, a LinkedIn blurb, and a Substack version.
-- <a href="/ai-setup/skills/publish-setup/">Publish setup</a>: Publishes the AI Setup section of a blog: agents clean out private details, checks run twice, and it asks before anything goes live.
+- <a href="/ai-setup/skills/publish-setup/">Publish setup</a>: Publishes the AI Setup section of a blog: cleans private details, checks twice, builds pages, and asks before going live.
 
 </div>
 
@@ -57,8 +54,7 @@ A skill is a written routine. Orlando starts one with a slash, or Claude picks i
 
 <div class="piece-grid">
 
-- <a href="/ai-setup/skills/podcast/">Podcast</a>: Turns source documents into a two-host podcast-style MP3 by writing a script, then rendering it locally with a text-to-speech voice.
-- <a href="/ai-setup/skills/video-title-cards/">Video title cards</a>: Makes intro, outro, and interstitial title cards with ffmpeg and joins them to screen recordings.
+- <a href="/ai-setup/skills/podcast/">Podcast</a>: Turns source documents into a two-host podcast MP3, writing the script and rendering the voices on the Mac.
 
 </div>
 
@@ -66,8 +62,8 @@ A skill is a written routine. Orlando starts one with a slash, or Claude picks i
 
 <div class="piece-grid">
 
-- <a href="/ai-setup/skills/heartbeat/">Heartbeat</a>: Adds, changes, pauses, or removes scheduled jobs on the heartbeat, a scheduler that runs a free check and then an agent session with limits.
-- <a href="/ai-setup/skills/relay/">Relay</a>: Runs a project's roadmap unattended as a relay of fresh Claude Code sessions, each leading one batch with parallel agents and handing off to the next.
+- <a href="/ai-setup/skills/heartbeat/">Heartbeat</a>: Adds, changes, pauses, or removes scheduled jobs on a Mac scheduler that runs a free check first, then a capped agent session if there is work.
+- <a href="/ai-setup/skills/relay/">Relay</a>: Runs a project's roadmap unattended as a relay of fresh Claude Code sessions, each leading one batch with parallel agents.
 
 </div>
 
@@ -75,6 +71,14 @@ A skill is a written routine. Orlando starts one with a slash, or Claude picks i
 
 <div class="piece-grid">
 
-- <a href="/ai-setup/skills/rex/">Rex</a>: Manages Rex sessions, tabs, and panes, runs commands, and reads terminal output from the command line.
+- <a href="/ai-setup/skills/rex/">Rex</a>: Manages Rex terminal sessions, tabs, and panes, runs commands in them, and reads their output.
+
+</div>
+
+## Other
+
+<div class="piece-grid">
+
+- <a href="/ai-setup/skills/evals/">Evals</a>: Checks that a decided change to an agent or instruction file is no worse than the current version, using a blind panel of judges.
 
 </div>

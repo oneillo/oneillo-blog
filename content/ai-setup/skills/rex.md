@@ -1,8 +1,8 @@
 ---
-title: "Rex: a Claude Code skill that controls Rex terminal sessions and tabs"
+title: "Rex: a Claude Code skill that controls Rex terminal sessions and panes"
 date: 2026-11-22
-lastmod: 2026-11-22
-summary: "AI-written: Manages Rex sessions, tabs, and panes, runs commands, and reads terminal output from the command line."
+lastmod: 2026-11-27
+summary: "AI-written: Manages Rex terminal sessions, tabs, and panes, runs commands in them, and reads their output."
 heading: "Rex"
 linkTitle: "Rex"
 author: "Orlando O'Neill"
@@ -17,15 +17,15 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
-<div class="post-description">Manages Rex sessions, tabs, and panes, runs commands, and reads terminal output from the command line.</div>
+<div class="post-description">Manages Rex terminal sessions, tabs, and panes, runs commands in them, and reads their output.</div>
 
-<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-27">2026-11-27</time>. Also changed: <time datetime="2026-11-22">2026-11-22</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
 <section class="facts facts-skill">
 
 <div class="facts-head"><span class="tag tag-skill">Skill</span><span class="facts-cmd"><code>/rex</code></span></div>
 
-- **What it is:** Rex is a Claude Code skill that teaches Claude to use the rex command line tool to manage sessions, tabs, and panes, run commands, and control connected Rex apps.
+- **What it is:** Rex is a Claude Code skill that uses the rex command line tool to manage Rex sessions, tabs, and panes, run commands, and read terminal output.
 - **How it starts:** You type <code>&#47;rex</code>. Claude can also pick it up when it fits.
 - **Needs:** Rex
 
@@ -38,6 +38,7 @@ Rex's own site: <a href="https://www.superlogical.com/rex/" target="_blank" rel=
 <nav class="page-foot">
 
 Previous: <a href="/ai-setup/skills/relay/">Relay</a>.
+Next: <a href="/ai-setup/skills/evals/">Evals</a>.
 
 <a href="/ai-setup/skills/">Back to Skills</a>
 
