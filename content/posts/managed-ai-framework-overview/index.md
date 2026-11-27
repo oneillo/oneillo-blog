@@ -1,6 +1,6 @@
 ---
 title: "How I Manage a Team of AI Agents at Work"
-date: 2026-03-16
+date: "2026-03-16"
 draft: false
 description: "A six-step framework for treating AI agents like a team you manage, not a tool you use."
 tags: ["ai", "llm", "productivity", "agents", "managed-ai-framework"]
@@ -8,6 +8,7 @@ cover:
   image: "managed-ai-framework-overview.jpg"
   alt: "Managed AI framework overview"
   hidden: true
+  relative: true
 ---
 
 I used to think of AI as a tool I used. Now I think of it as a team I manage. This perspective evolved gradually as I used it daily and found myself rewriting the same persona prompts over and over again for the same types of tasks. I started systematically improving what I was doing until I found myself managing a team, which happened to be made up of AI agents, at the end of the [7-month journey that made me an AI enthusiast]({{< ref "my-llm-journey" >}}).
