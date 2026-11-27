@@ -18,6 +18,7 @@ theme = "PaperMod"
 
 [params.schema]
   publisherType = "Person"  # a personal blog: search engines read the site as a person, not a company
+  sameAs = ["https://www.linkedin.com/in/oneillo/"]  # ties the site to his profile for search engines
 
 [menu]
   [[menu.main]]
