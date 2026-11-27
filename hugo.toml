@@ -4,7 +4,7 @@ title = "Orlando O'Neill"  # Change to whatever you want
 theme = "PaperMod"
 
 [params]
-  description = "Thoughts on AI, marketing, data, and whatever I'm curious about — by Orlando O'Neill."
+  description = "How I build and use AI agents at work and at home, plus marketing, data, and whatever I'm curious about."
   mainSections = ["posts"]  # keeps the homepage/archive to hand-written posts only; the AI Digest section (content/newsletter/) is separate
   defaultTheme = "auto"  # auto switches between light/dark based on OS
   ShowReadingTime = true
@@ -15,6 +15,9 @@ theme = "PaperMod"
   ShowShareButtons = true
   disableSpecial1stPost = true
   ShareButtons = ["linkedin", "x"]
+
+[params.schema]
+  publisherType = "Person"  # a personal blog: search engines read the site as a person, not a company
 
 [menu]
   [[menu.main]]

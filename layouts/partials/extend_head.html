@@ -1,1 +1,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" />
+{{- if .IsHome }}
+{{- /* Tells search engines the site's name, so results show "Orlando O'Neill" instead of the domain. */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Title }},
+  "url": {{ site.Home.Permalink }}
+}
+</script>
+{{- end }}
