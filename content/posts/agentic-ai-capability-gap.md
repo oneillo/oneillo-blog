@@ -1,16 +1,10 @@
 ---
 title: "When Your AI Agent Can't Do the Job"
-date: 2026-06-14T12:00:00
+date: "2026-06-14T12:00:00"
 draft: false
 description: "When your agent can't do what you need, you've hit a capability gap. There are four ways to fix it, depending on how technical you want to get."
 tags: ["ai", "agents", "productivity"]
-cover:
-  image: ""
-  alt: ""
-  hidden: true
 ---
-
-# The Third Agentic AI Gap
 
 When I first started building my mental model for agentic AI, I identified two types of gaps that you need to fix when working with agents: 
 
