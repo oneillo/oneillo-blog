@@ -1,6 +1,6 @@
 ---
 title: "Your First AI Hire: Building Agents That Know Their Job"
-date: 2026-03-20
+date: "2026-03-20"
 draft: false
 description: "A practical guide to scoping roles and creating persona prompts that make your AI agents more useful."
 tags: ["ai", "llm", "productivity", "agents", "managed-ai-framework"]
@@ -8,6 +8,7 @@ cover:
   image: "managed-ai-framework-build-your-team.jpg"
   alt: "Build your AI team process"
   hidden: true
+  relative: true
 ---
 
 I remember when I realized I was starting to use AI at work as if I were [managing a team of AI employees]({{< ref "managed-ai-framework-overview" >}}). I got so excited, I immediately sketched the idea on a sheet of paper so I could share it with my teammates.
