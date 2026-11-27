@@ -1,13 +1,14 @@
 ---
 title: "Stop Repeating Yourself: Team Rules and Skills for Your AI Team"
-date: 2026-04-04
+date: "2026-04-04"
 draft: false
 description: "When your agents keep making the same mistakes, you don't need more context files. You need team rules and skills."
 tags: ["ai", "llm", "productivity", "agents", "managed-ai-framework"]
 cover:
-  image: ""
-  alt: ""
+  image: "3-ai-framework-team-rules.jpg"
+  alt: "Team rules"
   hidden: true
+  relative: true
 ---
 
 With a [knowledge base]({{< ref "managed-ai-framework-knowledge-base" >}}), your team has the context they need to do their jobs. But you're still going to run into issues when you work with them. 
