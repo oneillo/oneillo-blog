@@ -20,6 +20,24 @@ theme = "PaperMod"
   publisherType = "Person"  # a personal blog: search engines read the site as a person, not a company
   sameAs = ["https://www.linkedin.com/in/oneillo/"]  # ties the site to his profile for search engines
 
+[taxonomies]
+  tag = "tags"  # tags only: the blog doesn't use categories, so Hugo makes no empty /categories/ page
+
+# Settings for groups of pages, picked by address.
+[[cascade]]
+  [cascade.params]
+    author = "Orlando O'Neill"  # posts name their author (beside the date, and for search engines); the AI Digest and AI Setup pages don't get it from here
+  [cascade.target]
+    path = "/posts/**"
+
+[[cascade]]
+  [cascade.params]
+    robotsNoIndex = true  # the search page has nothing of its own for search engines to show
+  [cascade.sitemap]
+    disable = true  # and it stays out of the sitemap
+  [cascade.target]
+    path = "/search"
+
 [menu]
   [[menu.main]]
     identifier = "about"

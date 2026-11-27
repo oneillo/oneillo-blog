@@ -1,6 +1,6 @@
 ---
-title: ""
+title: "Archive"
 layout: "archives"
 url: "/archives/"
-summary: "archive"
+description: "Every post on the blog, by year and month, newest first."
 ---
