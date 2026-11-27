@@ -8,13 +8,14 @@ cover:
   image: "corillo-claude-replied.png"
   alt: "corillo-claude-replied"
   hidden: true
+  relative: true
 ---
 
 At work, I realized that one-shotting documents with AI rarely led to something I felt comfortable sharing with others. Instead, I found I had to collaboratively refine documents with my agents, the same way I did with my manager and teammates.
 
 I'm sharing [Corillo](https://github.com/oneillo/corillo), a collaborative Markdown editor for writing and refining documents with your AI agents.
 
-![corillo-claude-replied](corillo-claude-replied.png)
+![Corillo with a document open, and Claude's replies to three comments in the side panel](corillo-claude-replied.png)
 
 The goal of the app is to make collaborating with agents on Markdown documents feel like collaborating with teammates in Word. You can add comments to specific parts of the copy for your agent(s) to address, see a history of changes, and more. At the end, you can export a version in Word or PDF with one click to share with others, using a default format or a doc template you provide.
 
