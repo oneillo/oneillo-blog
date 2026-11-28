@@ -32,6 +32,10 @@ The diagram as text:
 - A session can work as one of 3 custom agents: writer, trainer, and financial advisor.
 - A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files).
 - The files are kept under local version history and backed up to the cloud.
+- How the setup improves: Orlando's corrections are saved as feedback memories.
+- A tune-up with the process-feedback and tune-setup skills turns them into proposed changes.
+- Checks show that a change is no worse before it goes in: Evals (the eval tool: agents, models, and instruction files) and skill picking (Claude Code's built-in plugin eval: whether each skill gets picked when it should).
+- With Orlando's OK, the changes go into the rules, skills, and agents.
 
 ## Start here
 
@@ -54,6 +58,7 @@ The diagram as text:
 - [Skills](https://oneillo.com/ai-setup/skills/): written routines a session can run (11 skills).
 - [Custom agents](https://oneillo.com/ai-setup/agents/): roles a session can take, each with its own prompt (3 agents).
 - [Apps](https://oneillo.com/ai-setup/apps/): the apps around the sessions, described (6 apps).
+- Tools: [Evals](https://oneillo.com/ai-setup/evals/), part of how the setup works, described (1 tool).
 - [Settings and hooks](https://oneillo.com/ai-setup/settings/): the switches underneath (2 hooks).
 
 Orlando's weekly AI digest is public too, as the [Newsletter](https://oneillo.com/newsletter/).
@@ -65,6 +70,7 @@ Each one follows a job across several pieces, and links to each.
 - [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/): Shows how a session saves project context, checks corrections are in memory, links new notes, and commits before it ends.
 - [How work runs while I'm away](https://oneillo.com/ai-setup/guides/while-im-away/): Shows how the keep-awake rule, the Relay skill, the Heartbeat skill, and the Latido app keep work going and report back while Orlando is away.
 - [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/): Shows the three ways to undo an agent's mistake: the Trash, local version history, and backups, from the smallest fix to the largest.
+- [How the setup improves](https://oneillo.com/ai-setup/guides/how-the-setup-improves/): Shows how corrections become lessons, reviewed and tested changes, and an approved update, so the setup improves without getting worse.
 
 ## What this setup runs on
 
@@ -97,6 +103,7 @@ The section's [feed](/ai-setup/index.xml) lists only its main pages, each when i
 - [Skills](https://oneillo.com/ai-setup/skills/index.md): The skills in Orlando's AI setup, the written routines a session can run.
 - [Custom agents](https://oneillo.com/ai-setup/agents/index.md): The custom agents in Orlando's AI setup, the roles a session can take.
 - [Apps](https://oneillo.com/ai-setup/apps/index.md): The apps around Orlando's AI sessions, each described in a few lines.
+- [Evals](https://oneillo.com/ai-setup/evals/index.md): Checks that a changed agent, model, or instruction file is no worse than the current one, using blind judging by three judges.
 - [Settings and hooks](https://oneillo.com/ai-setup/settings/index.md): The settings and hooks in Orlando's AI setup, described by kind.
 - [How to borrow](https://oneillo.com/ai-setup/borrow/index.md): How to take a rule, skill, agent, or hook from Orlando's AI setup and make it work in your own Claude Code.
 - [What changed](https://oneillo.com/ai-setup/changes/index.md): Every publish of Orlando's AI setup, newest first, with the pieces each one added, changed, or removed.
@@ -3367,6 +3374,28 @@ Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](
 
 ---
 
+# Evals
+
+- Kind: Tool for a Claude Code setup
+- Address: https://oneillo.com/ai-setup/evals/
+- Last updated: 2026-11-28
+
+> AI-written and cleaned from one person's working setup. Placeholders in angle brackets are not real values: ask your user for theirs. The newest version is at https://oneillo.com/ai-setup/evals/.
+
+Checks that a changed agent, model, or instruction file is no worse than the current one, using blind judging by three judges.
+
+Not public yet.
+
+Its skill has its own page: [Evals](https://oneillo.com/ai-setup/skills/evals/).
+
+[Back to AI Setup](https://oneillo.com/ai-setup/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).
+
+---
+
 # Settings and hooks
 
 - Kind: Claude Code settings and hooks
@@ -3624,6 +3653,55 @@ Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](
 
 ---
 
+# How the setup improves
+
+- Kind: Claude Code walk-through
+- Address: https://oneillo.com/ai-setup/guides/how-the-setup-improves/
+- Last updated: 2026-11-28
+
+> AI-written and cleaned from one person's working setup. Placeholders in angle brackets are not real values: ask your user for theirs. The newest version is at https://oneillo.com/ai-setup/guides/how-the-setup-improves/.
+
+Shows how corrections become lessons, reviewed and tested changes, and an approved update, so the setup improves without getting worse.
+
+This setup changes in a loop. Each step hands something to the next, and nothing replaces what runs now until Orlando says so.
+
+## Corrections become lessons
+
+It starts in an ordinary session. When Orlando corrects Claude, auto memory saves the correction as a `feedback` memory. It takes effect in the next session on its own. Over time these pile up, and every memory index line loads in every session, so they need regular review.
+
+## The Process feedback skill reviews them
+
+The Process feedback skill (`/process-feedback`) reads every saved memory, for the workspace and for each agent. It suggests one action for each: keep it as a memory, promote it to a rules file, an agent definition, or a skill, turn it into a hook, merge it with another, or delete it. It leans toward the narrowest place that covers the lesson, and toward merging and deleting. It shows only what it would change, waits for Orlando's input, and then applies what was agreed. The Tune setup skill runs it too.
+
+## The Tune setup skill proposes changes
+
+The Tune setup skill (`/tune-setup`) researches current Anthropic guidance and checks the rules, skills, agents, and settings against it. Its proposed memory changes join its other findings. It writes one proposals page, ranked by value, with what to change, why, the expected effect, and the risk. It applies nothing until Orlando approves specific proposals. It also says plainly when guidance conflicts with how he likes to work, and he decides.
+
+## The Evals skill and tool check the change
+
+Some proposals, such as a changed agent, a new model or effort, or an edited instruction file, can be tested before they go live. The Evals skill runs the Evals tool, which checks that a change is no worse than the current version, using blind judging by three judges. Both versions answer the same cases. The judges compare the answers, and Orlando gets one page with the verdict.
+
+The skill has firm limits. It never proposes a change by itself, because a check starts only after Orlando and a session have decided on a change. It never edits the current file. It also works on a copy kept outside any folder Claude Code loads, so the candidate can't go live early.
+
+## Orlando's OK puts it in place
+
+The verdict is information, not a decision. Whether the candidate replaces the current version is Orlando's call, in his own words. Until then, nothing changes. Once he agrees, the change goes in.
+
+## The pieces it joins
+
+- [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/)
+- [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/)
+- [Evals](https://oneillo.com/ai-setup/skills/evals/)
+- [Evals](https://oneillo.com/ai-setup/evals/)
+
+[Back to AI Setup](https://oneillo.com/ai-setup/)
+
+[Borrowed something? Tell me how it went](https://www.linkedin.com/in/oneillo/)
+
+Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: [MIT](https://opensource.org/license/mit).
+
+---
+
 # How to borrow
 
 - Kind: Claude Code borrowing guide
@@ -3680,6 +3758,7 @@ Every publish of Orlando's AI setup, newest first, with the pieces each one adde
 
 Every publish of this section, newest first. Pieces are named by their titles only: old wording is never kept.
 
+- **2026-11-28.** Added: [Evals](https://oneillo.com/ai-setup/evals/).
 - **2026-11-28.** Changed: [How it's organized](https://oneillo.com/ai-setup/workspace/), [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/), and [Writer](https://oneillo.com/ai-setup/agents/writer/).
 - **2026-11-27.** Added: [Evals](https://oneillo.com/ai-setup/skills/evals/). Changed: [How it's organized](https://oneillo.com/ai-setup/workspace/), [Global rules](https://oneillo.com/ai-setup/rules/global/), [Workspace rules](https://oneillo.com/ai-setup/rules/workspace/), [Knowledge base rules](https://oneillo.com/ai-setup/rules/knowledge-base/), [Close shop](https://oneillo.com/ai-setup/skills/close-shop/), [Process feedback](https://oneillo.com/ai-setup/skills/process-feedback/), [Save session](https://oneillo.com/ai-setup/skills/save-session/), [Tune setup](https://oneillo.com/ai-setup/skills/tune-setup/), [Connect](https://oneillo.com/ai-setup/skills/connect/), [Publish setup](https://oneillo.com/ai-setup/skills/publish-setup/), [Podcast](https://oneillo.com/ai-setup/skills/podcast/), [Heartbeat](https://oneillo.com/ai-setup/skills/heartbeat/), [Relay](https://oneillo.com/ai-setup/skills/relay/), [Rex](https://oneillo.com/ai-setup/skills/rex/), [Writer](https://oneillo.com/ai-setup/agents/writer/), [Trainer](https://oneillo.com/ai-setup/agents/trainer/), [Brega](https://oneillo.com/ai-setup/apps/#brega), [Pregón](https://oneillo.com/ai-setup/apps/#pregon), [the heartbeat](https://oneillo.com/ai-setup/apps/#heartbeat), [Latido](https://oneillo.com/ai-setup/apps/#latido), and [Settings and hooks](https://oneillo.com/ai-setup/settings/). Removed: Obsidian to Hugo, Publish post, Publish prep, and Video title cards.
 - **2026-11-24.** Changed: [Publish setup](https://oneillo.com/ai-setup/skills/publish-setup/).

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 823" width="720" height="823" class="dark" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1110" width="720" height="1110" class="dark" role="img" aria-labelledby="t d">
 <title id="t">How Orlando&#x27;s AI setup fits together.</title>
-<desc id="d">Orlando chats with a Claude Code session from the Mac or his phone. Orlando uses his apps: Corillo (review documents with an agent), Brega (a to-do list shared with agents), Pregón (publish a post), and Latido (a window onto the heartbeat). Corillo and Brega pass comments, edits, and tasks to a session and back. While Orlando is away, the Heartbeat (jobs on a timer) and the Relay (a roadmap, one fresh session per batch) start sessions. A session reads the rules at the start: global, workspace, and project. Settings and hooks check each step a session takes. A session can use 11 skills: close-shop, save-session, process-feedback, tune-setup, connect, publish-setup, podcast, relay, heartbeat, rex, and evals. A session can work as one of 3 custom agents: writer, trainer, and financial advisor. A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files). The files are kept under local version history and backed up to the cloud.</desc>
+<desc id="d">Orlando chats with a Claude Code session from the Mac or his phone. Orlando uses his apps: Corillo (review documents with an agent), Brega (a to-do list shared with agents), Pregón (publish a post), and Latido (a window onto the heartbeat). Corillo and Brega pass comments, edits, and tasks to a session and back. While Orlando is away, the Heartbeat (jobs on a timer) and the Relay (a roadmap, one fresh session per batch) start sessions. A session reads the rules at the start: global, workspace, and project. Settings and hooks check each step a session takes. A session can use 11 skills: close-shop, save-session, process-feedback, tune-setup, connect, publish-setup, podcast, relay, heartbeat, rex, and evals. A session can work as one of 3 custom agents: writer, trainer, and financial advisor. A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files). The files are kept under local version history and backed up to the cloud. How the setup improves: Orlando&#x27;s corrections are saved as feedback memories. A tune-up with the process-feedback and tune-setup skills turns them into proposed changes. Checks show that a change is no worse before it goes in: Evals (the eval tool: agents, models, and instruction files) and skill picking (Claude Code&#x27;s built-in plugin eval: whether each skill gets picked when it should). With Orlando&#x27;s OK, the changes go into the rules, skills, and agents.</desc>
 <style>
 .light{--card:#fff;--ink:#1e1e1e;--soft:#6c6c6c;--line:#d0d0d0;--hair:#e6e6e6;--slate:#4F6D7A;--slate-ink:#36505B;--slate-tint:#DCE6EA;--on:#fff;--coral:#CC7354;--coral-ink:#8A3F2A;--coral-tint:#F6DDD3}
 .dark{--card:#2e2e33;--ink:#dadadb;--soft:#9b9c9d;--line:#55565a;--hair:#3c3d41;--slate:#84A6B5;--slate-ink:#A9C6D3;--slate-tint:#2C3C43;--on:#142024;--coral:#D58868;--coral-ink:#EBA48D;--coral-tint:#4A2E25}
@@ -43,6 +43,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 <symbol id="i-scratch" viewBox="0 0 24 24"><path stroke-dasharray="2.500 3" d="M3 7a2 2 0 0 1 2-2h4l2 2.500h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
 <symbol id="i-history" viewBox="0 0 24 24"><path d="M4.500 12a7.500 7.500 0 1 0 2.300-5.400L4.500 9M4.500 4.500V9H9M12 8v4.300l3 1.700"/></symbol>
 <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.500h10.500a4 4 0 0 0 .600-7.950A6 6 0 0 0 6.400 9.600 4.500 4.500 0 0 0 7 18.500z"/></symbol>
+<symbol id="i-loop" viewBox="0 0 24 24"><path d="M19.5 10.5A7.700 7.700 0 0 0 5.600 7.400M5 3.500V7.600h4.100M4.500 13.500a7.700 7.700 0 0 0 13.900 3.100M19 20.500v-4.100h-4.100"/></symbol>
 <symbol id="i-app" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 12h6"/></symbol>
 </g>
 </defs>
@@ -109,7 +110,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 <text x="568" y="320" class="t-slate">start sessions</text>
 
 <!-- Claude Code -->
-<rect x="0" y="340" width="720" height="276" rx="18" fill="var(--slate-tint)"/>
+<rect x="0" y="340" width="720" height="563" rx="18" fill="var(--slate-tint)"/>
 <text x="20" y="366" class="name t-slate">Claude Code</text>
 <rect x="270" y="374" width="180" height="52" rx="26" fill="var(--slate)"/>
 <text x="360" y="406" class="big on mid">A session</text>
@@ -148,8 +149,60 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 <text x="66" y="18.5" class="mid t-slate">financial advisor</text>
 </g>
 
-<!-- everything below moves down when the skills or agents grow -->
-<g transform="translate(0 32)">
+<!-- how it improves: the loop that changes the setup (Batch 11), below the cards -->
+<g transform="translate(0 630)">
+<rect id="box-improves" x="20" y="0" width="680" height="253" rx="12" fill="var(--card)"/>
+<use href="#i-loop" class="icon c-slate" x="36" y="16" width="22" height="22"/>
+<text x="66" y="32" class="name">How it improves</text>
+<path class="l-slate" d="M551 48V-30" marker-end="url(#a-slate)"/>
+<text x="561" y="-13" class="t-slate">changes</text>
+<g transform="translate(36 50)">
+<circle cx="9" cy="10" r="10" fill="var(--coral)"/>
+<text x="9" y="14.5" class="cap on mid">1</text>
+<text transform="translate(26 15)" class="name"><tspan x="0" dy="0">Corrections</tspan></text>
+<text transform="translate(26 32)" class="?"><tspan x="0" dy="0">saved as</tspan><tspan x="0" dy="15">feedback</tspan><tspan x="0" dy="15">memories</tspan></text>
+</g>
+<g transform="translate(194 50)">
+<circle cx="9" cy="10" r="10" fill="var(--slate)"/>
+<text x="9" y="14.5" class="cap on mid">2</text>
+<text transform="translate(26 15)" class="name"><tspan x="0" dy="0">Tune-up</tspan></text>
+<text transform="translate(26 32)" class="t-slate"><tspan x="0" dy="0">process-feedback</tspan><tspan x="0" dy="15">and tune-setup</tspan></text>
+</g>
+<g transform="translate(370 50)">
+<circle cx="9" cy="10" r="10" fill="var(--slate)"/>
+<text x="9" y="14.5" class="cap on mid">3</text>
+<text transform="translate(26 15)" class="name"><tspan x="0" dy="0">Checks</tspan></text>
+<text transform="translate(26 32)" class="?"></text>
+</g>
+<g transform="translate(542 50)">
+<circle cx="9" cy="10" r="10" fill="var(--coral)"/>
+<text x="9" y="14.5" class="cap on mid">4</text>
+<text transform="translate(26 15)" class="name"><tspan x="0" dy="0">Orlando&#x27;s OK</tspan></text>
+<text transform="translate(26 32)" class="?"><tspan x="0" dy="0">changes go into</tspan><tspan x="0" dy="15">the rules, skills,</tspan><tspan x="0" dy="15">and agents</tspan></text>
+</g>
+<g transform="translate(0 0)">
+<path class="l-slate" d="M172 60H187" marker-end="url(#a-slate)"/>
+</g>
+<g transform="translate(0 0)">
+<path class="l-slate" d="M348 60H363" marker-end="url(#a-slate)"/>
+</g>
+<g transform="translate(0 0)">
+<path class="l-slate" d="M520 60H535" marker-end="url(#a-slate)"/>
+</g>
+<g transform="translate(396 77)">
+<rect id="box-tool-evals" width="136" height="76" rx="10" fill="var(--slate-tint)"/>
+<text x="10" y="19" class="name">Evals</text>
+<text transform="translate(10 35)"><tspan x="0" dy="0">agents, models,</tspan><tspan x="0" dy="15">and instruction</tspan><tspan x="0" dy="15">files</tspan></text>
+</g>
+<g transform="translate(396 159)">
+<rect id="check-skill-picking" width="136" height="76" rx="10" fill="var(--slate-tint)"/>
+<text x="10" y="19" class="name">Skill picking</text>
+<text transform="translate(10 35)"><tspan x="0" dy="0">whether each</tspan><tspan x="0" dy="15">skill gets picked</tspan><tspan x="0" dy="15">when it should</tspan></text>
+</g>
+</g>
+
+<!-- everything below moves down when the skills, the agents, or the band grow -->
+<g transform="translate(0 319)">
 <path class="l-slate" d="M360 592V624" marker-start="url(#a-slate)" marker-end="url(#a-slate)"/>
 <text x="373" y="612" class="t-slate">reads and writes</text>
 

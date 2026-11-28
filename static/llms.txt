@@ -29,9 +29,11 @@ Every page in one file: https://oneillo.com/ai-setup/llms-full.txt
 - [Trainer](https://oneillo.com/ai-setup/agents/trainer/index.md): Coaches strength training: builds custom training blocks, adjusts for recovery and injuries, and delivers programs as Excel files.
 - [Financial advisor](https://oneillo.com/ai-setup/agents/financial-advisor/index.md): A custom agent for the household's money decisions, with its details left out of this section on purpose.
 - [Apps](https://oneillo.com/ai-setup/apps/index.md): The apps around Orlando's AI sessions, each described in a few lines.
+- [Evals](https://oneillo.com/ai-setup/evals/index.md): Checks that a changed agent, model, or instruction file is no worse than the current one, using blind judging by three judges.
 - [Settings and hooks](https://oneillo.com/ai-setup/settings/index.md): The settings and hooks in Orlando's AI setup, described by kind.
 - [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/index.md): Shows how a session saves project context, checks corrections are in memory, links new notes, and commits before it ends.
 - [How work runs while I'm away](https://oneillo.com/ai-setup/guides/while-im-away/index.md): Shows how the keep-awake rule, the Relay skill, the Heartbeat skill, and the Latido app keep work going and report back while Orlando is away.
 - [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/index.md): Shows the three ways to undo an agent's mistake: the Trash, local version history, and backups, from the smallest fix to the largest.
+- [How the setup improves](https://oneillo.com/ai-setup/guides/how-the-setup-improves/index.md): Shows how corrections become lessons, reviewed and tested changes, and an approved update, so the setup improves without getting worse.
 - [How to borrow](https://oneillo.com/ai-setup/borrow/index.md): How to take a rule, skill, agent, or hook from Orlando's AI setup and make it work in your own Claude Code.
 - [What changed](https://oneillo.com/ai-setup/changes/index.md): Every publish of Orlando's AI setup, newest first, with the pieces each one added, changed, or removed.

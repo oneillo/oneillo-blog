@@ -12,3 +12,7 @@ A session can use 11 skills: close-shop, save-session, process-feedback, tune-se
 A session can work as one of 3 custom agents: writer, trainer, and financial advisor.
 A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files).
 The files are kept under local version history and backed up to the cloud.
+How the setup improves: Orlando's corrections are saved as feedback memories.
+A tune-up with the process-feedback and tune-setup skills turns them into proposed changes.
+Checks show that a change is no worse before it goes in: Evals (the eval tool: agents, models, and instruction files) and skill picking (Claude Code's built-in plugin eval: whether each skill gets picked when it should).
+With Orlando's OK, the changes go into the rules, skills, and agents.

@@ -28,6 +28,10 @@ The diagram as text:
 - A session can work as one of 3 custom agents: writer, trainer, and financial advisor.
 - A session reads and writes the files on the Mac: the knowledge base (an Obsidian vault), projects (by area, in dated folders), tools (finished and reusable), and scratch (throwaway files).
 - The files are kept under local version history and backed up to the cloud.
+- How the setup improves: Orlando's corrections are saved as feedback memories.
+- A tune-up with the process-feedback and tune-setup skills turns them into proposed changes.
+- Checks show that a change is no worse before it goes in: Evals (the eval tool: agents, models, and instruction files) and skill picking (Claude Code's built-in plugin eval: whether each skill gets picked when it should).
+- With Orlando's OK, the changes go into the rules, skills, and agents.
 
 ## Start here
 
@@ -50,6 +54,7 @@ The diagram as text:
 - [Skills](https://oneillo.com/ai-setup/skills/): written routines a session can run (11 skills).
 - [Custom agents](https://oneillo.com/ai-setup/agents/): roles a session can take, each with its own prompt (3 agents).
 - [Apps](https://oneillo.com/ai-setup/apps/): the apps around the sessions, described (6 apps).
+- Tools: [Evals](https://oneillo.com/ai-setup/evals/), part of how the setup works, described (1 tool).
 - [Settings and hooks](https://oneillo.com/ai-setup/settings/): the switches underneath (2 hooks).
 
 Orlando's weekly AI digest is public too, as the [Newsletter](https://oneillo.com/newsletter/).
@@ -61,6 +66,7 @@ Each one follows a job across several pieces, and links to each.
 - [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/): Shows how a session saves project context, checks corrections are in memory, links new notes, and commits before it ends.
 - [How work runs while I'm away](https://oneillo.com/ai-setup/guides/while-im-away/): Shows how the keep-awake rule, the Relay skill, the Heartbeat skill, and the Latido app keep work going and report back while Orlando is away.
 - [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/): Shows the three ways to undo an agent's mistake: the Trash, local version history, and backups, from the smallest fix to the largest.
+- [How the setup improves](https://oneillo.com/ai-setup/guides/how-the-setup-improves/): Shows how corrections become lessons, reviewed and tested changes, and an approved update, so the setup improves without getting worse.
 
 ## What this setup runs on
 
@@ -93,6 +99,7 @@ The section's [feed](/ai-setup/index.xml) lists only its main pages, each when i
 - [Skills](https://oneillo.com/ai-setup/skills/index.md): The skills in Orlando's AI setup, the written routines a session can run.
 - [Custom agents](https://oneillo.com/ai-setup/agents/index.md): The custom agents in Orlando's AI setup, the roles a session can take.
 - [Apps](https://oneillo.com/ai-setup/apps/index.md): The apps around Orlando's AI sessions, each described in a few lines.
+- [Evals](https://oneillo.com/ai-setup/evals/index.md): Checks that a changed agent, model, or instruction file is no worse than the current one, using blind judging by three judges.
 - [Settings and hooks](https://oneillo.com/ai-setup/settings/index.md): The settings and hooks in Orlando's AI setup, described by kind.
 - [How to borrow](https://oneillo.com/ai-setup/borrow/index.md): How to take a rule, skill, agent, or hook from Orlando's AI setup and make it work in your own Claude Code.
 - [What changed](https://oneillo.com/ai-setup/changes/index.md): Every publish of Orlando's AI setup, newest first, with the pieces each one added, changed, or removed.

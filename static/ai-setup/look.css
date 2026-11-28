@@ -116,6 +116,8 @@
 .ai-setup a[href*="/ai-setup/skills/"] { --as-kind: var(--as-k-skill); --as-kind-edge: var(--as-k-skill-edge); }
 .ai-setup a[href*="/ai-setup/agents/"] { --as-kind: var(--as-k-agent); --as-kind-edge: var(--as-k-agent-edge); }
 .ai-setup a[href*="/ai-setup/apps/"] { --as-kind: var(--as-k-app); --as-kind-edge: var(--as-k-app-edge); }
+/* A tool (Batch 11: the eval tool's page) takes the apps' peach: both are described from a README. */
+.ai-setup a[href*="/ai-setup/evals/"] { --as-kind: var(--as-k-app); --as-kind-edge: var(--as-k-app-edge); }
 .ai-setup a[href*="/ai-setup/settings/"] { --as-kind: var(--as-k-hook); --as-kind-edge: var(--as-k-hook-edge); }
 .ai-setup a[href*="/ai-setup/guides/"] { --as-kind: var(--as-k-guide); --as-kind-edge: var(--as-k-guide-edge); }
 
@@ -126,6 +128,7 @@
 .ai-setup li:has(> a:first-child[href*="/ai-setup/skills/"]) { --as-kind: var(--as-k-skill); --as-kind-edge: var(--as-k-skill-edge); }
 .ai-setup li:has(> a:first-child[href*="/ai-setup/agents/"]) { --as-kind: var(--as-k-agent); --as-kind-edge: var(--as-k-agent-edge); }
 .ai-setup li:has(> a:first-child[href*="/ai-setup/apps/"]) { --as-kind: var(--as-k-app); --as-kind-edge: var(--as-k-app-edge); }
+.ai-setup li:has(> a:first-child[href*="/ai-setup/evals/"]) { --as-kind: var(--as-k-app); --as-kind-edge: var(--as-k-app-edge); }
 .ai-setup li:has(> a:first-child[href*="/ai-setup/settings/"]) { --as-kind: var(--as-k-hook); --as-kind-edge: var(--as-k-hook-edge); }
 .ai-setup li:has(> a:first-child[href*="/ai-setup/guides/"]) { --as-kind: var(--as-k-guide); --as-kind-edge: var(--as-k-guide-edge); }
 
