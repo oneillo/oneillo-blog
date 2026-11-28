@@ -1,8 +1,8 @@
 ---
 title: "Three safety nets: a walk-through of Orlando's Claude Code setup"
 date: 2026-11-24
-lastmod: 2026-11-27
-summary: "AI-written: Shows three ways to undo an agent's mistake, from the Trash to local version history to a cloud copy, and when each one helps."
+lastmod: 2026-11-28
+summary: "AI-written: Shows the three ways to undo an agent's mistake: the Trash, local version history, and backups, from the smallest fix to the largest."
 heading: "Three safety nets"
 linkTitle: "Three safety nets"
 author: "Orlando O'Neill"
@@ -17,42 +17,37 @@ hideMeta: true
 madeBy: "setup-share"
 ---
 
-<div class="post-description">Shows three ways to undo an agent's mistake, from the Trash to local version history to a cloud copy, and when each one helps.</div>
+<div class="post-description">Shows the three ways to undo an agent's mistake: the Trash, local version history, and backups, from the smallest fix to the largest.</div>
 
-<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-27">2026-11-27</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-28">2026-11-28</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
-Agents make mistakes. Orlando's setup assumes they will, so it has three safety nets. Each one catches a bigger problem than the one before it. The Workspace rules and the page on how the workspace is organized describe them.
+Agents make mistakes. This setup has three layers that let you undo them. They run from the smallest fix to the largest, and each one covers a different kind of problem.
 
 ## 1. The Trash
 
-The smallest net is the Trash. The Workspace rules tell every agent to delete with <code>trash</code>, not <code>rm</code>. A deleted file is moved to the Trash instead of being erased, so it can be brought back. The one exception is the scratch folder, where <code>rm</code> is fine because nothing vital lives there.
+The smallest safety net is the Trash. The Workspace rules tell agents to delete with the <code>trash</code> command, not <code>rm</code>. A file that is deleted this way is moved to the Trash, so a mistake can be recovered by taking the file back out.
 
-Use this net when a single file went missing. The rules also ask an agent to check that nothing refers to a file it didn't create before deleting it.
+Before an agent deletes something it didn't create, it checks that nothing else refers to it. There is one exception. Inside the scratch folder <code>tmp&#47;</code>, plain <code>rm</code> is fine. Anything there may be deleted at any time, and the real originals live in project folders.
+
+Use the Trash when a single file or folder was removed by mistake.
 
 ## 2. Local version history
 
-The next net is git. The workspace, the Claude Code config folder, and the knowledge base vault each keep a local history. None of them has a remote, so nothing is pushed. Agents handle all of the git work. A commit is made at the end of each session, and a checkpoint is made before any bulk change, such as moving or renaming many files. That way a large change can be undone in one step.
+The second net is version history. The workspace, the Claude Code configuration (agents, skills, and memory), and the knowledge base each keep their own local git history. Agents handle git, so Orlando never has to.
 
-Use this net when an agent changed a file, or many files, in a way you don't want. To undo something, the agent first confirms with Orlando. Then it restores the specific files. It never resets the whole repo.
+Sessions commit their finished work, and the <code>&#47;close&#45;shop</code> skill commits at the end of a session. Before a bulk change, such as moving, renaming, or deleting many files, an agent first commits a checkpoint. That way the whole change can be undone in one step.
 
-## 3. The cloud copy
+To undo something, the agent first confirms with Orlando. Then it restores the specific files that need it. It does not reset the whole repository. These histories are never pushed anywhere.
 
-The largest net is a copy of the work kept off the Mac. It covers the workspace folder, the Claude Code config folder, and the blog's working folder. A timer refreshes it every 30 minutes. The copy mirrors the Mac, deletions included. In Orlando's words, if an agent ever removes a file completely, he can generally recover it from the cloud storage's recycle bin online.
+Use this net when an edit went wrong, or when a larger change needs to be rolled back.
 
-Safeguards sit around the copy. It refuses to run if the cloud folder is missing. It warns when a run would delete an unusually large number of files. It also warns when a git history disappears.
+## 3. Backups
 
-Use this net when the first two have failed, or when the whole Mac is gone. To rebuild on a new Mac:
+The largest net is the backup layer. The workspace page says that backups are part of the design, so agents can work safely and changes can be undone. The pieces here say nothing more about how backups work or how to restore from them, so this walk-through doesn't either. Treat it as the last resort, for when the first two nets can't help.
 
-1. Sign in to the cloud storage and wait for the backup to download fully.
-2. Install the tools.
-3. Copy the folders back from the cloud copy, without deleting anything.
-4. Check that every git repo answers.
-5. Do a dry run of what the backup would delete, and stop if the list is long.
-6. Load the backup timer last, because it starts mirroring the moment it is loaded.
+## How they fit together
 
-## Why three
-
-Each net covers a gap in the others. The Trash can't undo a bad edit. Git can't help if a whole folder is lost. The cloud copy may be up to half an hour behind. Together, any change an agent makes can be seen and undone.
+Start with the smallest net that fits the problem. Check the Trash for a deleted file first, then the version history for a bad edit. Backups come last.
 
 ## The pieces it joins
 

@@ -1,7 +1,7 @@
 ---
 title: "Orlando's Claude Code setup: rules, skills, agents, and hooks"
 date: 2026-11-22
-lastmod: 2026-11-27
+lastmod: 2026-11-28
 summary: "An AI-written tour of Orlando's personal AI setup: how it's organized, rules, skills, agents, apps, and settings."
 heading: "AI Setup"
 linkTitle: "AI Setup"
@@ -19,7 +19,7 @@ madeBy: "setup-share"
 
 <div class="post-description">A tour of Orlando's personal AI setup: how it's organized, rules, skills, agents, apps, and settings.</div>
 
-<aside class="ai-box"><p><strong>Written by AI.</strong> This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated <time datetime="2026-11-27">2026-11-27</time>.</p></aside>
+<aside class="ai-box"><p><strong>Written by AI.</strong> This page was generated from Orlando's own setup by an automated run, and checked for private details before it was published. <a href="/ai-setup/#how-this-section-is-made">How this section is made</a>. Last updated <time datetime="2026-11-28">2026-11-28</time>.</p></aside>
 
 <section class="block what">
 
@@ -143,9 +143,9 @@ Orlando's weekly AI digest is public too, as the <a href="/newsletter/">Newslett
 
 Each one follows a job across several pieces, and links to each.
 
-- <a href="/ai-setup/guides/how-a-session-ends/">How a session ends</a>: Shows how a session saves project state, turns corrections into lasting lessons, links new notes, and commits, so the next session starts clean.
+- <a href="/ai-setup/guides/how-a-session-ends/">How a session ends</a>: Shows how a session saves project context, checks corrections are in memory, links new notes, and commits before it ends.
 - <a href="/ai-setup/guides/while-im-away/">How work runs while I'm away</a>: Shows how the keep-awake rule, the Relay skill, the Heartbeat skill, and the Latido app keep work going and report back while Orlando is away.
-- <a href="/ai-setup/guides/three-safety-nets/">Three safety nets</a>: Shows three ways to undo an agent's mistake, from the Trash to local version history to a cloud copy, and when each one helps.
+- <a href="/ai-setup/guides/three-safety-nets/">Three safety nets</a>: Shows the three ways to undo an agent's mistake: the Trash, local version history, and backups, from the smallest fix to the largest.
 
 </section>
 
@@ -183,7 +183,7 @@ Every text here can be copied and made your own. <a href="/ai-setup/borrow/">How
 
 ## Last updated
 
-2026-11-27. Added the Evals skill. Changed the Trainer agent, the Writer agent, the Apps page, the How a session ends page, and 17 more pages. Removed 4 pages.
+2026-11-28. Changed the Writer agent, the How a session ends page, the Three safety nets page, the Workspace rules, and the How it's organized page.
 
 <a href="/ai-setup/changes/">What changed</a> lists every publish, newest first.
 

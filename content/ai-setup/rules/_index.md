@@ -1,7 +1,7 @@
 ---
 title: "Rules: the Claude Code rules files in Orlando's setup"
 date: 2026-11-22
-lastmod: 2026-11-27
+lastmod: 2026-11-28
 summary: "AI-written: the rules files in Orlando's AI setup, the instructions every session starts from."
 heading: "Rules"
 linkTitle: "Rules"
@@ -19,14 +19,14 @@ madeBy: "setup-share"
 
 <div class="post-description">The rules files in Orlando's AI setup, the instructions every session starts from.</div>
 
-<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-27">2026-11-27</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
+<p class="ai-setup-label">Written by AI from Orlando's setup. Last updated <time datetime="2026-11-28">2026-11-28</time>. <a href="/ai-setup/#how-this-section-is-made">How this is made</a>.</p>
 
 Rules come in layers. The global rules apply to every session, anywhere on the Mac. The workspace rules apply in the agent workspace, the folder where agents do their work. The knowledge base has its own rules file, for agents working in the notes.
 
 <div class="piece-grid">
 
 - <a href="/ai-setup/rules/global/">Global rules</a>: Sets the style, file habits, cleanup duties, and Python rules that every Claude Code session and agent follows.
-- <a href="/ai-setup/rules/workspace/">Workspace rules</a>: Sets shared rules for every agent session in a workspace: how to push back, where files go, how to treat outside text, and how to keep history.
+- <a href="/ai-setup/rules/workspace/">Workspace rules</a>: Sets the shared rules every agent session follows in a workspace: how to work, where files go, git history, and how feedback is kept.
 - <a href="/ai-setup/rules/knowledge-base/">Knowledge base rules</a>: Sets the rules agents follow in a notes vault: where to start, how notes are named and linked, where drafts for review go, and how history is kept.
 
 </div>

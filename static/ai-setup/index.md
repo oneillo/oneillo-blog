@@ -58,9 +58,9 @@ Orlando's weekly AI digest is public too, as the [Newsletter](https://oneillo.co
 
 Each one follows a job across several pieces, and links to each.
 
-- [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/): Shows how a session saves project state, turns corrections into lasting lessons, links new notes, and commits, so the next session starts clean.
+- [How a session ends](https://oneillo.com/ai-setup/guides/how-a-session-ends/): Shows how a session saves project context, checks corrections are in memory, links new notes, and commits before it ends.
 - [How work runs while I'm away](https://oneillo.com/ai-setup/guides/while-im-away/): Shows how the keep-awake rule, the Relay skill, the Heartbeat skill, and the Latido app keep work going and report back while Orlando is away.
-- [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/): Shows three ways to undo an agent's mistake, from the Trash to local version history to a cloud copy, and when each one helps.
+- [Three safety nets](https://oneillo.com/ai-setup/guides/three-safety-nets/): Shows the three ways to undo an agent's mistake: the Trash, local version history, and backups, from the smallest fix to the largest.
 
 ## What this setup runs on
 
